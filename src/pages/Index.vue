@@ -323,8 +323,8 @@ export default {
             this.reasons[i].slide !== null &&
             this.reasons[i].slide.indexOf("right") < 0
           )
-            elll[i].classList.add("animated", "slideInRight", "slow");
-          else elll[i].classList.add("animated", "slideInLeft", "slow");
+            elll[i].classList.add("animated", "zoomIn", "slow");
+          else elll[i].classList.add("animated", "zoomIn", "slow");
           elll[i].classList.remove("perma_hidden2");
         }
       }

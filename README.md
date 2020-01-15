@@ -2,7 +2,7 @@
 
 Website for #Switch2Linux
 
-It can also be converted to an Android, an iOS app and an Electron desktop application.
+It can also be converted to an Android app, an iOS app and an Electron desktop application.
 
 ## Install the dependencies
 ```bash
