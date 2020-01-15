@@ -6,7 +6,7 @@ export default {
         "It's gratis and always will be and the apps running on it are gratis, too",
       text:
         "You can also just try it out and still switch to another OS later. Unlike for macOS or Windows you don't have to pay anything for the OS.",
-      image_src: "../statics/reasons_free.png",
+      image_src: "/statics/reasons_free.png",
       source_background_details: ["GNU/Linux software is made by volunteers, for-profit and non-profit developers and simply anybody with an interest in advancing the common good through code this way.",
         "It is published under licenses that allow use free of charge even for commercial purposes.",
         "Many people see an advantage to the software being free of charge and a lot of money can be saved in larger orders"
