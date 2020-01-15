@@ -167,7 +167,7 @@
       <q-icon
         name="ion-logo-reddit"
         class="logo_icon"
-        @click="openUrl('https://www.reddit.com')"
+        @click="openUrl('https://www.reddit.com/search?q=Switch2Linux&restrict_sr=')"
         style="cursor: pointer;"
       ></q-icon></td><td>
       <q-icon
