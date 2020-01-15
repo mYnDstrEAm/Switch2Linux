@@ -27,10 +27,10 @@
     height: 75vh
     width: 100%
 
-.slideshow_row
-    @media screen and (max-width: 900px)
-        height: calc(20vw + 20vh)
-        min-height: 25vh
+// .slideshow_row
+//     @media screen and (max-width: 900px)
+//         height: calc(20vw + 20vh)
+//         min-height: 25vh
 
 .page_upper
     min-height: 90vh
@@ -58,11 +58,16 @@
 #what_is_linux
     margin-bottom: 0.2vh
 
+// TODO: instead link why and how in the text
+@media (max-width: 600px)
+    .why_how_row
+        display: none
+
 .why_how_row
     min-height: 8vh
     height: 8vh
     position: absolute
-
+    padding-top: 7px
     bottom: 0px
     width: 100%
     left: 0px
@@ -77,7 +82,7 @@
 .why_how_row_3
     vertical-align: bottom
     bottom: 0px
-    padding-top: 0px !important
+    padding-left: 0px !important
 
 
 .arrow_down
@@ -263,20 +268,30 @@
 .what_row p
     font-size: calc(0.6vw + 0.28vh + 0.9vmin) !important
 
-.whatIsWebsiteBox
-    padding-left: calc(48px - ((3000px - 0.3vh)/100))
+@media (max-width: 600px)
+    .what_row p
+        font-size: 15px !important
+
+@media (min-width: 600px)
+    .whatIsWebsiteBox
+        padding-left: calc(48px - ((3000px - 0.3vh)/100))
 
 p,
 li,
 .q-item__label
     font-family: Roboto,sans-serif
-    font-size: 20px
+    font-size: calc(0.3vw + 0.3vh + 16px)
     line-height: calc(0.6vw + 0.6vh + 1.5vmin)
     letter-spacing: -.1px
     opacity: 0.7
     color: white
     margin-bottom: 7px
     text-align: left
+
+@media (max-width: 600px)
+    li
+        line-height: calc(1vw + 1vh + 1.9vmin) !important
+        font-size: calc(0.1vw + 0.1vh + 14px) !important
 
 .q-item__label,
 .whatIsWebsiteBox p,
@@ -286,7 +301,6 @@ li,
 #how > p,
 #why > p
     text-align: center
-    font-size: 23px
     padding-top: 7px
 
 .text-amber
@@ -393,6 +407,10 @@ reason_panel::-webkit-scrollbar
     .col-xs-12 > div > h6
         font-size: 32px
 
+.whatIsWebsiteBox p,
+.whatIsLinuxBox p
+    padding-top: 7px
+
 .col-xs-12 > h5,
 .col-xs-12 > div > h4,
 .col-xs-6 > h5,
@@ -404,7 +422,7 @@ reason_panel::-webkit-scrollbar
     font-family: Roboto,sans-serif
     font-weight: 500
     font-size: 4.0vh
-    line-height: 4vh
+    line-height: 3vh
     opacity: 0.9
     color: white
 
@@ -427,9 +445,6 @@ reason_panel::-webkit-scrollbar
 .reason_box > ul > li
     padding-bottom: 7px
 
-.reason_img_leftright
-    max-width: 150px
-
 .reason_panels a
     color: white
 
@@ -441,14 +456,31 @@ reason_panel::-webkit-scrollbar
 
 .reason_img_container_left,
 .reason_img_container_right
-    padding-right: 15px
+    padding-right: 5px
 
-.reason_img_container_left,
 .reason_img_container_right
-    padding-right: 0px !important
+    text-align: right
+    float: right
+    right: 0px
 
 .reason_img_container_left > .q-img
+    text-align: left
+    float: left
     margin-left: 10px
+
+@media (max-width: 600px)
+    .q-img
+        max-height: 180px
+
+.reason_img_container_topdown
+    max-width: 1000px
+    max-height: 400px
+    margin: auto
+
+// TODO topdown image adaption
+.q-img__image
+    background-size: contain !important
+    max-height: 380px
 
 .reason_subpoint
     padding-top: 10px

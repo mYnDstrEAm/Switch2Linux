@@ -12,13 +12,14 @@
     <q-tab-panel name="bla" class="reason_panel">
       <div class="reason_box">
         <div
-          v-if="reason.image !== null && reason.image.location === 'top'"
+          v-if="(reason.image !== null && reason.image.location === 'top' ) || isWindowSmallBool"
           class="row"
         >
           <div class="col-12 reason reason_img_container_topdown">
             <q-img
               class="reason_img reason_img_topdown"
               :src="reason.image.src"
+              contain
             />
           </div>
         </div>
@@ -30,8 +31,8 @@
             leave-active-class="animated fadeIn delay"
           >
             <div
-              v-if="reason.image !== null && reason.image.location === 'left'"
-              class="col-xs-12 col-sm-3 col-md-3 reason_img_container_left"
+              v-if="reason.image !== null && reason.image.location === 'left' && !isWindowSmallBool"
+              class="col-xs-12 col-sm-3 col-md-3 col-lg-1 col-xl-1 reason_img_container_left"
             >
               <q-img
                 style="vertical-align: middle !important;"
@@ -52,9 +53,9 @@
                   (reason.image !== null &&
                     (reason.image.location === 'bottom' ||
                       reason.image.location === 'top')),
-                'reason_left col-sm-9 col-md-9':
+                'reason_left col-sm-9 col-md-9 col-lg-11 col-xl-11':
                   reason.image !== null && reason.image.location === 'left',
-                'reason_right col-sm-9 col-md-9':
+                'reason_right col-sm-9 col-md-9 col-lg-11 col-xl-11':
                   reason.image !== null && reason.image.location === 'right',
                 'reason col-xs-12 col-sm-12 col-md-12': reason.image === null,
                 'reason col-xs-12': reason.image !== null
@@ -91,8 +92,8 @@
           >
             <div
               style="vertical-align: middle !important;"
-              v-if="reason.image !== null && reason.image.location === 'right'"
-              class="col-xs-12 col-sm-3 col-md-3 reason_img_container_right"
+              v-if="reason.image !== null && reason.image.location === 'right' && !isWindowSmallBool"
+              class="col-xs-12 col-sm-3 col-md-3 col-lg-1 col-xl-1 reason_img_container_right"
             >
               <div style="padding-right: 20px;">
                 <q-img
@@ -110,13 +111,14 @@
           leave-active-class="animated fadeIn delay"
         >
           <div
-            v-if="reason.image !== null && reason.image.location === 'bottom'"
+            v-if="reason.image !== null && reason.image.location === 'bottom' && !isWindowSmallBool"
             class="row"
           >
             <div class="col-12 reason reason_img_container_topdown">
               <q-img
                 class="reason_img reason_img_topdown"
                 :src="reason.image.src"
+                contain
               />
             </div>
           </div>
@@ -214,10 +216,12 @@ export default {
   },
   data() {
     return {
-      panel: "bla"
+      panel: "bla",
+      isWindowSmallBool: false
     };
   },
   mounted() {
+    window.addEventListener("resize", this.isWindowSmall);
     // https://stackoverflow.com/questions/15702867/html-tooltip-position-relative-to-mouse-pointer
     var tooltips = document.getElementsByClassName("tooltiptext");
     window.onmousemove = function(e) {
@@ -232,6 +236,10 @@ export default {
   methods: {
     slidePanel() {
       this.$refs.reason_panels.next();
+    },
+    isWindowSmall() {
+      this.isWindowSmallBool = window.innerWidth < 600;
+      return window.innerWidth < 600;
     }
   }
 };
