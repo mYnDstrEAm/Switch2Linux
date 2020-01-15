@@ -163,6 +163,9 @@
             <li>You might lose all passwords saved in your browser and other things stored in apps.</li>
           </div>
           <li>You might also want to backup data on storage devices which have a filesystem that don't work with GNU/Linux. For example usb sticks. But most likely they will work under GNU/Linux. If it is a FAT32 filesystem there might be problems with long filenames. NTFS filesystems work perfectly fine. Ext2, Ext3, and Ext4 filesystems only work properly on GNU/Linux. You can change the filesystem with GParted but will lose all data on the device.</li>
+          <!-- TODO: add as separate step #2: "Preknowledge" with info on what will not work, potential problems, etc. (?) and/or move step replace software to an earlier step -->
+          <li v-if="user_os === 'Windows'">Windows programs like .exe files won't work in GNU/Linux by default. But you usually can make them work by using a program called \"Wine\".</li>
+          <li v-if="user_os === 'macOS'">macOS programs won't work in GNU/Linux.</li>
           <li>Before you continue verify that the backup worked correctly and that you have backedup all important data: go through some of the folders, check if the filesize of the entire backup is as large as the folders you backedup and check if the backup program had errors.</li>
         </ul>
         <q-stepper-navigation>
