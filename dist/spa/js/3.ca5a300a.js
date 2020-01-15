@@ -84,7 +84,7 @@ var reasons = [{
   reason_text: i18n["b" /* i18n */].t("reasons[".concat(id, "].text")),
   image: {
     location: "left",
-    src: "reasons[".concat(id, "].image_src")
+    src: i18n["b" /* i18n */].t("reasons[".concat(id, "].image_src"))
   },
   slide: [""],
   source_background_details: i18n["b" /* i18n */].t("reasons[".concat(id, "].source_background_details")),
@@ -96,7 +96,7 @@ var reasons = [{
   reason_text: i18n["b" /* i18n */].t("reasons[".concat(id, "].text")),
   image: {
     location: "right",
-    src: "reasons[".concat(id, "].image_src")
+    src: i18n["b" /* i18n */].t("reasons[".concat(id, "].image_src"))
   },
   slide: ["right"],
   visible: false,
@@ -227,7 +227,7 @@ var reasons = [{
   reason_text: i18n["b" /* i18n */].t("reasons[".concat(id, "].text")),
   image: {
     location: "left",
-    src: "reasons[".concat(id, "].image_src")
+    src: i18n["b" /* i18n */].t("reasons[".concat(id, "].image_src"))
   },
   slide: [""],
   source_background_details: i18n["b" /* i18n */].t("reasons[".concat(id, "].source_background_details")),
@@ -2059,4 +2059,4 @@ runtime_auto_import_default()(Index_component, 'components', {QPage: QPage["a" /
 /***/ })
 
 }]);
-//# sourceMappingURL=3.c7af9fa4.js.map
+//# sourceMappingURL=3.ca5a300a.js.map

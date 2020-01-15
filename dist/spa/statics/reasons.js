@@ -10,7 +10,7 @@ export var reasons = [
     reason_text: i18n.t(`reasons[${id}].text`),
     image: {
       location: "left",
-      src: `reasons[${id}].image_src`
+      src: i18n.t(`reasons[${id}].image_src`)
     },
     slide: [""],
     source_background_details: i18n.t(
@@ -25,7 +25,7 @@ export var reasons = [
     reason_text: i18n.t(`reasons[${id}].text`),
     image: {
       location: "right",
-      src: `reasons[${id}].image_src`
+      src: i18n.t(`reasons[${id}].image_src`)
     },
     slide: ["right"],
     visible: false,
@@ -176,7 +176,7 @@ export var reasons = [
     reason_text: i18n.t(`reasons[${id}].text`),
     image: {
       location: "left",
-      src: `reasons[${id}].image_src`
+      src: i18n.t(`reasons[${id}].image_src`)
     },
     slide: [""],
     source_background_details: i18n.t(`reasons[${id}].source_background_details`),
