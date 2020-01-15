@@ -310,7 +310,7 @@ export default {
       for (var i = 0; i < elll.length; i++) {
         if (
           document.documentElement.scrollTop + this.windowHeight >
-          elll[i].offsetTop + elll[i].offsetHeight - 10
+          elll[i].offsetTop + elll[i].offsetHeight - elll[i].clientHeight + 30
         ) {
           if (
             this.reasons[i].special !== undefined &&

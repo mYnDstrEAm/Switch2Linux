@@ -294,8 +294,9 @@
           >Tweet about it</a>
         </q-btn>
 
-        <p>If you need help you can find help in places such as <span @click="scrollToElement('reason_13')" style="text-decoration: underline;">these</span> (swipe card).</p>
+        <p>If you need help you can find help in places such as <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">these</span> (swipe card).</p>
         <q-stepper-navigation>
+          <!-- TODO add action for finish -->
           <q-btn color="primary" label="Finish" />
           <q-btn
             flat
@@ -388,7 +389,7 @@ export default {
       ],
       distributions: [
         {
-          logo: '../statics/logos_debian_small.png',
+          logo: 'statics/logos_debian_small.png',
           name: 'Debian',
           description: '100% FOSS, run by a large community, very stable and the distribution used on most servers. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
@@ -396,7 +397,7 @@ export default {
           selectionKey: 'debian'
         },
         {
-          logo: '../statics/logos_kdeneon_small.png',
+          logo: 'statics/logos_kdeneon_small.png',
           name: 'KDE neon',
           description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
           enabled: true,
@@ -404,7 +405,7 @@ export default {
           selectionKey: 'kdeneon'
         },
         {
-          logo: '../statics/logos_kubuntu_small.png',
+          logo: 'statics/logos_kubuntu_small.png',
           name: 'Kubuntu',
           description: 'Similar to KDE neon but "Kubuntu maintains stable releases and LTS version of Ubuntu while KDE neon focuses on updating developer editions of KDE applications without maintaining stable releases of Ubuntu unless the root user actively chooses to upgrade their systems". In short in KDE neon you\'ll have newer KDE applications while in Kubuntu you\'ll have newer Ubuntu software by default',
           enabled: false,
@@ -414,7 +415,7 @@ export default {
       ],
       desktopEnvironments: [
         {
-          logo: '../statics/logos_kde.png',
+          logo: 'statics/logos_kde.png',
           name: 'KDE',
           description: '"Simple by default, Powerful when needed", highly customizable, modern UI, phone integration and more',
           enabled: true,
@@ -422,7 +423,7 @@ export default {
           selectionKey: 'kde'
         },
         {
-          logo: '../statics/logos_gnome.png',
+          logo: 'statics/logos_gnome.png',
           name: 'GNOME',
           description: '"An easy and elegant way to use your computer, GNOME is designed to put you in control and get things done."',
           enabled: false,
@@ -471,7 +472,7 @@ export default {
       if (val === "Geek (experienced)") {
         this.distributions = [
           {
-            logo: '../statics/logos_debian_small.png',
+            logo: 'statics/logos_debian_small.png',
             name: 'Debian',
             description: 'bla',
             enabled: true,
@@ -479,7 +480,7 @@ export default {
             selectionKey: 'debian'
           },
           {
-            logo: '../statics/logos_kdeneon_small.png',
+            logo: 'statics/logos_kdeneon_small.png',
             name: 'KDE neon',
             description: 'bla',
             enabled: true,
@@ -487,7 +488,7 @@ export default {
             selectionKey: 'kdeneon'
           },
           {
-            logo: '../statics/logos_kubuntu_small.png',
+            logo: 'statics/logos_kubuntu_small.png',
             name: 'Kubuntu',
             description: 'bla',
             enabled: false,
@@ -498,7 +499,7 @@ export default {
       } else {
         this.distributions = [
         {
-          logo: '../statics/logos_kdeneon_small.png',
+          logo: 'statics/logos_kdeneon_small.png',
           name: 'KDE neon',
           description: 'bla',
           enabled: true,
@@ -506,7 +507,7 @@ export default {
           selectionKey: 'kdeneon'
         },
         {
-          logo: '../statics/logos_kubuntu_small.png',
+          logo: 'statics/logos_kubuntu_small.png',
           name: 'Kubuntu',
           description: 'bla',
           enabled: false,
@@ -514,7 +515,7 @@ export default {
           selectionKey: 'kubuntu'
         },
         {
-          logo: '../statics/logos_debian_small.png',
+          logo: 'statics/logos_debian_small.png',
           name: 'Debian',
           description: 'Not recommended for inexperienced users yet',
           enabled: true,

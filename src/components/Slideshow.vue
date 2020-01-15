@@ -17,11 +17,11 @@
           :name="1"
           img-src="../statics/kdeneon_1.png"
         />
-        <!-- <q-carousel-slide
+        <q-carousel-slide
           class="slide_item"
           :name="2"
           img-src="../statics/kdeneon_2.png"
-        /> -->
+        />
       </q-carousel>
     </div>
   </div>
