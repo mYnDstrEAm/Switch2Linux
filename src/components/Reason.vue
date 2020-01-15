@@ -32,7 +32,7 @@
           >
             <div
               v-if="reason.image !== null && reason.image.location === 'left' && !isWindowSmallBool"
-              class="col-xs-12 col-sm-3 col-md-3 col-lg-1 col-xl-1 reason_img_container_left"
+              class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-1 reason_img_container_left"
             >
               <q-img
                 style="vertical-align: middle !important;"
@@ -53,9 +53,9 @@
                   (reason.image !== null &&
                     (reason.image.location === 'bottom' ||
                       reason.image.location === 'top')),
-                'reason_left col-sm-9 col-md-9 col-lg-11 col-xl-11':
+                'reason_left col-sm-9 col-md-9 col-lg-10 col-xl-11':
                   reason.image !== null && reason.image.location === 'left',
-                'reason_right col-sm-9 col-md-9 col-lg-11 col-xl-11':
+                'reason_right col-sm-9 col-md-9 col-lg-10 col-xl-11':
                   reason.image !== null && reason.image.location === 'right',
                 'reason col-xs-12 col-sm-12 col-md-12': reason.image === null,
                 'reason col-xs-12': reason.image !== null
@@ -93,7 +93,7 @@
             <div
               style="vertical-align: middle !important;"
               v-if="reason.image !== null && reason.image.location === 'right' && !isWindowSmallBool"
-              class="col-xs-12 col-sm-3 col-md-3 col-lg-1 col-xl-1 reason_img_container_right"
+              class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-1 reason_img_container_right"
             >
               <div style="padding-right: 20px;">
                 <q-img
