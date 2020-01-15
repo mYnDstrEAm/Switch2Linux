@@ -161,8 +161,7 @@
       <q-icon
         name="ion-logo-github"
         class="logo_icon"
-        href="https://github.com"
-        @click="openUrl('https://github.com')"
+        @click="openUrl('https://github.com/mYnDstrEAm/Switch2Linux')"
         style="cursor: pointer;"
       ></q-icon></td><td>
       <q-icon
@@ -358,11 +357,9 @@ export default {
       }
     },
     options_user_type_changed(value) {
-      console.log("###", value);
       this.panel = "setup_wizard";
     },
     options_user_os_changed(value) {
-      console.log("###", value);
       this.panel = "user_type";
     },
     jumpBack() {
