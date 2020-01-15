@@ -56,7 +56,7 @@ export default {
       subpoints: [
         '<b>Open source software is a development-model that can deliver inherently more secure software.</b><br/>Because the code is open to the public and other developers security vulnerabilities can be fixed quickly. It also depends on how many developers are actively watching changes to the code and have audited it. Open source software allows more people to check the code. But software that is not open source can never reach the level of security of an open source project. This is also because it could contain hidden "backdoors" and bugs and because there\'s no dependence on a single company to fix security issues.',
         "<b>GNU/Linux still doesn't have a market share as large as Windows so less malware is designed for it.</b>",
-        "<b>GNU/Linux has better security designs including its implementation of privileges.</b><br/>For example it requires the password to be entered for making some changes. Sandboxing can prevent malware from causing harm. And more technologies like sandboxing are already getting picked up by developers to be included in the OS."
+        "<b>GNU/Linux has better security designs including its implementation of privileges.</b><br/>For example it requires the password to be entered for making some changes. And more technologies like sandboxing are already getting picked up by developers to be included in the OS. More details can be found by swiping this card."
       ],
       image_src: "statics/reasons_security.png",
       source_background_details: ["More: <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.pcworld.com/article/202452/why_linux_is_more_secure_than_windows.html>Why Linux Is More Secure Than Windows, by Katherine Noyes, PCWorld </a>"]
@@ -108,7 +108,7 @@ export default {
       main_text:
         "All software in GNU/Linux is supposed to be managed with a single program",
       text:
-        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password, wait a short time for it to install and can then easily uninstall or update it with a click of a button in the same software-management program.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the image on the right).",
+        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password, wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the image on the right).",
       image_src: "statics/reasons_update.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://userbase.kde.org/Discover>Intro to Discover by KDE</a>"]
     },
@@ -133,7 +133,7 @@ export default {
     },
     {
       title: "Changeable source code",
-      main_text: "Especially if you are a developer you might occasionally want to change or request a change to some of the software",
+      main_text: "Especially if you are a developer you might occasionally want to change or request a change to some of the software you use",
       text: "This gives users more flexibility and allows for more use-cases and increased efficiency.",
       image_src: "statics/reasons_changeable.png",
       source_background_details: ["Some changes only require running commands in the terminal. Other changes may require downloading the source code, changing it, compiling it and then running and potentially distributing it.",
@@ -147,13 +147,13 @@ export default {
       source_background_details: ["<a href=https://unix.stackexchange.com/>Unix & Linux Stack Exchange - Recommended place to ask about Linux-related things</a>",
         "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://askubuntu.com/>AskUbuntu Stack Exchange - Questions related to Ubuntu, answers typically also apply to Debian as Ubuntu is based on Debian</a>",
         "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://superuser.com/>Super User Stack Exchange - More general questions such as about hardware</a>",
-        "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://linux-help.org/chat>#Linux-Help - One of many live chats where you can find help</a>"]
+        "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>#Linux-Help - One of many live chats where you can find help</a>"]
     },
     {
       title: "Only few barriers left",
       main_text: "Most reasons for not using GNU/Linux have been resolved by now",
       text:
-        'For example it\'s not harder to use than Windows or macOS - sometimes even easier: for instance unlike for Windows many drivers are included in the "kernel" already. Users sometimes can have different difficulties with GNU/Linux such as missing specific programs, familiar layout, problems with gaming or how to install GNU/Linux. But these have been mostly resolved. In the guide below we show you how to make it look like Windows, MacOs and better. Only few problems remain for some users > most importantly that some games might not work. Windows-programs like .exe files won\'t work in Linux by default but you usually can make them work with a program called \"Wine\". Except for those games as a last option you could run a Windows operating system in a "virtual machine" to get a software to work - it\'s not hard to do and at the bottom of the guide you\'ll be shown how exactly you can set such a thing up if you need to. Other than that hibernation doesn\'t work and switching to GNU/Linux takes some effort.<br/>The usage-share of GNU/Linux is still small but it\'s rising.',
+        'For example it\'s not harder to use than Windows or macOS - sometimes even easier: for instance unlike for Windows many drivers are included in the "kernel" already. Users sometimes can have different difficulties with GNU/Linux such as missing specific programs, familiar layout, problems with gaming or how to install GNU/Linux. But these have been mostly resolved. In the guide below we show you how to make it look like Windows, macOS and better. Only few problems remain for some users - namely, most importantly that some games might not work. Windows-programs like .exe files won\'t work in Linux by default but you usually can make them work with a program called \"<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>Wine</a>\". Except for those games as a last option you could run a Windows operating system in a "virtual machine" to get a software to work - it\'s not hard to do and at the bottom of the guide you\'ll be shown how exactly you can set such a thing up if you need to. Other than that hibernation doesn\'t work and switching to GNU/Linux takes some effort.<br/>The usage-share of GNU/Linux is still small but it\'s rising.',
       image_src: "statics/reasons_barrier.png",
       source_background_details: [
         "Fragmentation of GNU/Linux into many different distributions and desktop environments and many different applications could be detrimental to a GNU/Linux as a project. This is partly why this page is so decisive in the recommendations given and e.g. only recommends one software alternative in the first reasons's details instead of multiple ones. Another reason for that is that inexperienced users should not be expected to have to (spend a lot of time) research things like that. This site is about making the switch fast and simple and to improve the GNU/Linux FOSS ecosystem most effectively.",
