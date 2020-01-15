@@ -18,8 +18,6 @@
             v-for="item in items"
             :key="item.guid"
           >
-            <!-- :href="item.link" -->
-            <!--if item.categories[0] !== null it's a subreddit-->
             <div
               style="border: 1px solid orange"
               v-if="
@@ -29,8 +27,6 @@
               "
             >
               <p>{{ item.title }}</p>
-              <!-- <div v-html="item.content"></div> -->
-              <!-- <p style="color:black;">{{ item.title }}</p> -->
               <a :href="item.link" style="padding:0px !important; margin: 0px;"
                 >{{ item.author }} on /r/{{ item.categories[0] }}</a
               >
@@ -44,7 +40,6 @@
               v-else-if="item.feed_name === 'twitter'"
             >
               <div v-html="item.content"></div>
-              <!--item.thumbnail--><!--item.enclosure.link--><!--:href="item.link"-->
             </div>
           </q-carousel-slide>
         </q-carousel>
@@ -92,54 +87,13 @@
                 style="border: 1px solid blue"
                 v-else-if="item.feed_name === 'twitter'"
               >
-                <!-- <p style="color:black;">{{ item.title }}</p>
-                <a :href="item.link"
-                  >{{ item.author }} at {{ dateFormat1(item.pubDate) }}</a
-                > -->
                 <div v-html="item.content"></div>
               </div>
-              <!-- {{ item.title }} -->
-              <!-- <a :href="item.feed.link" :title="item.feed.description">
-              {{ item.feed.title }}
-            </a> -->
             </q-item-section>
-            <!-- <v-list-tile-content :title="item.title">
-            <v-list-tile-sub-title class="text--primary">{{
-              item.title
-            }}</v-list-tile-sub-title>
-            <v-list-tile-title class="caption text--secondary">
-              <v-layout>
-                <v-flex>
-                  {{
-                    new Date(item.pubDate).toLocaleDateString(
-                      $t("locale"),
-                      timeOptions
-                    )
-                  }}
-                </v-flex>
-                <v-flex class="text-xs-right">
-                  <a :href="item.feed.link" :title="item.feed.description">
-                    {{ item.feed.title }}
-                  </a>
-                </v-flex>
-              </v-layout>
-            </v-list-tile-title>
-          </v-list-tile-content> -->
           </q-item>
         </q-list>
-        <!-- <q-card v-else>
-        <q-linear-progress v-if="loading" indeterminate />
-        <div v-else class="text-xs-center">
-          <q-icon name="rss_feed" />
-          <h2 v-t="'RSS.empty'" class="subheading" />
-        </div>
-      </q-card> -->
       </div>
     </div>
-    <!-- <div>
-      <q-input v-model="newFeed" placeholder="e.g. https://example.com/rss" />
-      <q-btn v-t="'add'" flat @click="addFeed(newFeed)" />
-    </div> -->
   </div>
 </template>
 
@@ -151,12 +105,6 @@ const API = "https://api.rss2json.com/v1/api.json?rss_url=";
 
 export default {
   name: "SocialFeed",
-  // props: {
-  //   settings: {
-  //     type: Object,
-  //     required: true
-  //   }
-  // },
   data() {
     return {
       slide: "",
@@ -167,11 +115,11 @@ export default {
         feeds: [
           // {
           //   name: "twitter",
-          //   url: "https://rss.app/feeds/oH6SRHkSliQLXCmk.xml"
+          //   url: "..."
           // },
           // {
           //   name: "reddit",
-          //   url: "https://www.reddit.com/search.xml?q=Twitter&sort=new"
+          //   url: "https://www.reddit.com/search.xml?q=Switch2Linux&sort=new"
           // }
         ]
       },
@@ -180,10 +128,6 @@ export default {
   },
   mounted() {
     this.items = [];
-    // if (this.VALID_CACHE && !this.loading) {
-    //   this.$emit("init", false);
-    //   return;
-    // }
     this.loadFeeds();
   },
   methods: {
@@ -191,7 +135,6 @@ export default {
       let x = this.$axios
         .get(`${API}${encodeURIComponent(url)}`)
         .then(res => res.data);
-      // console.log(x);
       return x;
     },
     addFeed(url) {

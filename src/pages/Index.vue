@@ -1,15 +1,6 @@
 <template>
-  <!-- <q-page class="flex flex-center">
-    <div class="row">
-      <div>First column</div>
-      <div>Second column</div>
-      <div>Third column</div>
-    </div>
-  </q-page>-->
   <q-page class="page pre-formatted">
     <div class="q-pa-md page_container">
-      <!-- <div class="column"> -->
-      <!-- style="height: 110vh;" -->
       <span class="page_upper">
         <Slideshow></Slideshow>
         <div class="what_row row justify-between items-start q-col-gutter-xl">
@@ -40,8 +31,6 @@
               leave-active-class="animated fadeIn slow"
             ><span>
                 <h5>{{ $t('explanations.what_is_website_header') }}</h5>
-                <!-- TODO -->
-                <!-- <p>It shows you <span class="bold">why</span> and <span class="bold">how</span> to switch to GNU/Linux. Windows 7 is getting phased out<span id="to_hide"> soon.</span> -->
                 <p><span v-html="$t('explanations.what_is_website')"/><span id="to_hide">{{ $t('explanations.what_is_website_tohide') }}</span>
                   <span class="hidden" id="what_is_website">{{ $t('explanations.what_is_website_hidden') }}
                   </span>
@@ -72,15 +61,7 @@
           />
         </div>
       </div>
-      <!-- </div> -->
     </div>
-    <!-- <div class="hidden" style="margin-top: -3px;">
-        <div style="background-color: blue;">
-          <p>Test</p>
-          <p>Test</p>
-          <p>Test</p>
-        </div>
-      </div> -->
 
     <div class="col-xs-12 col-sm-12" id="why">
       <h5>{{ $t('explanations.reasons_header') }}</h5>
@@ -91,34 +72,7 @@
         :key="reason.id"
         :reason="reason"
       />
-      <!-- TODO barrier: not preinstalled -->
-      <!-- TODO add reasons when usertype is selected? easily add functionality or ask somebody to add it, get support, no reinvention of wheel  -->
     </div>
-    <!-- <transition
-      appear
-      enter-active-class="animated bounceInUp slow"
-      leave-active-class="animated bounceInUp slow"
-    >
-      <div class="col-xs-12 col-sm-12" id="transition_barrier">
-        Users often have different difficulties with GNU/Linux such as missing
-        specific programs, familiar layout, problems with gaming or how to
-        install GNU/Linux. but these have been mostly resolved. In the guide
-        below we show you how to make it look like Windows, MacOs and better,
-        Windows programs and games. Only few problems remain for some users ->
-        some of the latest games might not work. Except for those games as a
-        last resort you could run a Windows operating system in a "virtual
-        machine" to get something to work - it's not hard to do and at the
-        bottom of the guide you'll be shown how exactly you can set such a thing
-        up if you need to
-      </div>
-    </transition> -->
-
-    <!-- <twitter>
-        <a
-          class="twitter-timeline"
-          href="https://twitter.com/realDonaldTrump?ref_src=twsrc%5Etfw"
-        >Tweets by realDonaldTrump</a>
-      </twitter> -->
 
     <div class="col-xs-12 col-sm-12" id="how">
       <h5>{{ $t('explanations.wizard_header') }}</h5>
@@ -131,7 +85,6 @@
         ref="options_panel_1"
         class="bg-transparent text-white"
       >
-        <!-- bg-transparent text-white shadow-2 rounded-borders -->
         <q-tab-panel name="user_os">
           <div class="options_container_container" id="user_os_options">
             <div class="row justify-between items-start q-col-gutter-xl">
@@ -162,7 +115,6 @@
                 class="steps_selection_buttons options_container"
                 v-if="user_os !== ''"
               >
-                <!-- padding-left: 4%; -->
                 <q-icon
                   style="vertical-align: center; horizontal-align:left;top:30%;left:0px;position:absolute;"
                   name="keyboard_arrow_left"
@@ -201,21 +153,9 @@
         </q-tab-panel>
       </q-tab-panels>
     </div>
-    <!-- span class="hidden" id="what_is_website_logos" -->
     <div
       style="margin: auto; padding-bottom: 20px; background-color: #245f5e;"
     >
-      <a
-        href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
-        target="_blank"
-      >
-      </a>
-      <!-- <q-icon
-        name="ion-logo-twitter"
-        class="logo_icon"
-        style="font-size: 29px !important; min-width: 42px; min-height: 42px; padding: 10px; color: black;"
-      ></q-icon> -->
-      <!-- border: 1px solid black; border-radius: 42px; -->
       <table style="margin: auto;"><tr>
         <td>
       <q-icon
@@ -253,10 +193,6 @@ import { i18n } from "../boot/i18n.js";
 import SetupWizard from "../components/SetupWizard.vue";
 import Slideshow from "../components/Slideshow.vue";
 import SocialFeed from "../components/SocialFeed.vue";
-// import Twitter from "../components/Twitter.vue";
-// import Vue from "vue";
-// import wowjs from "wowjs";
-// import twitter from "vue-twitter";
 import { scroll } from "quasar";
 const { getScrollTarget, setScrollPosition } = scroll;
 import languages from "quasar/lang/index.json";
@@ -267,10 +203,6 @@ const appLanguages = languages.filter(lang =>
 
 export default {
   name: "PageIndex",
-  // created() {
-  //   console.log(wowjs);
-  //   new wowjs().init();
-  // },
   mounted() {
     //setlang
     var language = window.navigator.userLanguage || window.navigator.language;
@@ -282,19 +214,9 @@ export default {
     window.addEventListener("resize", this.init);
     window.addEventListener("scroll", this.checkPosition);
     window.addEventListener("DOMContentLoaded", this.checkPosition);
-    // console.log(this.animationDone);
     this.animationDone = false;
     this.isWhyHowExpanded = false;
-    // console.log(this.animationDone);
     this.init();
-    // console.log(this.animationDone);
-    // Vue.use(twitter);
-
-    // var script = document.createElement("script");
-    // script.src = "https://platform.twitter.com/widgets.js";
-    // script.type = "text/javascript";
-    // var head = document.getElementsByTagName("head")[0];
-    // head.appendChild(script);
   },
   data() {
     return {
@@ -352,8 +274,6 @@ export default {
     SocialFeed,
     SetupWizard,
     Slideshow
-    // twitter
-    // Twitter
   },
   methods: {
     scrollToElement(el) {
@@ -361,7 +281,6 @@ export default {
       let target = getScrollTarget(ell);
       let offset = ell.offsetTop;
       let duration = 200;
-      // console.log(offset);
       setScrollPosition(target, offset, duration);
     },
     scrollToElement2(el2) {
@@ -375,24 +294,19 @@ export default {
       this.checkPosition();
     },
     checkPosition() {
-      // console.log('checkPosition');
-      this.showWhatIsLinux(false); // TODO set toggle-bool
+      this.showWhatIsLinux(false);
       this.showWhatIsWebsite(false);
       if (!this.animationDone) {
         for (var i = 0; i < this.elements.length; i++) {
-          // console.log(this.elements);
-          // console.log('checkPosition');
           var element = this.elements[i];
           var positionFromTop = this.elements[i].getBoundingClientRect().top;
           if (positionFromTop - this.windowHeight <= 0) {
-            // console.log('checkPosition', this.animationDone, element);
             element.classList.add("animated", "bounceInUp", "slow");
             element.classList.remove("hidden");
             this.animationDone = true;
           }
         }
       }
-      // TODO expand reason on tap or swipe
       let elll = document.getElementsByClassName("reasons");
       for (var i = 0; i < elll.length; i++) {
         if (
@@ -420,15 +334,7 @@ export default {
       let el = document.getElementById("what_is_linux");
       el.classList.add("animated", "fadeIn", "slow");
       el.classList.remove("hidden");
-      // if (!this.isWhyHowExpanded) {
-      // let el2 = document.getElementsByClassName('what_row');
-      // el2[0].classList.add('col-3');
-      // el2[0].classList.remove('col-2');
-      // this.isWhyHowExpanded = true;
-      // }
       if (isMouseOver) {
-        // this.scrollToElement('scroll_arrow'); //scrollToArrowToBottomOfPage
-        // TODO separate helper method
         let ell = document.getElementById("scroll_arrow");
         let offset = ell.offsetTop;
         let scrollPixels = offset - window.pageYOffset;
@@ -440,23 +346,9 @@ export default {
       let el = document.getElementById("what_is_website");
       el.classList.add("animated", "fadeIn", "slow");
       el.classList.remove("hidden");
-      // let el_logos = document.getElementById('what_is_website_logos');
-      // for (let i = 0; i < el_logos.childNodes.length; i++) {
-      //   console.log(el_logos.childNodes[i]);
-      //   el_logos.childNodes[i].classList.remove('hidden');
-      // }
-
-      // let el_logos = document.getElementById('what_is_website_logos');
-      // el_logos.classList.remove('hidden');
 
       let el3 = document.getElementById("to_hide");
       el3.classList.add("perma_hidden");
-      // if (!this.isWhyHowExpanded) {
-      // let el2 = document.getElementsByClassName('what_row');
-      // el2[0].classList.add('col-3');
-      // el2[0].classList.remove('col-2');
-      // this.isWhyHowExpanded = true;
-      // }
       if (isMouseOver) {
         let ell = document.getElementById("scroll_arrow");
         let offset = ell.offsetTop;
@@ -472,26 +364,8 @@ export default {
     options_user_os_changed(value) {
       console.log("###", value);
       this.panel = "user_type";
-
-      // TODO add previous button
-      // TODO ?:
-      // this.panel.next();
-      // let el = document.getElementById('options_panel');
-      // el.next();
-
-      // let el = document.getElementById('user_os_options');
-      // el.classList.add('animated', 'slideOutLeft', 'slow');
-      // TODO add class after delay: hidden collapsed oder anders zweite replaced 1te
-      // setTimeout(function() {
-      //   el.classList.add('hidden');
-      // }, 1000);
-      // let el2 = document.getElementById('user_type_options');
-      // el2.classList.add('animated', 'slideInRight', 'slow');
     },
-    // TODO incl in wizard when hover on left side
     jumpBack() {
-      // let ell = document.getElementById("options_panel");
-      // this.panel
       this.$refs.options_panel_1.previous();
       this.hasOptionsArrowBackBeenClicked = true;
     },
@@ -530,7 +404,6 @@ export default {
   },
   watch: {
     user_os: function(val) {},
-    // todo: jump so that bottom of why is at bottom of screen
     user_type: function(val) {
       this.$nextTick(() => {
         this.scrollToElement2("stepper_module");

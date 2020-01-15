@@ -1,37 +1,4 @@
 <template>
-  <!-- <div v-if="reason.visible === true"> -->
-  <!-- <div :class="reason.visible === true ? '' : ''"> -->
-  <!-- <transition
-      appear
-      v-if="reason.visible === true"
-      :enter-active-class="
-        (reason.image === null &&
-          reason.animate !== null &&
-          reason.animate === true &&
-          reason.visible === true) ||
-        (reason.image !== null &&
-          reason.animate !== null &&
-          reason.animate === true &&
-          (reason.image.location === 'left' ||
-            reason.image.location === 'bottom'))
-          ? 'animated slideInRight slow delay'
-          : ''
-      "
-      :leave-active-class="
-        (reason.image === null &&
-          reason.animate !== null &&
-          reason.animate === true) ||
-        (reason.image !== null &&
-          reason.animate !== null &&
-          reason.animate === true &&
-          (reason.image.location === 'left' ||
-            reason.image.location === 'bottom'))
-          ? 'animated slideInLeft slow delay'
-          : 'animated slideInRight slow delay'
-      "
-    > -->
-  <!-- :class="(reason.animate === true) ? 'perma_hidden2' : 'perma_hidden2'" -->
-  <!-- v-if="reason.animate === true" -->
   <q-tab-panels
     v-model="panel"
     animated
@@ -42,7 +9,6 @@
     style="overflow: visible; white-space: normal;"
     :id="'reason_' + reason.id"
   >
-    <!-- bg-transparent text-white shadow-2 rounded-borders -->
     <q-tab-panel name="bla" class="reason_panel">
       <div class="reason_box">
         <div
@@ -63,7 +29,6 @@
             enter-active-class="animated fadeIn delay"
             leave-active-class="animated fadeIn delay"
           >
-            <!-- // TODO expand image to fit col-md-3 contain: ... -->
             <div
               v-if="reason.image !== null && reason.image.location === 'left'"
               class="col-xs-12 col-sm-3 col-md-3 reason_img_container_left"
@@ -79,23 +44,6 @@
             enter-active-class="animated fadeIn delay"
             leave-active-class="animated fadeIn delay"
           >
-            <!-- TODO: check why first condition doesnt work so that the third can be left out -->
-            <!-- col-sm-9 col-md-9  -->
-            <!-- "
-                (reason.image === null ||
-                (reason.image !== null &&
-                  (reason.image.location === 'bottom' ||
-                    reason.image.location === 'top'))
-                  ? 'col-sm-12 col-md-12'
-                  : '',
-                (reason.image !== null && reason.image.location === 'left')
-                  ? 'reason_left col-sm-9 col-md-9'
-                  : '',
-                (reason.image !== null && reason.image.location === 'right')
-                  ? 'reason_right col-sm-9 col-md-9'
-                  : '',
-                reason.image === null ? 'reason col-xs-12 col-sm-12 col-md-12' : 'reason col-xs-12')
-              " -->
             <div
               style="white-space: pre-wrap"
               :class="{
@@ -116,7 +64,6 @@
               <h4>{{ reason.reason_title }}</h4>
               <h6>{{ reason.reason_main_text }}</h6>
               <p v-if="reason.reason_text"><span v-html="reason.reason_text"/></p>
-              <!-- TODO -->
                 <div
                   v-if="
                     reason.reason_subpoints !== undefined &&
@@ -129,7 +76,6 @@
                       v-for="(reason_subpoint, index) in reason.reason_subpoints"
                       :key="index"
                     >
-                      <!-- {{ reason_subpoint }} -->
                       <span v-html="reason_subpoint"/>
                     </li>
                   </ul>
@@ -148,7 +94,6 @@
               v-if="reason.image !== null && reason.image.location === 'right'"
               class="col-xs-12 col-sm-3 col-md-3 reason_img_container_right"
             >
-              <!-- class="reason_img reason_img_leftright" -->
               <div style="padding-right: 20px;">
                 <q-img
                   style="vertical-align: middle !important;"
@@ -191,7 +136,6 @@
             v-for="source_background_detail in reason.source_background_details"
             :key="source_background_detail"
           >
-            <!-- {{ source_background_detail }} -->
             <span v-html="source_background_detail"/>
           </li>
         </ul>
@@ -204,7 +148,6 @@
               reason.source_background_details_tiles.length > 0
           "
         >
-          <!-- ;background: radial-gradient(circle, #939393 0%, #363B41 90%); -->
           <q-card
             v-for="source_background_details_tile in reason.source_background_details_tiles"
             :key="source_background_details_tile.title"
@@ -258,9 +201,6 @@
       </div>
     </q-tab-panel>
   </q-tab-panels>
-  <!-- </transition> -->
-  <!-- </div> -->
-  <!-- security privacy/surveillance sovereignty/independence participatory innovation work-efficiency(reinventingthewheel)less time standardization +more -->
 </template>
 
 <script>
@@ -280,7 +220,6 @@ export default {
   mounted() {
     // https://stackoverflow.com/questions/15702867/html-tooltip-position-relative-to-mouse-pointer
     var tooltips = document.getElementsByClassName("tooltiptext");
-    // querySelectorAll .tooltip span
     window.onmousemove = function(e) {
       var x = e.clientX - 40 + "px",
         y = e.clientY - 40 + "px";

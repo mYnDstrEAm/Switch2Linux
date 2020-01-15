@@ -57,10 +57,6 @@
         </q-card>
       </q-expansion-item>
       </div>
-        <!-- It is recommended to pick a Debian-based
-        distribution or Debian itself. Show why Kubuntu, KDE neon, Ubuntu, Linux
-        Mint, Debian Desktop environment KDE (or GNOME) -->
-        
         <div id="distributionContainer">
           <p>Select GNU/Linux distribution:</p>
           <q-table
@@ -291,7 +287,7 @@
         <p>Congratulations for switching to GNU/Linux!</p>
         <q-btn flat style="background-color: #027BE3 !important; margin-top: 15px; margin-bottom: 15px;">
           <a
-            href="https://twitter.com/intent/tweet?text=I'm%20switching%20to%20Linux!&button_hashtag=Switch2Linux"
+            href="https://twitter.com/intent/tweet?text=I'm%20switching%20to%20Linux%20&button_hashtag=Switch2Linux"
             class="twitter-hashtag-button"
             data-show-count="false"
             style="color: white; text-decoration: none;"

@@ -1,10 +1,5 @@
 <template>
   <div class="row slideshow_row">
-    <!-- col-9 -->
-    <!-- style="min-height:1000px;" -->
-    <!-- <div class="overlay">
-            <p class="caption">#Switch2Linux</p>
-          </div>-->
     <div class="slideshow_container">
       <q-carousel
         class="qcarousel"
@@ -27,8 +22,6 @@
           :name="2"
           img-src="../statics/kdeneon_2.png"
         />
-        <!--<q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
-              <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />-->
       </q-carousel>
     </div>
   </div>

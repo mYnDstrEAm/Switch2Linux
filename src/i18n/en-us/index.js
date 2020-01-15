@@ -117,7 +117,7 @@ export default {
       title: "Highly customizable",
       main_text: "Especially KDE is highly customizable and can also be made to look like Windows or macOS",
       text:
-        "Swipe this card to see an exemplary guide to reproduce this setup",
+        "Swipe this card to see an exemplary guide to reproduce the setup of the screenshot.",
       // Click on a screenshot below to view a tutorial for the set-up or simply follow the guide below which includes customization.
       image_src: "../statics/kdeneon_2.png",
       source_background_details: ["Guide: 1. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://store.kde.org/content/show.php/Kvantum?content=166241>Kvantum</a> 2. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://github.com/PapirusDevelopmentTeam/papirus-icon-theme>Papirus Icons</a> 3. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.techrepublic.com/article/how-to-install-the-latte-dock-on-kde/>Latte Dock</a>"]
@@ -154,7 +154,7 @@ export default {
       title: "Only few barriers left",
       main_text: "Most reasons for not using GNU/Linux have been resolved by now",
       text:
-        'For example it\'s not harder to use than Windows or macOS - sometimes even easier: for instance unlike for Windows many drivers are included in the "kernel" already. Users sometimes can have different difficulties with GNU/Linux such as missing specific programs, familiar layout, problems with gaming or how to install GNU/Linux. but these have been mostly resolved. In the guide below we show you how to make it look like Windows, MacOs and better, Windows programs and games. Only few problems remain for some users -> some of the latest games might not work. Except for those games as a last resort you could run a Windows operating system in a "virtual machine" to get something to work - it\'s not hard to do and at the bottom of the guide you\'ll be shown how exactly you can set such a thing up if you need to.<br/>The usage-share of GNU/Linux is still small but it\'s rising.',
+        'For example it\'s not harder to use than Windows or macOS - sometimes even easier: for instance unlike for Windows many drivers are included in the "kernel" already. Users sometimes can have different difficulties with GNU/Linux such as missing specific programs, familiar layout, problems with gaming or how to install GNU/Linux. But these have been mostly resolved. In the guide below we show you how to make it look like Windows, MacOs and better, Windows programs and games. Only few problems remain for some users > namely that some games might not work. Except for those games as a last option you could run a Windows operating system in a "virtual machine" to get a software to work - it\'s not hard to do and at the bottom of the guide you\'ll be shown how exactly you can set such a thing up if you need to. Other than that hibernation doesn\'t work and switching to GNU/Linux takes some effort.<br/>The usage-share of GNU/Linux is still small but it\'s rising.',
       image_src: "../statics/reasons_barrier.png",
       source_background_details: [
         "Fragmentation of GNU/Linux into many different distributions and desktop environments and many different applications could be detrimental to a GNU/Linux as a project. This is partly why this page is so decisive in the recommendations given and e.g. only recommends one software alternative in the first reasons's details instead of multiple ones. Another reason for that is that inexperienced users should not be expected to have to (spend a lot of time) research things like that. This site is about making the switch fast and simple and to improve the GNU/Linux FOSS ecosystem most effectively.",
@@ -170,7 +170,7 @@ export default {
       'An OS is software that makes computer components available to applications. "Linux" is only one part of the OS (the "kernel") so a more correct name for the OS is "GNU/Linux".',
     what_is_linux: "It is an operating system, like Windows.<br/>",
     what_is_website_hidden:
-      "as support ends on January 14, 2020. And Linux is now better than ever: most reasons not to switch have been resolved. It is easy to set up: everybody can do it!",
+      "as support ended on January 14, 2020. And Linux is now better than ever: most reasons not to switch have been resolved. It is easy to set up: everybody can do it!",
     what_is_website:
       "It shows you <b>why</b> and <b>how</b> to switch to GNU/Linux.<br/>Windows 7 is getting phased out ",
     what_is_website_tohide: "soon.",
