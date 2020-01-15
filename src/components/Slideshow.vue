@@ -22,6 +22,11 @@
           :name="2"
           img-src="../statics/kdeneon_2.png"
         />
+        <q-carousel-slide
+          class="slide_item"
+          :name="3"
+          img-src="../statics/kde_3.jpg"
+        />
       </q-carousel>
     </div>
   </div>
