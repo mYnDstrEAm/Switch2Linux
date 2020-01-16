@@ -5,7 +5,7 @@
         <Slideshow></Slideshow>
         <div class="what_row row justify-between items-start q-col-gutter-xl">
           <div
-            class="col-xs-12 col-sm-6 description_box whatIsLinuxBox"
+            class="col-xs-12 col-sm-6 col-md-6 col-lg-6 description_box whatIsLinuxBox"
             @mouseover="showWhatIsLinux(true)"
           >
             <transition
@@ -22,7 +22,7 @@
             </transition>
           </div>
           <div
-            class="col-xs-12 col-sm-6 description_box whatIsWebsiteBox"
+            class="col-xs-12 col-sm-6 col-md-6 col-lg-6 description_box whatIsWebsiteBox"
             @mouseover="showWhatIsWebsite(true)"
           >
             <transition
@@ -31,7 +31,7 @@
               leave-active-class="animated fadeIn slow"
             ><span>
                 <h5>{{ $t('explanations.what_is_website_header') }}</h5>
-                <p><span v-html="$t('explanations.what_is_website')"/><span id="to_hide">{{ $t('explanations.what_is_website_tohide') }}</span>
+                <p><span v-html="$t('explanations.what_is_website')"/>
                   <span class="hidden" id="what_is_website">{{ $t('explanations.what_is_website_hidden') }}
                   </span>
                 </p>
@@ -43,7 +43,7 @@
 
       <div class="row why_how_row_top"></div>
       <div class="row why_how_row justify-between items-start q-col-gutter-xl">
-        <div class="col-xs-6 col-sm-6 why_how_row_2">
+        <div class="col-xs-6 col-sm-6 col-md-6 why_how_row_2">
           <h5 class="why_how">{{ $t('explanations.why') }}</h5>
           <q-icon
             name="keyboard_arrow_down"
@@ -224,6 +224,7 @@ export default {
       panel: "user_os",
       lang: this.$q.lang.isoName,
       animationDone: false,
+      userHasScrolled: false,
       isWhyHowExpanded: false,
       isSetupWizardFullscreen: false,
       hasOptionsArrowBackBeenClicked: false,
@@ -293,19 +294,20 @@ export default {
       this.checkPosition();
     },
     checkPosition() {
-      this.showWhatIsLinux(false);
-      this.showWhatIsWebsite(false);
+      // this.showWhatIsLinux(false);
+      // this.showWhatIsWebsite(false);
       if (!this.animationDone) {
         for (var i = 0; i < this.elements.length; i++) {
           var element = this.elements[i];
           var positionFromTop = this.elements[i].getBoundingClientRect().top;
-          if (positionFromTop - this.windowHeight <= 0) {
+          if (positionFromTop - this.windowHeight <= 0 && this.userHasScrolled) {
             element.classList.add("animated", "bounceInUp", "slow");
             element.classList.remove("hidden");
             this.animationDone = true;
           }
         }
       }
+      this.userHasScrolled = true;
       let elll = document.getElementsByClassName("reasons");
       for (var i = 0; i < elll.length; i++) {
         if (
@@ -346,8 +348,8 @@ export default {
       el.classList.add("animated", "fadeIn", "slow");
       el.classList.remove("hidden");
 
-      let el3 = document.getElementById("to_hide");
-      el3.classList.add("perma_hidden");
+      // let el3 = document.getElementById("to_hide");
+      // el3.classList.add("perma_hidden");
       if (isMouseOver) {
         let ell = document.getElementById("scroll_arrow");
         let offset = ell.offsetTop;

@@ -2,7 +2,9 @@
 
 Website for #Switch2Linux
 
-It can also be converted to an Android app, an iOS app and an Electron desktop application.
+A single-page application that explains why and how to switch to GNU/Linux.
+
+It's built with the Quasar Framework and can be converted to an Android app, an iOS app and an Electron desktop application.
 
 ## Install the dependencies
 ```bash

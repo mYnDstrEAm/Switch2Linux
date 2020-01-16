@@ -169,10 +169,9 @@ export default {
       'An OS is software that makes computer components available to applications. "Linux" is only one part of the OS (the "kernel") so a more correct name for the OS is "GNU/Linux".',
     what_is_linux: "It is an operating system, like Windows.<br/>",
     what_is_website_hidden:
-      "as support ended on January 14, 2020. And Linux is now better than ever: most reasons not to switch have been resolved. It is easy to set up: everybody can do it!",
+      "And Linux is now better than ever: most reasons not to switch have been resolved. It is easy to set up: everybody can do it!",
     what_is_website:
-      "It shows you <b>why</b> and <b>how</b> to switch to GNU/Linux.<br/>Windows 7 is getting phased out ",
-    what_is_website_tohide: "soon.",
+      "It shows you <b>why</b> and <b>how</b> to switch to GNU/Linux.<br/>Windows 7 is getting phased out as support ended on January 14, 2020.",
     what_is_website_header: "What is this website?",
     reasons_header: "Why to switch?",
     reasons_subheader: "What's better than macOS or Windows 10?",
