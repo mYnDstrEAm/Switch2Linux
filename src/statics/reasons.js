@@ -187,21 +187,21 @@ export var reasons = [
     reason_title: i18n.t(`reasons[${id}].title`),
     reason_main_text: i18n.t(`reasons[${id}].main_text`),
     reason_text: i18n.t(`reasons[${id}].text`),
+    image: {
+      location: "right",
+      src: i18n.t(`reasons[${id}].image_src`)
+    },
+    slide: ["right"],
+    source_background_details: i18n.t(`reasons[${id}].source_background_details`),
+    visible: false
+  },
+  {
+    id: (id = id + 1),
+    reason_title: i18n.t(`reasons[${id}].title`),
+    reason_main_text: i18n.t(`reasons[${id}].main_text`),
+    reason_text: i18n.t(`reasons[${id}].text`),
     reason_subpoints: i18n.t(`reasons[${id}].subpoints`),
     image: {
-      location: "right",
-      src: i18n.t(`reasons[${id}].image_src`)
-    },
-    slide: ["right"],
-    source_background_details: i18n.t(`reasons[${id}].source_background_details`),
-    visible: false
-  },
-  {
-    id: (id = id + 1),
-    reason_title: i18n.t(`reasons[${id}].title`),
-    reason_main_text: i18n.t(`reasons[${id}].main_text`),
-    reason_text: i18n.t(`reasons[${id}].text`),
-    image: {
       location: "left",
       src: i18n.t(`reasons[${id}].image_src`)
     },
@@ -267,7 +267,7 @@ export var reasons = [
     reason_main_text: i18n.t(`reasons[${id}].main_text`),
     reason_text: i18n.t(`reasons[${id}].text`),
     image: {
-      location: "right",
+      location: "bottom",
       src: i18n.t(`reasons[${id}].image_src`)
     },
     slide: ["right"],
@@ -281,7 +281,7 @@ export var reasons = [
     reason_main_text: i18n.t(`reasons[${id}].main_text`),
     reason_text: i18n.t(`reasons[${id}].text`),
     image: {
-      location: "bottom",
+      location: "right",
       src: i18n.t(`reasons[${id}].image_src`)
     },
     slide: [""],

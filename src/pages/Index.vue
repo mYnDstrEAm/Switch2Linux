@@ -211,7 +211,7 @@ export default {
     }
 
     window.addEventListener("resize", this.init);
-    window.addEventListener("scroll", this.checkPosition);
+    window.addEventListener("scroll", this.userScrolledEventHandler);
     window.addEventListener("DOMContentLoaded", this.checkPosition);
     this.animationDone = false;
     this.isWhyHowExpanded = false;
@@ -293,9 +293,11 @@ export default {
       this.windowHeight = window.innerHeight;
       this.checkPosition();
     },
+    userScrolledEventHandler() {
+      this.userHasScrolled = true;
+      this.checkPosition();
+    },
     checkPosition() {
-      // this.showWhatIsLinux(false);
-      // this.showWhatIsWebsite(false);
       if (!this.animationDone) {
         for (var i = 0; i < this.elements.length; i++) {
           var element = this.elements[i];
@@ -307,7 +309,6 @@ export default {
           }
         }
       }
-      this.userHasScrolled = true;
       let elll = document.getElementsByClassName("reasons");
       for (var i = 0; i < elll.length; i++) {
         if (
@@ -332,30 +333,34 @@ export default {
       }
     },
     showWhatIsLinux(isMouseOver) {
-      let el = document.getElementById("what_is_linux");
-      el.classList.add("animated", "fadeIn", "slow");
-      el.classList.remove("hidden");
-      if (isMouseOver) {
-        let ell = document.getElementById("scroll_arrow");
-        let offset = ell.offsetTop;
-        let scrollPixels = offset - window.pageYOffset;
-        let x = offset + 36 - (window.pageYOffset + window.innerHeight);
-        if (x > 0) window.scrollBy(0, x);
+      if (!this.userHasScrolled && !this.isWhyHowExpanded) {
+        let el = document.getElementById("what_is_linux");
+        el.classList.add("animated", "fadeIn", "slow");
+        el.classList.remove("hidden");
+        if (isMouseOver) {
+          let ell = document.getElementById("scroll_arrow");
+          let offset = ell.offsetTop;
+          let scrollPixels = offset - window.pageYOffset;
+          let x = offset + 36 - (window.pageYOffset + window.innerHeight);
+          if (x > 0) window.scrollBy(0, x);
+        }
       }
     },
     showWhatIsWebsite(isMouseOver) {
-      let el = document.getElementById("what_is_website");
-      el.classList.add("animated", "fadeIn", "slow");
-      el.classList.remove("hidden");
+      if (!this.userHasScrolled && !this.isWhyHowExpanded) {
+        let el = document.getElementById("what_is_website");
+        el.classList.add("animated", "fadeIn", "slow");
+        el.classList.remove("hidden");
 
-      // let el3 = document.getElementById("to_hide");
-      // el3.classList.add("perma_hidden");
-      if (isMouseOver) {
-        let ell = document.getElementById("scroll_arrow");
-        let offset = ell.offsetTop;
-        let scrollPixels = offset - window.pageYOffset;
-        let x = offset + 36 - (window.pageYOffset + window.innerHeight);
-        if (x > 0) window.scrollBy(0, x);
+        // let el3 = document.getElementById("to_hide");
+        // el3.classList.add("perma_hidden");
+        if (isMouseOver) {
+          let ell = document.getElementById("scroll_arrow");
+          let offset = ell.offsetTop;
+          let scrollPixels = offset - window.pageYOffset;
+          let x = offset + 36 - (window.pageYOffset + window.innerHeight);
+          if (x > 0) window.scrollBy(0, x);
+        }
       }
     },
     options_user_type_changed(value) {

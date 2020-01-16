@@ -41,13 +41,20 @@ export default {
       ]
     },
     {
-      title: "Realizes a free and open society",
+      title: "No walled garden and vendor-lock-in",
+      main_text: "Personal freedom and independence and fair opportunities for alternatives",
+      text: "Windows, macOS and non-free software running on these OS are (or can be) a \"walled garden\" wherein the service provider has control over applications, content, and media, and restricts convenient access to non-approved applicants or content.<br/>Similarly a vendor lock-in makes a customer dependent on a vendor for products and services, unable to use another vendor without substantial switching costs.",
+      image_src: "statics/reasons_vendorlockin.png",
+      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=http://www.hbs.edu/faculty/Publication%20Files/09-030.pdf>Opening Platforms: How, When and Why?</a>"]
+    },
+    {
+      title: "Update mechanism and software repository",
       main_text:
-        'By using free software you can help realize a society that values collaboration, transparency, participation, freedom, privacy, respect for users, openness, innovation and sovereignty',
+        "All software in GNU/Linux is supposed to be managed with a single program",
       text:
-        'Every software project may reflect different values, but these values are mostly inherent to free and open source software. For example if people don\'t like some design-decisions made by a project they could code their preferred approach as an extension or option to it or make a "fork" of the software. A fork is simply a copy of the software that developers modify differently than the original software and distribute it freely under a different name. The Debian project whose distibutions are recommended here also has a "Social Contract" that codifies some values for the project.',
-      image_src: "statics/reasons_society.png",
-      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.debian.org/social_contract>The Debian Social Contract</a>", "<a href=https://fsfe.org/freesoftware/society/society.en.html>Free software, Free Society by FSFE</a>"]
+        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password and wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program. You can also configure it to run updates automatically.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the screenshot).",
+      image_src: "statics/reasons_update.png",
+      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://userbase.kde.org/Discover>Intro to Discover by KDE</a>"]
     },
     {
       title: "More secure",
@@ -61,6 +68,17 @@ export default {
       ],
       image_src: "statics/reasons_security.png",
       source_background_details: ["More: <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.pcworld.com/article/202452/why_linux_is_more_secure_than_windows.html>Why Linux Is More Secure Than Windows, by Katherine Noyes, PCWorld </a>"]
+    },
+    {
+      title: "Privacy",
+      main_text:
+        "A high level of privacy is enabled by default by the OS and most applications",
+      text: "Because the software is free developers can inspect the open source code and modify it if it contains privacy-violating code or misses features to protect privacy.",
+      image_src: "statics/reasons_privacy.png",
+      source_background_details: ["<a href=https://www.zdnet.com/article/sick-of-windows-spying-on-you-go-linux/>Sick of Windows spying on you? Go Linux, ZDNet</a>",
+      "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.infoworld.com/article/2969704/windows-10-privacy-concerns-may-help-linux.html>Windows 10 privacy concerns may help Linux, Infoworld</a>",
+      "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.computerworld.com/article/3163627/if-you-want-privacy-you-need-to-run-linux.html>If you want privacy you need to run Linux, Computerworld</a>",
+      "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://spreadprivacy.com/linux-privacy-tips/>How to Protect Your Privacy on Linux, Short Tutorial by DuckDuckGo</a>"]
     },
     {
       title: "Fosters innovation",
@@ -79,39 +97,12 @@ export default {
       source_background_details: ["This is because the software is free and because it can be lightweight."]
     },
     {
-      title: "No walled garden and vendor-lock-in",
-      main_text: "Personal freedom and independence and fair opportunities for alternatives",
-      text: "Windows, macOS and non-free software running on these OS are (or can be) a \"walled garden\" wherein the service provider has control over applications, content, and media, and restricts convenient access to non-approved applicants or content.<br/>Similarly a vendor lock-in makes a customer dependent on a vendor for products and services, unable to use another vendor without substantial switching costs.",
-      image_src: "statics/reasons_vendorlockin.png",
-      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=http://www.hbs.edu/faculty/Publication%20Files/09-030.pdf>Opening Platforms: How, When and Why?</a>"]
-    },
-    {
-      title: "Privacy",
-      main_text:
-        "A high level of privacy is enabled by default by the OS and most applications",
-      text: "Because the software is free developers can inspect the open source code and modify it if it contains privacy-violating code or misses features to protect privacy.",
-      image_src: "statics/reasons_privacy.png",
-      source_background_details: ["<a href=https://www.zdnet.com/article/sick-of-windows-spying-on-you-go-linux/>Sick of Windows spying on you? Go Linux, ZDNet</a>",
-      "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.infoworld.com/article/2969704/windows-10-privacy-concerns-may-help-linux.html>Windows 10 privacy concerns may help Linux, Infoworld</a>",
-      "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.computerworld.com/article/3163627/if-you-want-privacy-you-need-to-run-linux.html>If you want privacy you need to run Linux, Computerworld</a>",
-      "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://spreadprivacy.com/linux-privacy-tips/>How to Protect Your Privacy on Linux, Short Tutorial by DuckDuckGo</a>"]
-    },
-    {
       title: "Independence and sovereignty",
       main_text:
         "By using GNU/Linux you don't depend on a company or its decisions",
       text: "This is especially relevant for nations' federal agencies and businesses.",
       image_src: "statics/reasons_sovereignty.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.zdnet.com/article/microsoft-poses-threat-to-germanys-digital-sovereignty-warns-study/>Microsoft poses threat to Germany's digital sovereignty, warns study, ZDNet</a>"]
-    },
-    {
-      title: "Update mechanism and software repository",
-      main_text:
-        "All software in GNU/Linux is supposed to be managed with a single program",
-      text:
-        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password and wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program. You can also configure it to run updates automatically.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the screenshot).",
-      image_src: "statics/reasons_update.png",
-      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://userbase.kde.org/Discover>Intro to Discover by KDE</a>"]
     },
     {
       title: "Highly customizable",
@@ -131,6 +122,15 @@ export default {
       image_src: "statics/reasons_looks.png",
       source_background_details: ["A guide for making it look more like Windows will be added above (swipe card)",
         "A guide for making it look more like macOS will be added above (swipe card)"]
+    },
+    {
+      title: "Realizes a free and open society",
+      main_text:
+        'By using free software you can help realize a society that values collaboration, transparency, participation, freedom, privacy, respect for users, openness, innovation and sovereignty',
+      text:
+        'Every software project may reflect different values, but these values are mostly inherent to free and open source software. For example if people don\'t like some design-decisions made by a project they could code their preferred approach as an extension or option to it or make a "fork" of the software. A fork is simply a copy of the software that developers modify differently than the original software and distribute it freely under a different name. The Debian project whose distibutions are recommended here also has a "Social Contract" that codifies some values for the project.',
+      image_src: "statics/reasons_society.png",
+      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.debian.org/social_contract>The Debian Social Contract</a>", "<a href=https://fsfe.org/freesoftware/society/society.en.html>Free software, Free Society by FSFE</a>"]
     },
     {
       title: "Changeable source code",
