@@ -5,7 +5,7 @@ export default {
       main_text:
         "It's gratis and always will be and the apps running on it are gratis, too",
       text:
-        "You can also just try it out and still switch to another OS later. Unlike for macOS or Windows you don't have to pay anything for the OS.",
+        "You can also just try it out and still switch to another OS later. Unlike for macOS or Windows you don't have to pay anything for the OS - you can use it without charge or recompense.",
       image_src: "statics/reasons_free.png",
       source_background_details: ["GNU/Linux software is made by volunteers, for-profit and non-profit developers and simply anybody with an interest in advancing the common good through code this way.",
         "It is published under licenses that allow use free of charge even for commercial purposes.",
@@ -15,9 +15,9 @@ export default {
     {
       title: "It's free software",
       main_text:
-        "It gives the user the freedom to share, study and modify the software and the apps running on it are free software, too",
+        "It gives the user the freedom to share, study and modify the software",
       text:
-        "Many arguments in favor of GNU/Linux listed here stem from it being free and open source software. It is called free software because the user is free.<br/>Free software include LibreOffice for office programs, GIMP for image editing, Kdenlive for video editing, Thunderbird for e-mail.<br/><b>Swipe this card to the right see more free software alternatives</b>.",
+        "Many arguments in favor of GNU/Linux listed here stem from it being free and open source software. It is called free software because the user is free.<br/>And the apps running on GNU/Linux are free software, too. Free software include LibreOffice for office programs, GIMP for image editing, Kdenlive for video editing, Thunderbird for e-mail.<br/><b>Swipe this card to the right see more free software alternatives</b>.",
       image_src: "statics/reasons_foss.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.fsf.org/about/what-is-free-software>What is free software and why is it so important for society? by FSF</a>", "<a href=https://www.wired.com/2013/09/why-free-software-is-more-important-now-than-ever-before/>Why Free Software Is More Important Now Than Ever Before by Angela Watercutter on WIRED</a>", "Recommended software alternatives:"],
       source_background_details_tiles: [
@@ -45,7 +45,7 @@ export default {
       main_text:
         'By using free and open source software (here: "free" as in free speech, not as in gratis) you can help realize a society that values collaboration, transparency, participation, freedom, privacy, respect for users, rationality, openness, innovation and sovereignty',
       text:
-        'Every software project may reflect different values, but these values are mostly inherent to free software. For example if people don\'t like some design-decisions made by a project they could code their favored approach as an extension or option to it or make a "fork" of the software. A fork is simply a copy of the software that developers modify differently than the original software and distribute it freely under a different name. The Debian project whose distibutions are recommended here also has a "Social Contract" that codifies some values for the project.',
+        'Every software project may reflect different values, but these values are mostly inherent to free software. For example if people don\'t like some design-decisions made by a project they could code their preferred approach as an extension or option to it or make a "fork" of the software. A fork is simply a copy of the software that developers modify differently than the original software and distribute it freely under a different name. The Debian project whose distibutions are recommended here also has a "Social Contract" that codifies some values for the project.',
       image_src: "statics/reasons_society.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.debian.org/social_contract>The Debian Social Contract</a>", "<a href=https://fsfe.org/freesoftware/society/society.en.html>Free software, Free Society by FSFE</a>"]
     },
@@ -54,8 +54,9 @@ export default {
       main_text: "There are multiple reasons for why GNU/Linux is more secure:",
       text: "",
       subpoints: [
-        '<b>Open source software is a development-model that can deliver inherently more secure software.</b><br/>Because the code is open to the public and other developers security vulnerabilities can be fixed quickly. It also depends on how many developers are actively watching changes to the code and have audited it. Open source software allows more people to check the code. But software that is not open source can never reach the level of security of an open source project. This is also because it could contain hidden "backdoors" and bugs and because there\'s no dependence on a single company to fix security issues.',
-        "<b>GNU/Linux still doesn't have a market share as large as Windows so less malware is designed for it.</b>",
+        '<b>Open source software is a development-model that can deliver inherently more secure software.</b><br/>Because the code is open to the public and other developers security vulnerabilities can be fixed quickly. Open source software allows more people to check the code. In practice the security also depends on how many developers are actively watching changes to the code and have audited it. But software that is not open source can never reach the level of security of an open source project that is sufficiently watched and maintained. This is mainly because it could contain hidden "backdoors", by which third parties can bypass security mechanisms and intrude the user\'s device, and bugs and because there\'s no dependence on a single company to fix security issues.',
+        "<b>GNU/Linux still doesn't have a market share as large as Windows so less malware is designed for it.</b><br/>While GNU/Linux is running on virtually all supercomputers, almost all routers and web servers and is therefore a valuable target for sophisticated malware, the market share of personal computer users - which is the target population of more common malware - is too small for typical, criminal hackers to develop malware for. However, a high level of computer security under GNU/Linux does not depend on the market share being small.",
+        "<b>GNU/Linux better protects privacy</b><br/>Details on this in a separate card below.",
         "<b>GNU/Linux has better security designs including its implementation of privileges and its updating-processes.</b><br/>For example it requires the password to be entered for making some changes. And more technologies like sandboxing are already getting picked up by developers to be included in the OS. More details can be found by swiping this card."
       ],
       image_src: "statics/reasons_security.png",
@@ -64,7 +65,7 @@ export default {
     {
       title: "Fosters innovation",
       main_text: "Open source code allows people to easily innovate upon others' work",
-      text: "Innovators can study or directly use code of other projects to build new products. Innovators can also extend these projects or modify them to suit their needs or cut costs by using free software.",
+      text: "Innovators can study or directly use code of other projects to build new products. They can also extend these projects or modify them to suit their needs or cut costs by using free software. Furthermore innovative hardware can be developed more easily by using GNU/Linux.",
       image_src: "statics/reasons_innovation.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://opensource.com/business/13/1/impact-open-source-business>Open source boosts entrepreneurship and social good through collaboration by Aseem Sharma on opensource.com</a>",
         "Many innovative devices run GNU/Linux.",
@@ -73,7 +74,7 @@ export default {
     {
       title: "Also runs on old hardware and mini computers",
       main_text: "A universal operating system for all devices",
-      text: "This allows more convergent software that runs on many different devices, standardization and familiarity. GNU/Linux runs on phones, supercomputers and small embedded devices.",
+      text: "This allows more convergent software that runs on many different devices, broader or additional areas of application, standardization and familiarity. GNU/Linux runs on phones, old laptops, supercomputers and small embedded devices.",
       image_src: "statics/reasons_hardware.png",
       source_background_details: ["This is because the software is free and because it can be lightweight."]
     },
@@ -108,7 +109,7 @@ export default {
       main_text:
         "All software in GNU/Linux is supposed to be managed with a single program",
       text:
-        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password, wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the image on the right).",
+        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password and wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program. You can also configure it to run updates automatically.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the screenshot).",
       image_src: "statics/reasons_update.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://userbase.kde.org/Discover>Intro to Discover by KDE</a>"]
     },
@@ -126,7 +127,7 @@ export default {
       main_text:
         "Especially KDE looks sleek and modern by default",
       text:
-        "As KDE/GNU/Linux is highly customizable you can make it look many different ways - more on that in the point above. Depending on your taste and the distribution/DE you choose it can look better than Windows or macOS even without any customization.",
+        "As KDE/GNU/Linux is highly customizable you can make it look many different ways - more on that in the point above. Depending on your taste and the distribution/DE you choose, it can look better than Windows or macOS even without any customization.",
       image_src: "statics/reasons_looks.png",
       source_background_details: ["A guide for making it look more like Windows will be added above (swipe card)",
         "A guide for making it look more like macOS will be added above (swipe card)"]
@@ -147,7 +148,8 @@ export default {
       source_background_details: ["<a href=https://unix.stackexchange.com/>Unix & Linux Stack Exchange - Recommended place to ask about Linux-related things</a>",
         "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://askubuntu.com/>AskUbuntu Stack Exchange - Questions related to Ubuntu, answers typically also apply to Debian as Ubuntu is based on Debian</a>",
         "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://superuser.com/>Super User Stack Exchange - More general questions such as about hardware</a>",
-        "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>#Linux-Help - One of many live chats where you can find help</a>"]
+        "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>#Linux-Help - One of many live chats where you can find help</a>",
+        "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://kde.org/support/>Support for KDE software</a>"]
     },
     {
       title: "Only few barriers left",
