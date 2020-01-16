@@ -56,7 +56,7 @@ export default {
       subpoints: [
         '<b>Open source software is a development-model that can deliver inherently more secure software.</b><br/>Because the code is open to the public and other developers security vulnerabilities can be fixed quickly. It also depends on how many developers are actively watching changes to the code and have audited it. Open source software allows more people to check the code. But software that is not open source can never reach the level of security of an open source project. This is also because it could contain hidden "backdoors" and bugs and because there\'s no dependence on a single company to fix security issues.',
         "<b>GNU/Linux still doesn't have a market share as large as Windows so less malware is designed for it.</b>",
-        "<b>GNU/Linux has better security designs including its implementation of privileges.</b><br/>For example it requires the password to be entered for making some changes. And more technologies like sandboxing are already getting picked up by developers to be included in the OS. More details can be found by swiping this card."
+        "<b>GNU/Linux has better security designs including its implementation of privileges and its updating-processes.</b><br/>For example it requires the password to be entered for making some changes. And more technologies like sandboxing are already getting picked up by developers to be included in the OS. More details can be found by swiping this card."
       ],
       image_src: "statics/reasons_security.png",
       source_background_details: ["More: <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.pcworld.com/article/202452/why_linux_is_more_secure_than_windows.html>Why Linux Is More Secure Than Windows, by Katherine Noyes, PCWorld </a>"]
@@ -118,7 +118,7 @@ export default {
       text:
         "Swipe this card to see an exemplary guide to reproduce the setup of the screenshot.",
       // Click on a screenshot below to view a tutorial for the set-up or simply follow the guide below which includes customization.
-      image_src: "statics/kdeneon_2.png",
+      image_src: "statics/kdeneon_2.jpg",
       source_background_details: ["Guide: 1. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://store.kde.org/content/show.php/Kvantum?content=166241>Kvantum</a> 2. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://github.com/PapirusDevelopmentTeam/papirus-icon-theme>Papirus Icons</a> 3. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.techrepublic.com/article/how-to-install-the-latte-dock-on-kde/>Latte Dock</a>"]
     },
     {

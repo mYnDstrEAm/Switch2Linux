@@ -221,6 +221,7 @@ export default {
     };
   },
   mounted() {
+    this.isWindowSmall();
     window.addEventListener("resize", this.isWindowSmall);
     // https://stackoverflow.com/questions/15702867/html-tooltip-position-relative-to-mouse-pointer
     var tooltips = document.getElementsByClassName("tooltiptext");

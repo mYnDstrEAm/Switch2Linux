@@ -15,12 +15,12 @@
         <q-carousel-slide
           class="slide_item"
           :name="1"
-          img-src="../statics/kdeneon_1.png"
+          img-src="../statics/kdeneon_1.jpg"
         />
         <q-carousel-slide
           class="slide_item"
           :name="2"
-          img-src="../statics/kdeneon_2.png"
+          img-src="../statics/kdeneon_2.jpg"
         />
         <q-carousel-slide
           class="slide_item"

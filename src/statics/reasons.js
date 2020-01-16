@@ -163,7 +163,7 @@ export var reasons = [
       //   title: Virus scanner,
       //   icon: "",
       //   image: null,
-      //   content: "ClamTk",
+      //   content: "ClamAV",
       //   link: ""
       // }
       // Software management discover/apper/..
