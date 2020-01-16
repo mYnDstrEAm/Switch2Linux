@@ -190,14 +190,14 @@
     0%, 20%, 50%, 80%, 100%
         transform: translate3d(0,0,0)
     40%
-        transform: translate3d(0,-20px,0)
+        transform: translate3d(0,-10px,0)
     60%
         transform: translate3d(0,-10px,0)
 @keyframes landing-bounce2
     0%, 15%, 45%, 75%, 100%
         transform: translate3d(0,0,0)
     50%
-        transform: translate3d(0,-20px,0)
+        transform: translate3d(0,-10px,0)
     60%
         transform: translate3d(0,-10px,0)
 
@@ -277,8 +277,9 @@
 
 @media (min-width: 600px)
     .whatIsWebsiteBox
-        padding-left: calc(48px - ((3000px - 0.3vh)/100))
-
+        // padding-left: calc(48px - ((3000px - 0.3vh)/100))
+    #whatIsWebsiteBoxContent
+        padding-left: 20px
 p,
 li,
 .q-item__label
@@ -422,8 +423,8 @@ reason_panel::-webkit-scrollbar
 .col-xs-12 > div > h4,
 .col-xs-6 > h5,
 .col-xs-6 > div > h4,
-.col-xs-12 > span > h5,
-.col-xs-12 > span > h4
+.col-xs-12 > div > h5,
+.col-xs-12 > div > h4
     margin-top: 0px
     margin-bottom: 0px
     font-family: Roboto,sans-serif
@@ -438,8 +439,12 @@ reason_panel::-webkit-scrollbar
     .col-xs-12 > div > h4,
     .col-xs-6 > div > h5,
     .col-xs-6 > div > h4,
-    .col-xs-12 > span > h5,
-    .col-xs-12 > span > h4
+    .col-xs-12 > div > h5,
+    .col-xs-12 > div > h4,
+    .why_how_row_3 > h5,
+    .why_how_row_2 > h5,
+    #why > h5,
+    #how > h5
         font-size: 42px
 
 .col-xs-12 > div > div > ul > li

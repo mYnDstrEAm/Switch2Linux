@@ -13,12 +13,12 @@
               enter-active-class="animated fadeIn slow"
               leave-active-class="animated fadeIn slow"
             >
-              <span>
+              <div>
                 <h5>{{ $t('explanations.what_is_linux_header') }}</h5>
                 <p><span v-html="$t('explanations.what_is_linux')"/>
                   <span class="hidden" id="what_is_linux">{{ $t('explanations.what_is_linux_hidden') }}</span>
                 </p>
-              </span>
+              </div>
             </transition>
           </div>
           <div
@@ -29,13 +29,13 @@
               appear
               enter-active-class="animated fadeIn slow"
               leave-active-class="animated fadeIn slow"
-            ><span>
+            ><div id="whatIsWebsiteBoxContent">
                 <h5>{{ $t('explanations.what_is_website_header') }}</h5>
                 <p><span v-html="$t('explanations.what_is_website')"/>
                   <span class="hidden" id="what_is_website">{{ $t('explanations.what_is_website_hidden') }}
                   </span>
                 </p>
-              </span>
+              </div>
             </transition>
           </div>
         </div>

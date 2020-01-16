@@ -43,9 +43,9 @@ export default {
     {
       title: "Realizes a free and open society",
       main_text:
-        'By using free and open source software (here: "free" as in free speech, not as in gratis) you can help realize a society that values collaboration, transparency, participation, freedom, privacy, respect for users, rationality, openness, innovation and sovereignty',
+        'By using free software you can help realize a society that values collaboration, transparency, participation, freedom, privacy, respect for users, openness, innovation and sovereignty',
       text:
-        'Every software project may reflect different values, but these values are mostly inherent to free software. For example if people don\'t like some design-decisions made by a project they could code their preferred approach as an extension or option to it or make a "fork" of the software. A fork is simply a copy of the software that developers modify differently than the original software and distribute it freely under a different name. The Debian project whose distibutions are recommended here also has a "Social Contract" that codifies some values for the project.',
+        'Every software project may reflect different values, but these values are mostly inherent to free and open source software. For example if people don\'t like some design-decisions made by a project they could code their preferred approach as an extension or option to it or make a "fork" of the software. A fork is simply a copy of the software that developers modify differently than the original software and distribute it freely under a different name. The Debian project whose distibutions are recommended here also has a "Social Contract" that codifies some values for the project.',
       image_src: "statics/reasons_society.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.debian.org/social_contract>The Debian Social Contract</a>", "<a href=https://fsfe.org/freesoftware/society/society.en.html>Free software, Free Society by FSFE</a>"]
     },
@@ -168,10 +168,10 @@ export default {
     how: "How?",
     what_is_linux_header: "What is Linux?",
     what_is_linux_hidden:
-      'An OS is software that makes computer components available to applications. "Linux" is only one part of the OS (the "kernel") so a more correct name for the OS is "GNU/Linux".',
+      'An OS is a set of software that manages computer components and makes them available to apps. "Linux" is only one part of the OS (the "kernel") so a more correct name for the OS is "GNU/Linux".',
     what_is_linux: "It is an operating system, like Windows.<br/>",
     what_is_website_hidden:
-      " And Linux is now better than ever: most reasons not to switch have been resolved. It is easy to set up: everybody can do it!",
+      " And Linux is now better than ever - most reasons not to switch have been resolved. It is easy to set up: everybody can do it!",
     what_is_website:
       "It shows you <b>why</b> and <b>how</b> to switch to GNU/Linux.<br/>Windows 7 is getting phased out as support ended on January 14, 2020.",
     what_is_website_header: "What is this website?",
