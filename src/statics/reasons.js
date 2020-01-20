@@ -333,6 +333,7 @@ export var reasons = [
     reason_title: i18n.t(`reasons[${id}].title`),
     reason_main_text: i18n.t(`reasons[${id}].main_text`),
     reason_text: i18n.t(`reasons[${id}].text`),
+    reason_subpoints: i18n.t(`reasons[${id}].subpoints`),
     image: {
       location: "bottom",
       src: i18n.t(`reasons[${id}].image_src`)

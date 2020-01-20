@@ -3,7 +3,7 @@ export default {
     {
       title: "It's gratis",
       main_text:
-        "It's gratis and always will be and the apps running on it are gratis, too",
+        "It's gratis and always will be and the apps running on it are gratis too",
       text:
         "You can also just try it out and still switch to another OS later. Unlike for macOS or Windows you don't have to pay anything for the OS - you can use it without charge or recompense.",
       image_src: "statics/reasons_free.png",
@@ -17,7 +17,7 @@ export default {
       main_text:
         "It gives the user the freedom to share, study and modify the software",
       text:
-        "Many arguments in favor of GNU/Linux listed here stem from it being free and open source software. It is called free software because the user is free.<br/>And the apps running on GNU/Linux are free software, too. Free software include LibreOffice for office programs, GIMP for image editing, Kdenlive for video editing, Thunderbird for e-mail.<br/><b>Swipe this card to the right see more free software alternatives</b>.",
+        "Many arguments in favor of GNU/Linux listed here stem from it being free and open source software. It is called free software because the user is free.<br/>And the apps running on GNU/Linux are free software, too. You can also make most non-free Windows applications run under Linux with a program called \"<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>Wine</a>\".<br/>Free software include LibreOffice for office programs, GIMP for image editing, Kdenlive for video editing, Thunderbird for e-mail. <b>Swipe this card to see more free software alternatives</b>.",
       image_src: "statics/reasons_foss.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.fsf.org/about/what-is-free-software>What is free software and why is it so important for society? by FSF</a>", "<a href=https://www.wired.com/2013/09/why-free-software-is-more-important-now-than-ever-before/>Why Free Software Is More Important Now Than Ever Before by Angela Watercutter on WIRED</a>", "Recommended software alternatives:"],
       source_background_details_tiles: [
@@ -36,8 +36,7 @@ export default {
         "IDE",
         "Virtual machine",
         "Remote desktop",
-        "Backup",
-        "Cleaning"
+        "Backup"
       ]
     },
     {
@@ -52,9 +51,10 @@ export default {
       main_text:
         "All software in GNU/Linux is supposed to be managed with a single program",
       text:
-        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password and wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program. You can also configure it to run updates automatically.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the screenshot).",
+        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password and wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program. You can also configure it to run updates automatically.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the screenshot).<br/>Sometimes you still might need to install software by other means though (like installing .deb files).",
       image_src: "statics/reasons_update.png",
-      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://userbase.kde.org/Discover>Intro to Discover by KDE</a>"]
+      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://userbase.kde.org/Discover>Intro to Discover by KDE</a>",
+        "To install a .deb file open the terminal (\"Konsole\" in the search), navigate to the downloads folder with <i>cd ~/Downloads</i> and enter: <i>sudo dpkg -i filename.deb</i>"]
     },
     {
       title: "More secure",
@@ -64,7 +64,7 @@ export default {
         '<b>Open source software is a development-model that can deliver inherently more secure software.</b><br/>Because the code is open to the public and other developers security vulnerabilities can be fixed quickly. Open source software allows more people to check the code. In practice the security also depends on how many developers are actively watching changes to the code and have audited it. But software that is not open source can never reach the level of security of an open source project that is sufficiently watched and maintained. This is mainly because it could contain hidden "backdoors", by which third parties can bypass security mechanisms and intrude the user\'s device, and bugs and because there\'s no dependence on a single company to fix security issues.',
         "<b>GNU/Linux still doesn't have a market share as large as Windows so less malware is designed for it.</b><br/>While GNU/Linux is running on virtually all supercomputers, almost all routers and web servers and is therefore a valuable target for sophisticated malware, the market share of personal computer users - which is the target population of more common malware - is too small for typical, criminal hackers to develop malware for. However, a high level of computer security under GNU/Linux does not depend on the market share being small.",
         "<b>GNU/Linux better protects privacy</b><br/>Details on this in a separate card below.",
-        "<b>GNU/Linux has better security designs including its implementation of privileges and its updating-processes.</b><br/>For example it requires the password to be entered for making some changes. And more technologies like sandboxing are already getting picked up by developers to be included in the OS. More details can be found by swiping this card."
+        "<b>GNU/Linux has better security designs including its implementation of privileges and its updating-processes.</b><br/>For example it requires the password to be entered for making some changes and allows very timely software-updates. And more technologies like sandboxing are already getting picked up by developers to be included in the OS. More details can be found by swiping this card."
       ],
       image_src: "statics/reasons_security.png",
       source_background_details: ["More: <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.pcworld.com/article/202452/why_linux_is_more_secure_than_windows.html>Why Linux Is More Secure Than Windows, by Katherine Noyes, PCWorld </a>"]
@@ -155,7 +155,13 @@ export default {
       title: "Only few barriers left",
       main_text: "Most reasons for not using GNU/Linux have been resolved by now",
       text:
-        'For example it\'s not harder to use than Windows or macOS - sometimes even easier: for instance unlike for Windows many drivers are included in the "kernel" already. Users sometimes can have different difficulties with GNU/Linux such as missing specific programs, familiar layout, problems with gaming or how to install GNU/Linux. But these have been mostly resolved. In the guide below we show you how to make it look like Windows, macOS and better. Only few problems remain for some users - namely, most importantly that some games might not work. Windows-programs like .exe files won\'t work in Linux by default but you usually can make them work with a program called \"<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>Wine</a>\". Except for those games as a last option you could run a Windows operating system in a "virtual machine" to get a software to work - it\'s not hard to do and at the bottom of the guide you\'ll be shown how exactly you can set such a thing up if you need to. Other than that hibernation doesn\'t work and switching to GNU/Linux takes some effort.<br/>The usage-share of GNU/Linux is still small but it\'s rising.',
+        'For example it\'s not harder to use than Windows or macOS after things have been configured correctly. Listed below are different difficulties with GNU/Linux users sometimes can have or expect to have. But these have been mostly resolved. Only few problems remain for some users - namely, most importantly that some games might not work.<br/>The usage-share of GNU/Linux is still small but it\'s rising.<br/>Common remaining problems:',
+      subpoints: ["<b>Drivers and missing support for hardware</b><br/>Sometimes it can be even easier to use than Windows or macOS: for instance unlike for Windows many drivers are included in the \"kernel\" already. But sometimes devices are incompatible with GNU/Linux or require a more complicated installation.",
+        "<b>Missing specific programs / Windows applications don't work</b><br/>Windows-programs like .exe files won\'t work in Linux by default but you usually can make them work with a program called \"<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>Wine</a>\". Except for those games as a last option you could run a Windows operating system in a \"virtual machine\" to get a software to work - it\'s not hard to do and at the bottom of the guide you\'ll be shown how exactly you can set such a thing up if you need to.",
+        "<b>Missing familiar layout</b><br/>In the guide below we show you how to make it look like Windows, macOS and better. You could also configure different shortcuts and so on if you don't think that you'll get used to the different.",
+        "<b>Problems with gaming</b><br/>Applications like <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://lutris.net/\" style=\"color: white;\">Lutris</a> make it very easy to play console and Windows games after installing graphics drivers. However not all Windows games work on GNU/Linux, many with less performance and some require some tinkering to run. You can find help getting a game to run <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.reddit.com/r/linux_gaming/wiki/index#wiki_getting_tech_support>here</a> and <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.gamingonlinux.com/irc/>here (IRC)</a>.",
+        "<b>Hibernation doesn\'t work</b><br/>Until this issue is fixed users could use the standby functionality instead.",
+        "<b>Problems with switching to and installing GNU/Linux</b><br/>It still takes some effort but this website should make it easier for you as long as you don't buy a device with a GNU/Linux like Kubuntu preinstalled."],
       image_src: "statics/reasons_barrier.png",
       source_background_details: [
         "Fragmentation of GNU/Linux into many different distributions and desktop environments and many different applications could be detrimental to a GNU/Linux as a project. This is partly why this page is so decisive in the recommendations given and e.g. only recommends one software alternative in the first reasons's details instead of multiple ones. Another reason for that is that inexperienced users should not be expected to have to (spend a lot of time) research things like that. This site is about making the switch fast and simple and to improve the GNU/Linux FOSS ecosystem most effectively.",

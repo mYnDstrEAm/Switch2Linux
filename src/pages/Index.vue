@@ -85,6 +85,7 @@
         ref="options_panel_1"
         class="bg-transparent text-white"
       >
+      <!-- TODO: build this into SetupWizard / make it large icons next to each other instead of radiobuttons -->
         <q-tab-panel name="user_os">
           <div class="options_container_container" id="user_os_options">
             <div class="row justify-between items-start q-col-gutter-xl">
@@ -326,8 +327,8 @@ export default {
             this.reasons[i].slide !== null &&
             this.reasons[i].slide.indexOf("right") < 0
           )
-            elll[i].classList.add("animated", "zoomIn", "slow");
-          else elll[i].classList.add("animated", "zoomIn", "slow");
+            elll[i].classList.add("animated", "slideInUp", "slow");
+          else elll[i].classList.add("animated", "slideInUp", "slow");
           elll[i].classList.remove("perma_hidden2");
         }
       }
@@ -401,7 +402,7 @@ export default {
           '<li><strong>Reason \"Only few barriers left\"</strong>: <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Usage_share_of_operating_systems#Desktop_and_laptop_computers" style="color: white;">1</a></li>' +
           '<li><strong>Logos</strong>: <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Debian-OpenLogo.svg" style="color: white;">Debian</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Neon-logo.svg" style="color: white;">KDE neon</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Kubuntu_logo.svg" style="color: white;">Kubuntu</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:KDE_logo.svg" style="color: white;">KDE</a> <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/File:Gnomelogo.svg" style="color: white;">GNOME</a></li>' +
           '<li><strong>Screenshots</strong>: <a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/unixporn/comments/b62mqc/kde_neon_mountains/" style="color: white;">1 by reddit user u/MrChrobok</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Kde-neon-5.14.png" style="color: white;">2 by Wikipedia User Ulexer Miner</a> <a target="_blank" rel="noopener noreferrer" href="https://dot.kde.org/2020/01/15/moving-windows-7-plasma-do-it-easy-way" style="color: white;">3 by KDE, David Cahalane</a>' +
-          '<li>The reddit user will be contacted and more Screenshots will be added. The images have been modified.</li>' +
+          '<li>More Screenshots will be added. The images have been modified.</li>' +
           '</ul>'
       }).onOk(() => {})
     }
