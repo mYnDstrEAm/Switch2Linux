@@ -12,15 +12,6 @@
         transition-prev="slide-right"
         transition-next="slide-left"
       >
-
-      <!-- <q-carousel-slide :name="1" class="" style="text-align: horizontal;">
-        <div class="slide_item" style="background-image: url('../statics/kdeneon_1.jpg');"></div>
-        <div class="" style="background-color: red;"></div>
-      </q-carousel-slide> -->
-      <!-- <q-carousel-slide :name="2" class="slide_item">
-        <q-img class="" src="../statics/kdeneon_2.jpg" />
-      </q-carousel-slide> -->
-
         <q-carousel-slide
           class="slide_item"
           :name="1"
