@@ -27,8 +27,14 @@ body
     white-space: normal
 
 .slideshow_row
-    height: 75vh
+    max-height: 75vh
     width: 100%
+
+.qcarousel,
+.q-panel,
+.slide_item
+    background-size: contain !important
+    background-repeat: no-repeat
 
 // .slideshow_row
 //     @media screen and (max-width: 900px)
@@ -44,8 +50,9 @@ body
     padding-right: 1vw
     margin-left: 0px !important
     position: absolute
-    top: 75vh
-    bottom: 8vh
+    // top: 75vh
+    // bottom: 8vh
+    vertical-align: top
     width: 100%
 @media screen and (max-width: 900px)
     .what_row
@@ -423,6 +430,7 @@ reason_panel::-webkit-scrollbar
     // padding-top: 12px
     padding-bottom: 4px
     text-align: left
+    line-height: auto !important
 
 .col-xs-12 > div > h6
     margin-top: 0px
@@ -518,7 +526,7 @@ reason_panel::-webkit-scrollbar
     margin: auto
 
 // TODO topdown image adaption
-.q-img__image
+.reason_img > .q-img > .q-img__image
     background-size: contain !important
     max-height: 380px
 
@@ -644,6 +652,9 @@ reason_panel::-webkit-scrollbar
 
 .column > div
     background: rgba(86, 61, 124, .15)
+
+.q-carousel__slide
+    padding: 0px !important
 
 .qcarousel,
 .slideshow_container
