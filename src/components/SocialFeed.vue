@@ -165,7 +165,6 @@ export default {
                 );
               })
               .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-            // TODO sort by likes and upvotes (not in rss feed) or preselect tweets
           })
           .finally(() => {
             this.loading = false;

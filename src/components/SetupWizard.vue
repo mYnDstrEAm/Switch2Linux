@@ -163,7 +163,6 @@
             <li>You might lose all passwords saved in your browser and other things stored in apps.</li>
           </div>
           <li>You might also want to backup data on storage devices which have a filesystem that don't work with GNU/Linux. For example usb sticks. But most likely they will work under GNU/Linux. If it is a FAT32 filesystem there might be problems with long filenames. NTFS filesystems work perfectly fine. Ext2, Ext3, and Ext4 filesystems only work properly on GNU/Linux. You can change the filesystem with GParted but will lose all data on the device.</li>
-          <!-- TODO: add as separate step #2: "Preknowledge" with info on what will not work, potential problems, etc. (?) and/or move step replace software to an earlier step -->
           <li v-if="user_os === 'Windows'">Windows programs like .exe files won't work in GNU/Linux by default. But you usually can make them work by using a program called \"Wine\".</li>
           <li v-if="user_os === 'macOS'">macOS programs won't work in GNU/Linux.</li>
           <li>Before you continue verify that the backup worked correctly and that you have backedup all important data: go through some of the folders, check if the filesize of the entire backup is as large as the folders you backedup and check if the backup program had errors.</li>
@@ -276,7 +275,7 @@
           <li>Connect the devices you stored your backups on and copy them to your hard drive. On the left side of your file manager "Dolphin" you can find folders for various types of content. You can add shortcuts there by right click > Add entry.</li>
         </ul>
         <q-stepper-navigation>
-          <q-btn @click="step = 8" color="primary" label="Continue"/>
+          <q-btn @click="step = 8" color="primary" label="Finish"/>
           <q-btn
             flat
             @click="step = 6"
@@ -299,8 +298,6 @@
 
         <p>If you need help you can find help in places such as <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">these</span> (swipe card).</p>
         <q-stepper-navigation>
-          <!-- TODO add action for finish -->
-          <q-btn color="primary" label="Finish" />
           <q-btn
             flat
             @click="step = 7"
@@ -454,7 +451,6 @@ export default {
       if (props.row.selectionKey === "kdeneon" || props.row.selectionKey === "kubuntu") {
         this.selection_de = "kde";
         this.selection_de2 = ["kde"];
-        //TODO props.selected = true;
       } else {
         this.selection_de = "";
         this.selection_de2 = [];

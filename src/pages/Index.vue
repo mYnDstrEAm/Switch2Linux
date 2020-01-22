@@ -85,7 +85,6 @@
         ref="options_panel_1"
         class="bg-transparent text-white"
       >
-      <!-- TODO: build this into SetupWizard / make it large icons next to each other instead of radiobuttons -->
         <q-tab-panel name="user_os">
           <div class="options_container_container" id="user_os_options">
             <div class="row justify-between items-start q-col-gutter-xl">
@@ -134,8 +133,6 @@
           </div>
         </q-tab-panel>
 
-        <!-- TODO remove strange intro animation -->
-        <!-- TODO make q-tab-panels swipeable but this panel unswipeable -->
         <q-tab-panel name="setup_wizard">
           <div
             id="setup_wizard_left_side"

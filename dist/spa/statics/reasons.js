@@ -274,7 +274,6 @@ export var reasons = [
     source_background_details: i18n.t(`reasons[${id}].source_background_details`),
     visible: false
   },
-  // TODO: array of src = carousel
   {
     id: (id = id + 1),
     reason_title: i18n.t(`reasons[${id}].title`),
@@ -288,7 +287,6 @@ export var reasons = [
     source_background_details: i18n.t(`reasons[${id}].source_background_details`),
     visible: false
   },
-  // TODO add url to image: jump to screenshots, or sliding carousel with screenshots expands when hovered over
   {
     id: (id = id + 1),
     reason_title: i18n.t(`reasons[${id}].title`),

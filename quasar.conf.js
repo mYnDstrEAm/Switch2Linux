@@ -87,7 +87,6 @@ module.exports = function (ctx) {
 
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    // TODO: change to [specified animations]
     animations: 'all',
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
