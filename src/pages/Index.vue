@@ -77,79 +77,7 @@
     <div class="col-xs-12 col-sm-12" id="how">
       <h5>{{ $t('explanations.wizard_header') }}</h5>
       <p>{{ $t('explanations.wizard_subheader') }}</p>
-      <q-tab-panels
-        v-model="panel"
-        animated
-        infinite
-        id="options_panel"
-        ref="options_panel_1"
-        class="bg-transparent text-white"
-      >
-        <q-tab-panel name="user_os">
-          <div class="options_container_container" id="user_os_options">
-            <div class="row justify-between items-start q-col-gutter-xl">
-              <div class="col options_container">
-                <p>{{ $t('explanations.wizard_current_os') }}</p>
-                <q-option-group
-                  v-model="user_os"
-                  :options="options_user_os"
-                  @input="options_user_os_changed"
-                  color="primary"
-                />
-                <q-icon
-                  style="vertical-align: center; horizontal-align:right; top:30%; right:0px; position:absolute; font-size:30pt"
-                  class="arrow_right"
-                  v-if="hasOptionsArrowBackBeenClicked === true"
-                  name="keyboard_arrow_right"
-                  @click="jumpForward()"
-                />
-              </div>
-            </div>
-          </div>
-        </q-tab-panel>
-
-        <q-tab-panel name="user_type">
-          <div class="options_container_container" id="user_type_options">
-            <div class="row justify-between items-start q-col-gutter-xl">
-              <div
-                class="steps_selection_buttons options_container"
-                v-if="user_os !== ''"
-              >
-                <q-icon
-                  style="vertical-align: center; horizontal-align:left;top:30%;left:0px;position:absolute;"
-                  name="keyboard_arrow_left"
-                  class="arrow_left"
-                  @click="jumpBack()"
-                />
-                <p>{{ $t('explanations.wizard_user_type') }}</p>
-                <q-option-group
-                  v-model="user_type"
-                  :options="options_user_type"
-                  @input="options_user_type_changed"
-                  color="primary"
-                />
-              </div>
-            </div>
-          </div>
-        </q-tab-panel>
-
-        <q-tab-panel name="setup_wizard">
-          <div
-            id="setup_wizard_left_side"
-          >
-            <q-icon
-              style="vertical-align: center; horizontal-align:left;top:30%;left:0px;position:absolute;"
-              name="keyboard_arrow_left"
-              class="arrow_left"
-              @click="jumpBack()"
-            />
-          </div>
-          <SetupWizard :user_type="user_type" :user_os="user_os"></SetupWizard>
-          <div v-if="user_type === '' || user_os === ''">
-            <p>{{ $t('explanations.wizard_select_first_message') }}</p>
-          </div>
-        </q-tab-panel>
-      </q-tab-panels>
+      <SetupWizard></SetupWizard>
     </div>
     <div
       style="margin: auto; padding-bottom: 20px; background-color: #245f5e;"
@@ -217,53 +145,12 @@ export default {
   },
   data() {
     return {
-      user_type: "",
-      user_os: "",
-      panel: "user_os",
       lang: this.$q.lang.isoName,
       animationDone: false,
       userHasScrolled: false,
       isWhyHowExpanded: false,
-      isSetupWizardFullscreen: false,
-      hasOptionsArrowBackBeenClicked: false,
       elements: [],
       windowHeight: 0,
-      options_user_os: [
-        {
-          label: "Windows",
-          value: "Windows"
-        },
-        {
-          label: "macOS",
-          value: "macOS"
-        }
-      ],
-      options_user_type: [
-        {
-          label: i18n.t("explanations.wizard_options_user_type_personal"),
-          value: "Personal user (inexperienced)"
-        },
-        {
-          label: i18n.t("explanations.wizard_options_user_type_geek"),
-          value: "Geek (experienced)"
-        },
-        {
-          label: i18n.t("explanations.wizard_options_user_type_developer"),
-          value: "Developer"
-        },
-        {
-          label: i18n.t("explanations.wizard_options_user_type_school"),
-          value: "School"
-        },
-        {
-          label: i18n.t("explanations.wizard_options_user_type_administration"),
-          value: "Public administration"
-        },
-        {
-          label: i18n.t("explanations.wizard_options_user_type_business"),
-          value: "Business"
-        }
-      ],
       reasons: reasons
     };
   },
@@ -361,19 +248,6 @@ export default {
         }
       }
     },
-    options_user_type_changed(value) {
-      this.panel = "setup_wizard";
-    },
-    options_user_os_changed(value) {
-      this.panel = "user_type";
-    },
-    jumpBack() {
-      this.$refs.options_panel_1.previous();
-      this.hasOptionsArrowBackBeenClicked = true;
-    },
-    jumpForward() {
-      this.$refs.options_panel_1.next();
-    },
     openUrl(url) {
       window.open(url, "_blank");
     },
@@ -405,12 +279,13 @@ export default {
     }
   },
   watch: {
-    user_os: function(val) {},
-    user_type: function(val) {
-      this.$nextTick(() => {
-        this.scrollToElement2("stepper_module");
-      });
-    },
+    //TODO
+    // user_os: function(val) {},
+    // user_type: function(val) {
+    //   this.$nextTick(() => {
+    //     this.scrollToElement2("stepper_module");
+    //   });
+    // },
     lang(lang) {
       // dynamic import, so loading on demand only
       import(

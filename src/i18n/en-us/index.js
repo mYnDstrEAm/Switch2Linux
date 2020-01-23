@@ -188,7 +188,6 @@ export default {
       "The recommendations and steps of the guide vary depending on what you select in the options",
     wizard_current_os: "Current OS",
     wizard_user_type: "I'm a",
-    wizard_select_first_message: "Please first select OS and user type.",
     wizard_options_user_type_personal: "Personal user (inexperienced)",
     wizard_options_user_type_geek: "Geek (experienced)",
     wizard_options_user_type_developer: "Developer",

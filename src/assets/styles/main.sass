@@ -225,13 +225,6 @@ body
 .why_how
     margin-top: 0px !important
 
-.options_container_container
-    display: flex
-    justify-content: center
-
-.options_container
-    text-align: left
-
 .justify-between
     justify-content: space-between
     text-align: center
@@ -568,20 +561,17 @@ reason_panel::-webkit-scrollbar
     height: 100%
     position: absolute
 
-.steps_selection_buttons,
-.options_container
+.steps_selection_buttons
     background-color: #363B41
     border-radius: 4px
     margin-left: 38px
     padding-left: 40px !important
     padding-right: 40px
 
-.steps_selection_buttons > p,
-.options_container > p
+.steps_selection_buttons > p
     padding-top: 10px
 
 .steps_selection_buttons > .q-option-group
-.options_container > .q-option-group
     padding-bottom: 10px
 
 .expandableInfo .q-item__label
@@ -619,6 +609,16 @@ reason_panel::-webkit-scrollbar
 
 .q-stepper__tab--active > .q-stepper__dot > .row:after
     content: ">"
+
+.q-stepper__step-inner > p
+    text-align: center
+
+.options_container_container
+    display: flex
+    justify-content: center
+
+.options_container
+    text-align: left
 
 .description_box
     margin-bottom: 15px
