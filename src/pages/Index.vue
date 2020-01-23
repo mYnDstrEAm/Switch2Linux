@@ -5,7 +5,7 @@
         <Slideshow></Slideshow>
         <div class="what_row row justify-between items-start q-col-gutter-xl">
           <div
-            class="col-xs-12 col-sm-6 col-md-6 col-lg-6 description_box whatIsLinuxBox"
+            class="col-xs-12 col-sm-12 col-md-12 col-lg-6 description_box whatIsLinuxBox"
             @mouseover="showWhatIsLinux(true)"
           >
             <transition
@@ -22,7 +22,7 @@
             </transition>
           </div>
           <div
-            class="col-xs-12 col-sm-6 col-md-6 col-lg-6 description_box whatIsWebsiteBox"
+            class="col-xs-12 col-sm-12 col-md-12 col-lg-6 description_box whatIsWebsiteBox"
             @mouseover="showWhatIsWebsite(true)"
           >
             <transition
@@ -174,9 +174,22 @@ export default {
     },
 
     init() {
+      this.resizeTopSlideshow();
       this.elements = document.querySelectorAll(".hidden");
       this.windowHeight = window.innerHeight;
       this.checkPosition();
+    },
+    resizeTopSlideshow() {
+      let slideshow_row = document.getElementsByClassName("slideshow_row");
+      let slide_item = document.getElementsByClassName("slide_item");
+      var height = ((1080/1920) * window.innerWidth) - 6; //TODO replace -6 => maybe not .innerWidth
+      if (height < window.innerHeight * 0.75) {
+        slideshow_row[0].style.height = height + 'px';
+        slide_item[0].style.height = height + 'px';}
+      else {
+        slideshow_row[0].style.height = window.innerHeight * 0.75 + 'px';
+        slide_item[0].style.height = window.innerHeight * 0.75 + 'px';
+      }
     },
     userScrolledEventHandler() {
       this.userHasScrolled = true;
