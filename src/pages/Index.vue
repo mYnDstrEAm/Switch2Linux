@@ -196,11 +196,13 @@ export default {
       }
       let elll = document.getElementsByClassName("reasons");
       for (var i = 0; i < elll.length; i++) {
-        if (
-          document.documentElement.scrollTop + this.windowHeight >
-          elll[i].offsetTop + elll[i].offsetHeight - elll[i].clientHeight * 0.45
+        let currentScrollPosition = document.documentElement.scrollTop + this.windowHeight;
+        if ((currentScrollPosition >
+          elll[i].offsetTop + elll[i].offsetHeight * 0.55) ||
+          (currentScrollPosition >
+          elll[i].offsetTop + this.windowHeight * 0.45)
         ) {
-          if (
+        if (
             this.reasons[i].special !== undefined &&
             this.reasons[i].special !== null &&
             this.reasons[i].special === true
