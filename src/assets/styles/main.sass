@@ -74,7 +74,6 @@ body
     margin-left: 0px !important
     margin-right: 0px !important
 
-// TODO: instead link why and how in the text
 @media (max-width: 600px)
     .why_how_row
         display: none
@@ -232,13 +231,6 @@ body
 
 .why_how
     margin-top: 0px !important
-
-.options_container_container
-    display: flex
-    justify-content: center
-
-.options_container
-    text-align: left
 
 .justify-between
     justify-content: space-between
@@ -430,7 +422,7 @@ reason_panel::-webkit-scrollbar
     // padding-top: 12px
     padding-bottom: 4px
     text-align: left
-    line-height: auto !important
+    line-height: normal !important
 
 .col-xs-12 > div > h6
     margin-top: 0px
@@ -466,7 +458,7 @@ reason_panel::-webkit-scrollbar
     font-family: Roboto,sans-serif
     font-weight: 500
     font-size: calc(0.3vw + 0.3vh + 17px)
-    // line-height: 3vh
+    line-height: normal !important
     opacity: 0.9
     color: white
 
@@ -525,8 +517,7 @@ reason_panel::-webkit-scrollbar
     max-height: 400px
     margin: auto
 
-// TODO topdown image adaption
-.reason_img > .q-img > .q-img__image
+.q-img__image
     background-size: contain !important
     max-height: 380px
 
@@ -577,20 +568,17 @@ reason_panel::-webkit-scrollbar
     height: 100%
     position: absolute
 
-.steps_selection_buttons,
-.options_container
+.steps_selection_buttons
     background-color: #363B41
     border-radius: 4px
     margin-left: 38px
     padding-left: 40px !important
     padding-right: 40px
 
-.steps_selection_buttons > p,
-.options_container > p
+.steps_selection_buttons > p
     padding-top: 10px
 
 .steps_selection_buttons > .q-option-group
-.options_container > .q-option-group
     padding-bottom: 10px
 
 .expandableInfo .q-item__label
@@ -628,6 +616,16 @@ reason_panel::-webkit-scrollbar
 
 .q-stepper__tab--active > .q-stepper__dot > .row:after
     content: ">"
+
+.q-stepper__step-inner > p
+    text-align: center
+
+.options_container_container
+    display: flex
+    justify-content: center
+
+.options_container
+    text-align: left
 
 .description_box
     margin-bottom: 15px

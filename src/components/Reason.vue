@@ -12,7 +12,10 @@
     <q-tab-panel name="bla" class="reason_panel">
       <div class="reason_box">
         <div
-          v-if="(reason.image !== null && reason.image.location === 'top' ) || isWindowSmallBool"
+          v-if="
+            (reason.image !== null && reason.image.location === 'top') ||
+              isWindowSmallBool
+          "
           class="row"
         >
           <div class="col-12 reason reason_img_container_topdown">
@@ -25,104 +28,93 @@
         </div>
 
         <div class="row" style="vertical-align: middle;">
-          <transition
-            appear
-            enter-active-class="animated fadeIn delay"
-            leave-active-class="animated fadeIn delay"
+          <div
+            v-if="
+              reason.image !== null &&
+                reason.image.location === 'left' &&
+                !isWindowSmallBool
+            "
+            class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2 reason_img_container_left"
           >
-            <div
-              v-if="reason.image !== null && reason.image.location === 'left' && !isWindowSmallBool"
-              class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2 reason_img_container_left"
-            >
+            <q-img
+              style="vertical-align: middle !important;"
+              :src="reason.image.src"
+            />
+          </div>
+          <div
+            style="white-space: pre-wrap"
+            :class="{
+              'col-sm-12 col-md-12':
+                reason.image === null ||
+                (reason.image !== null &&
+                  (reason.image.location === 'bottom' ||
+                    reason.image.location === 'top')),
+              'reason_left col-sm-9 col-md-9 col-lg-10 col-xl-10':
+                reason.image !== null && reason.image.location === 'left',
+              'reason_right col-sm-9 col-md-9 col-lg-10 col-xl-10':
+                reason.image !== null && reason.image.location === 'right',
+              'reason col-xs-12 col-sm-12 col-md-12': reason.image === null,
+              'reason col-xs-12': reason.image !== null
+            }"
+          >
+            <div>
+              <h4>{{ reason.reason_title }}</h4>
+              <h6>{{ reason.reason_main_text }}</h6>
+              <p v-if="reason.reason_text">
+                <span v-html="reason.reason_text" />
+              </p>
+              <div
+                v-if="
+                  reason.reason_subpoints !== undefined &&
+                    reason.reason_subpoints !== null
+                "
+              >
+                <ul class="reason_subpoints">
+                  <li
+                    class="reason_subpoint"
+                    v-for="(reason_subpoint, index) in reason.reason_subpoints"
+                    :key="index"
+                  >
+                    <span v-html="reason_subpoint" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            style="vertical-align: middle !important;"
+            v-if="
+              reason.image !== null &&
+                reason.image.location === 'right' &&
+                !isWindowSmallBool
+            "
+            class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2 reason_img_container_right"
+          >
+            <div style="padding-right: 20px;">
               <q-img
                 style="vertical-align: middle !important;"
                 :src="reason.image.src"
               />
             </div>
-          </transition>
-          <transition
-            appear
-            enter-active-class="animated fadeIn delay"
-            leave-active-class="animated fadeIn delay"
-          >
-            <div
-              style="white-space: pre-wrap"
-              :class="{
-                'col-sm-12 col-md-12':
-                  reason.image === null ||
-                  (reason.image !== null &&
-                    (reason.image.location === 'bottom' ||
-                      reason.image.location === 'top')),
-                'reason_left col-sm-9 col-md-9 col-lg-10 col-xl-10':
-                  reason.image !== null && reason.image.location === 'left',
-                'reason_right col-sm-9 col-md-9 col-lg-10 col-xl-10':
-                  reason.image !== null && reason.image.location === 'right',
-                'reason col-xs-12 col-sm-12 col-md-12': reason.image === null,
-                'reason col-xs-12': reason.image !== null
-              }"
-            >
-            <div>
-              <h4>{{ reason.reason_title }}</h4>
-              <h6>{{ reason.reason_main_text }}</h6>
-              <p v-if="reason.reason_text"><span v-html="reason.reason_text"/></p>
-                <div
-                  v-if="
-                    reason.reason_subpoints !== undefined &&
-                      reason.reason_subpoints !== null
-                  "
-                >
-                  <ul class="reason_subpoints">
-                    <li
-                      class="reason_subpoint"
-                      v-for="(reason_subpoint, index) in reason.reason_subpoints"
-                      :key="index"
-                    >
-                      <span v-html="reason_subpoint"/>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </transition>
-
-          <transition
-            appear
-            enter-active-class="animated fadeIn delay"
-            leave-active-class="animated fadeIn delay"
-          >
-            <div
-              style="vertical-align: middle !important;"
-              v-if="reason.image !== null && reason.image.location === 'right' && !isWindowSmallBool"
-              class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2 reason_img_container_right"
-            >
-              <div style="padding-right: 20px;">
-                <q-img
-                  style="vertical-align: middle !important;"
-                  :src="reason.image.src"
-                />
-              </div>
-            </div>
-          </transition>
+          </div>
         </div>
 
-        <transition
-          appear
-          enter-active-class="animated fadeIn delay"
-          leave-active-class="animated fadeIn delay"
+        <div
+          v-if="
+            reason.image !== null &&
+              reason.image.location === 'bottom' &&
+              !isWindowSmallBool
+          "
+          class="row"
         >
-          <div
-            v-if="reason.image !== null && reason.image.location === 'bottom' && !isWindowSmallBool"
-            class="row"
-          >
-            <div class="col-12 reason reason_img_container_topdown">
-              <q-img
-                class="reason_img reason_img_topdown"
-                :src="reason.image.src"
-                contain
-              />
-            </div>
+          <div class="col-12 reason reason_img_container_topdown">
+            <q-img
+              class="reason_img reason_img_topdown"
+              :src="reason.image.src"
+              contain
+            />
           </div>
-        </transition>
+        </div>
         <q-icon
           name="keyboard_arrow_right"
           class="arrow_right"
@@ -138,7 +130,7 @@
             v-for="source_background_detail in reason.source_background_details"
             :key="source_background_detail"
           >
-            <span v-html="source_background_detail"/>
+            <span v-html="source_background_detail" />
           </li>
         </ul>
         <div

@@ -2,7 +2,6 @@
   <div
     class="q-pa-md"
     id="stepper_module"
-    v-if="user_type !== '' && user_os !== ''"
   >
     <q-stepper
       id="setup_wizard"
@@ -12,11 +11,61 @@
       animated
     >
       <q-icon name="fullscreen" class="fullscreen_btn" @click="fullscreen()" />
+
       <q-step
         :name="1"
-        title="Select distribution and desktop environment"
+        title="Select current operating system"
         prefix="1"
         :done="step > 1"
+      >
+      <p>{{ $t('explanations.wizard_current_os') }}</p>
+      <div class="options_container_container">
+        <div class="options_container">
+          <q-option-group
+            v-model="user_os"
+            :options="options_user_os"
+            color="primary"
+          />
+        </div>
+      </div>
+        <q-stepper-navigation>
+          <q-btn @click="increaseStep()" color="primary" label="Continue" />
+        </q-stepper-navigation>
+      </q-step>
+
+      <q-step
+        :name="2"
+        title="Select user type"
+        prefix="2"
+        :done="step > 2"
+      >
+        <p>{{ $t('explanations.wizard_user_type') }}</p>
+        <div class="options_container_container">
+          <div class="options_container">
+            <q-option-group
+              v-model="user_type"
+              :options="options_user_type"
+              color="primary"
+            />
+          </div>
+        </div>
+        <q-stepper-navigation>
+          <q-btn @click="increaseStep()" color="primary" label="Continue" />
+          <q-btn
+            flat
+            @click="decreaseStep()"
+            color="primary"
+            label="Back"
+            class="q-ml-sm"
+          />
+        </q-stepper-navigation>
+      </q-step>
+
+      <q-step
+        :name="3"
+        title="Select distribution and desktop environment"
+        prefix="3"
+        :done="step > 3"
       >
         <p>First you have to choose a linux "distribution" and a "desktop environment" to use with that distribution.</p>
       <div class="expandableInfoContainer">
@@ -118,15 +167,22 @@
         </div>
 
         <q-stepper-navigation>
-          <q-btn @click="step = 2" color="primary" label="Continue" :disable="(selection_distro === '' || selection_de === '')" />
+          <q-btn @click="increaseStep()" color="primary" label="Continue" :disable="(selection_distro === '' || selection_de === '')" />
+          <q-btn
+            flat
+            @click="decreaseStep()"
+            color="primary"
+            label="Back"
+            class="q-ml-sm"
+          />
         </q-stepper-navigation>
       </q-step>
 
       <q-step
-        :name="2"
+        :name="4"
         title="Download iso & burn to DVD"
-        prefix="2"
-        :done="step > 2">
+        prefix="4"
+        :done="step > 4">
         <!-- you can also copy it to USB stick -->
         <ul style="text-align: left;">
           <li v-if="selection_distro === 'kdeneon'">Download the .iso file of your selected distribution (KDE neon): <a target="_blank" rel="noopener noreferrer" href="https://neon.kde.org/download" style="color: white; font-weight: bold;">here</a> by clicking on the button "User Edition Live/Install Image" on the left.</li>
@@ -136,10 +192,10 @@
           <li>Use a waterproof pencil to label the DVD with the name of your dsitribution and the version number which is in the .iso's filename</li>
         </ul>
         <q-stepper-navigation>
-          <q-btn @click="step = 3" color="primary" label="Continue"/>
+          <q-btn @click="increaseStep()" color="primary" label="Continue"/>
           <q-btn
             flat
-            @click="step = 1"
+            @click="decreaseStep()"
             color="primary"
             label="Back"
             class="q-ml-sm"
@@ -147,7 +203,7 @@
         </q-stepper-navigation>
       </q-step>
 
-      <q-step :name="3" title="Backup your data" prefix="3">
+      <q-step :name="5" title="Backup your data" prefix="5" :done="step > 5">
         <ul>
           <li>Do a complete backup of all your data or all the data you want to keep.</li>
           <li>Don't just copy your files but use a backup program for this. An external hard drive is probably the most convenient storage device for the backup, but you could also use another internal hard drive or something else that has large enough storage space.</li>
@@ -163,16 +219,15 @@
             <li>You might lose all passwords saved in your browser and other things stored in apps.</li>
           </div>
           <li>You might also want to backup data on storage devices which have a filesystem that don't work with GNU/Linux. For example usb sticks. But most likely they will work under GNU/Linux. If it is a FAT32 filesystem there might be problems with long filenames. NTFS filesystems work perfectly fine. Ext2, Ext3, and Ext4 filesystems only work properly on GNU/Linux. You can change the filesystem with GParted but will lose all data on the device.</li>
-          <!-- TODO: add as separate step #2: "Preknowledge" with info on what will not work, potential problems, etc. (?) and/or move step replace software to an earlier step -->
           <li v-if="user_os === 'Windows'">Windows programs like .exe files won't work in GNU/Linux by default. But you usually can make them work by using a program called \"Wine\".</li>
           <li v-if="user_os === 'macOS'">macOS programs won't work in GNU/Linux.</li>
           <li>Before you continue verify that the backup worked correctly and that you have backedup all important data: go through some of the folders, check if the filesize of the entire backup is as large as the folders you backedup and check if the backup program had errors.</li>
         </ul>
         <q-stepper-navigation>
-          <q-btn @click="step = 4" color="primary" label="Continue"/>
+          <q-btn @click="increaseStep()" color="primary" label="Continue"/>
           <q-btn
             flat
-            @click="step = 2"
+            @click="decreaseStep()"
             color="primary"
             label="Back"
             class="q-ml-sm"
@@ -180,7 +235,7 @@
         </q-stepper-navigation>
       </q-step>
 
-      <q-step :name="4" title="Install GNU/Linux" prefix="4">
+      <q-step :name="6" title="Install GNU/Linux" prefix="6" :done="step > 6">
         <ul>
           <li>To install GNU/Linux from DVD you need to make your computer start the DVD before it starts {{user_os}}. This is called booting from DVD.</li>
           <li>To do this insert the DVD with GNU/Linux that you burned earlier into your disc drive. Then check that you really didn't forget to backup anything and shut your computer off.</li>
@@ -193,10 +248,10 @@
           <li>In step "User Info" select "Require my password to log in" and select a password that's not too short and simple. Make sure you remember your password/s for example by writing it down somewhere.</li>
         </ul>
         <q-stepper-navigation>
-          <q-btn @click="step = 5" color="primary" label="Continue"/>
+          <q-btn @click="increaseStep()" color="primary" label="Continue"/>
           <q-btn
             flat
-            @click="step = 3"
+            @click="decreaseStep()"
             color="primary"
             label="Back"
             class="q-ml-sm"
@@ -204,7 +259,7 @@
         </q-stepper-navigation>
       </q-step>
 
-      <q-step :name="5" title="Install drivers and updates" prefix="5">
+      <q-step :name="7" title="Install drivers and updates" prefix="7" :done="step > 7">
         <p>You might have to enter your password before making changes</p>
         <ul>
           <li>Connect to your WLAN or LAN if you aren't yet by clicking the WiFi icon in bottom right, selecting your WLAN and entering your password. You can configure the connection by clicking the button in the upper right of the box.</li>
@@ -213,10 +268,10 @@
           <li>To get your printer to work click on the button in the bottom left and enter "printer" in the search field > Print Settings.</li>
         </ul>
         <q-stepper-navigation>
-          <q-btn @click="step = 6" color="primary" label="Continue"/>
+          <q-btn @click="increaseStep()" color="primary" label="Continue"/>
           <q-btn
             flat
-            @click="step = 4"
+            @click="decreaseStep()"
             color="primary"
             label="Back"
             class="q-ml-sm"
@@ -224,7 +279,7 @@
         </q-stepper-navigation>
       </q-step>
 
-      <q-step :name="6" title="Install needed software" prefix="6">
+      <q-step :name="8" title="Install needed software" prefix="8" :done="step > 8">
         <ul>
           <li>Replace software you used that only runs on {{user_os}} or if there's no alternative use <span v-if="user_os === 'Windows'">Wine or </span>a virtual machine.</li>
           <li>Common software can be found by swiping the card <span @click="scrollToElement('reason_1')" style="text-decoration: underline;">here</span>.</li>
@@ -251,17 +306,17 @@
           <li>Never run software as root. Apps should be installed via your software manager only except if it's not available in the "repositories" it has configured.</li>
         </ul>
         <q-stepper-navigation>
-          <q-btn @click="step = 7" color="primary" label="Continue"/>
+          <q-btn @click="increaseStep()" color="primary" label="Continue"/>
           <q-btn
             flat
-            @click="step = 5"
+            @click="decreaseStep()"
             color="primary"
             label="Back"
             class="q-ml-sm"
           />
         </q-stepper-navigation>
       </q-step>
-      <q-step :name="7" title="Configure your system" prefix="7">
+      <q-step :name="9" title="Configure your system" prefix="9" :done="step > 9">
         <ul>
           <li>Most settings can be found under System Settings after pressing the button in the bottom left.</li>
           <li>To change KDE to dark mode select Workspace Theme > Breeze Dark, Colors > Breeze Dark, Icons > Breeze Dark, Application Style > Widget Style > Breeze</li>
@@ -276,17 +331,17 @@
           <li>Connect the devices you stored your backups on and copy them to your hard drive. On the left side of your file manager "Dolphin" you can find folders for various types of content. You can add shortcuts there by right click > Add entry.</li>
         </ul>
         <q-stepper-navigation>
-          <q-btn @click="step = 8" color="primary" label="Continue"/>
+          <q-btn @click="increaseStep()" color="primary" label="Finish"/>
           <q-btn
             flat
-            @click="step = 6"
+            @click="decreaseStep()"
             color="primary"
             label="Back"
             class="q-ml-sm"
           />
         </q-stepper-navigation>
       </q-step>
-      <q-step :name="8" title="Finish" prefix="8">
+      <q-step :name="10" title="Finish" prefix="10">
         <p>Congratulations for switching to GNU/Linux!</p>
         <q-btn flat style="background-color: #027BE3 !important; margin-top: 15px; margin-bottom: 15px;">
           <a
@@ -299,11 +354,9 @@
 
         <p>If you need help you can find help in places such as <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">these</span> (swipe card).</p>
         <q-stepper-navigation>
-          <!-- TODO add action for finish -->
-          <q-btn color="primary" label="Finish" />
           <q-btn
             flat
-            @click="step = 7"
+            @click="decreaseStep()"
             color="primary"
             label="Back"
             class="q-ml-sm"
@@ -315,25 +368,56 @@
 </template>
 
 <script>
+import { i18n } from "../boot/i18n.js";
+
 export default {
   name: "SetupWizard",
-  props: {
-    user_type: {
-      type: String,
-      required: true
-    },
-    user_os: {
-      type: String,
-      required: true
-    }
-  },
   data() {
     return {
       step: 1,
+      isSetupWizardFullscreen: false,
+      user_type: "Personal user (inexperienced)",
+      user_os: "Windows",
       selection_distro2: [],
       selection_distro: '',
       selection_de2: [],
       selection_de: '',
+      options_user_os: [
+        {
+          label: "Windows",
+          value: "Windows"
+        },
+        {
+          label: "macOS",
+          value: "macOS"
+        }
+      ],
+      options_user_type: [
+        {
+          label: i18n.t("explanations.wizard_options_user_type_personal"),
+          value: "Personal user (inexperienced)"
+        },
+        {
+          label: i18n.t("explanations.wizard_options_user_type_geek"),
+          value: "Geek (experienced)"
+        },
+        {
+          label: i18n.t("explanations.wizard_options_user_type_developer"),
+          value: "Developer"
+        },
+        {
+          label: i18n.t("explanations.wizard_options_user_type_school"),
+          value: "School"
+        },
+        {
+          label: i18n.t("explanations.wizard_options_user_type_administration"),
+          value: "Public administration"
+        },
+        {
+          label: i18n.t("explanations.wizard_options_user_type_business"),
+          value: "Business"
+        }
+      ],
       columns: [
         {
           name: 'logo',
@@ -454,7 +538,6 @@ export default {
       if (props.row.selectionKey === "kdeneon" || props.row.selectionKey === "kubuntu") {
         this.selection_de = "kde";
         this.selection_de2 = ["kde"];
-        //TODO props.selected = true;
       } else {
         this.selection_de = "";
         this.selection_de2 = [];
@@ -468,9 +551,16 @@ export default {
     scrollToElement(el){
       let ell = document.getElementById(el);
       ell.scrollIntoView();
+    },
+    increaseStep(){
+      this.step = this.step + 1;
+    },
+    decreaseStep(){
+      this.step = this.step - 1;
     }
   },
   watch : {
+    user_os: function(val) {},// Todo
     user_type:function(val) {
       if (val === "Geek (experienced)") {
         this.distributions = [

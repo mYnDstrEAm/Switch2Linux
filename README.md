@@ -6,6 +6,8 @@ A single-page application that explains why and how to switch to GNU/Linux.
 
 It's built with the Quasar Framework and can be converted to an Android app, an iOS app and an Electron desktop application.
 
+The project will be moved to GitLab sooner or later.
+
 ## Install the dependencies
 ```bash
 npm install
@@ -25,6 +27,7 @@ npm run lint
 ```bash
 quasar build
 ```
+(Test it with `quasar serve`)
 
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
