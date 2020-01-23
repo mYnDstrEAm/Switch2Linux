@@ -182,14 +182,67 @@ export default {
     resizeTopSlideshow() {
       let slideshow_row = document.getElementsByClassName("slideshow_row");
       let slide_item = document.getElementsByClassName("slide_item");
-      var height = ((1080/1920) * window.innerWidth) - 6; //TODO replace -6 => maybe not .innerWidth
+      let prev_arrow = document.getElementsByClassName("q-carousel__prev-arrow");
+      let next_arrow = document.getElementsByClassName("q-carousel__next-arrow");
+      let carouselPrevArrowIcon = document.querySelectorAll(".q-carousel__prev-arrow .q-icon");
+      let carouselNextArrowIcon = document.querySelectorAll(".q-carousel__next-arrow .q-icon");
+
+      let height = ((1080/1920) * window.innerWidth) - 6; //TODO replace -6 => maybe not .innerWidth
+
       if (height < window.innerHeight * 0.75) {
-        slideshow_row[0].style.height = height + 'px';
-        slide_item[0].style.height = height + 'px';}
-      else {
-        slideshow_row[0].style.height = window.innerHeight * 0.75 + 'px';
-        slide_item[0].style.height = window.innerHeight * 0.75 + 'px';
+        slideshow_row[0].style.height = Math.round(height) + 'px';
+        slide_item[0].style.height = Math.round(height) + 'px';
+
+        let width = ((1920/1080) * Math.round(height))
+        let whitespaceArea = window.innerWidth - width;
+        if (whitespaceArea > 100) {
+          prev_arrow[0].style.borderRadius = '0%';
+          next_arrow[0].style.borderRadius = '0%';
+          prev_arrow[0].style.width = (whitespaceArea - 20) / 2 + 'px';
+          next_arrow[0].style.width = (whitespaceArea - 20) / 2 + 'px';
+          carouselPrevArrowIcon[0].style.fontSize = '80px';
+          carouselNextArrowIcon[0].style.fontSize = '80px';
+        }
+        else {
+          prev_arrow[0].style.height = 'auto';
+          next_arrow[0].style.height = 'auto';
+          prev_arrow[0].style.borderRadius = '50%';
+          next_arrow[0].style.borderRadius = '50%';
+          prev_arrow[0].style.width = 'auto';
+          next_arrow[0].style.width = 'auto';
+          carouselPrevArrowIcon[0].style.fontSize = '46px';
+          carouselNextArrowIcon[0].style.fontSize = '46px';
+        }
       }
+      else {
+        slideshow_row[0].style.height = Math.round(window.innerHeight * 0.75) + 'px';
+        slide_item[0].style.height = Math.round(window.innerHeight * 0.75) + 'px';
+        
+        let width = ((1920/1080) * Math.round(window.innerHeight * 0.75))
+        let whitespaceArea = window.innerWidth - width;
+
+        if (whitespaceArea > 100) {
+          prev_arrow[0].style.height = Math.round(window.innerHeight * 0.75) + 'px';
+          next_arrow[0].style.height = Math.round(window.innerHeight * 0.75) + 'px';
+
+          prev_arrow[0].style.borderRadius = '0%';
+          next_arrow[0].style.borderRadius = '0%';
+          prev_arrow[0].style.width = (whitespaceArea - 20) / 2 + 'px'; //TODO replace -20
+          next_arrow[0].style.width = (whitespaceArea - 20) / 2 + 'px';
+          carouselPrevArrowIcon[0].style.fontSize = Math.round(window.innerWidth/15) + 'px';
+          carouselNextArrowIcon[0].style.fontSize = Math.round(window.innerWidth/15) + 'px';
+        } else {
+          prev_arrow[0].style.height = 'auto';
+          next_arrow[0].style.height = 'auto';
+          prev_arrow[0].style.borderRadius = '50%';
+          next_arrow[0].style.borderRadius = '50%';
+          prev_arrow[0].style.width = 'auto';
+          next_arrow[0].style.width = 'auto';
+          carouselPrevArrowIcon[0].style.fontSize = '46px';
+          carouselNextArrowIcon[0].style.fontSize = '46px';
+        }
+      }
+
     },
     userScrolledEventHandler() {
       this.userHasScrolled = true;
