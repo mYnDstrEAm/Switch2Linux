@@ -63,7 +63,7 @@
               <p v-if="reason.reason_text">
                 <span v-html="reason.reason_text" />
               </p>
-              <div
+              <div class="reason_subpoints_container"
                 v-if="
                   reason.reason_subpoints !== undefined &&
                     reason.reason_subpoints !== null
