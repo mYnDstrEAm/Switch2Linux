@@ -119,16 +119,16 @@
             class="distributionsTable">
             <template v-slot:body="props">
               <q-tr :props="props" :class="{ disabledTableRow: props.row.enabled === false }">
-                <q-td key="logo" :props="props" style="width: 100px;"><q-img
-                  style="vertical-align: middle !important; text-align: left; width: 100px; height: 100px;"
+                <q-td key="logo" :props="props" style="width: 10vw; min-width: 40px; max-width: 100px;"><q-img
+                  style="vertical-align: middle !important; text-align: left;"
                   :src="props.row.logo"/>
                 </q-td>
                 <q-td key="name" :props="props" style="text-align: left; width: 100px; font-weight: bold;">{{ props.row.name }}</q-td>
-                <q-td key="description" :props="props" style="text-align: left; white-space: normal;"><span v-html="props.row.description"></span></q-td>
-                <q-td key="website" :props="props" style="text-align: right; width: 100px;">
+                <q-td key="description" :props="props" style="text-align: left; white-space: normal; min-width: 180px;"><span v-html="props.row.description"></span></q-td>
+                <q-td key="website" :props="props" style="text-align: right;">
                   <a target="_blank" rel="noopener noreferrer" :href="props.row.website" style="color: white; padding-right: 20px;">Website</a>
                 </q-td>
-                <q-td auto-width style="text-align: right; width: 150px;">
+                <q-td auto-width style="text-align: right;">
                   <q-btn color="primary" label="Select" @click="selectDistro(props)" :disable="props.row.enabled === false"/>
                 </q-td>
               </q-tr>
@@ -149,12 +149,12 @@
             class="desktopEnvironmentsTable">
             <template v-slot:body="props">
               <q-tr :props="props" :class="{ disabledTableRow: props.row.enabled === false }">
-                <q-td key="logo" :props="props" style="width: 100px;"><q-img
-                  style="vertical-align: middle !important; text-align: left; width: 100px; height: 100px;"
+                <q-td key="logo" :props="props" style="width: 10vw; min-width: 40px; max-width: 100px;"><q-img
+                  style="vertical-align: middle !important; text-align: left;"
                   :src="props.row.logo"/>
                 </q-td>
                 <q-td key="name" :props="props" style="text-align: left; width: 100px; font-weight: bold;">{{ props.row.name }}</q-td>
-                <q-td key="description" :props="props" style="text-align: left; white-space: normal">{{ props.row.description }}</q-td>
+                <q-td key="description" :props="props" style="text-align: left; white-space: normal; min-width: 180px;">{{ props.row.description }}</q-td>
                 <q-td key="website" :props="props" style="text-align: right; width: 100px;">
                   <a target="_blank" rel="noopener noreferrer" :href="props.row.website" style="color: white; padding-right: 20px;">Website</a>
                 </q-td>
@@ -206,7 +206,8 @@
       <q-step :name="5" title="Backup your data" prefix="5" :done="step > 5">
         <ul>
           <li>Do a complete backup of all your data or all the data you want to keep.</li>
-          <li>Don't just copy your files but use a backup program for this. An external hard drive is probably the most convenient storage device for the backup, but you could also use another internal hard drive or something else that has large enough storage space.</li>
+          <li>Don't just copy your files but use a backup program for this. Simply copying over files is better than nothing but you should still use a proper backup program or command for reasons explained <a target="_blank" rel="noopener noreferrer" href="https://askleo.com/cant_i_just_copy_everything_instead_of_using_a_backup_program/" style="color: white; font-weight: bold;">here</a><li>
+          <li>An external hard drive is probably the most convenient storage device for the backup, but you could also use another internal hard drive or something else that has large enough storage space.</li>
           <li>It's best to disconnect the storage device before you install GNU/Linux so you don't accidentally overwrite it.</li>
           <li>GNU/Linux doesn't work with all filesystems of storage devices so you might have to change the filesystem of the storage device before you do the backup. This will erase all the data on the storage device. You can do this with the program <a target="_blank" rel="noopener noreferrer" href="https://gparted.org/download.php" style="color: white; font-weight: bold;">GParted</a>. For example select your connected external hard drive and change the filesystem to "NTFS" which also works on GNU/Linux.</li>
           <div v-if="user_os === 'Windows'">
@@ -283,6 +284,7 @@
         <ul>
           <li>Replace software you used that only runs on {{user_os}} or if there's no alternative use <span v-if="user_os === 'Windows'">Wine or </span>a virtual machine.</li>
           <li>Common software can be found by swiping the card <span @click="scrollToElement('reason_1')" style="text-decoration: underline;">here</span>.</li>
+          <span v-if="user_type === 'Developer'">For most developers it is recommended to install Visual Studio Code as your IDE. You might also be interested in QtCreator for developing cross-platform Qt apps.</li></span>
           <li>If you can't find an alternative for some software you could also try sites like <a target="_blank" rel="noopener noreferrer" href="https://alternativeto.net/" style="color: white;">AlternativeTo</a> to find free software alternatives that run on GNU/Linux.</li>
           <span v-if="user_os === 'Windows'"><li>If you still need some software that only runs on Windows you can simply use Wine to run it. <a target="_blank" rel="noopener noreferrer" href="https://itsfoss.com/use-windows-applications-linux/" style="color: white;">Here is how to install and use Wine.</a></li></span>
           <li>As a last option you can create a virtual machine with {{user_os}} within Linux to use {{user_os}}-programs: <div class="expandableInfoContainer">
@@ -564,55 +566,83 @@ export default {
     user_type:function(val) {
       if (val === "Geek (experienced)") {
         this.distributions = [
-          {
-            logo: 'statics/logos_debian_small.png',
-            name: 'Debian',
-            description: 'bla',
-            enabled: true,
-            website: '',
-            selectionKey: 'debian'
-          },
-          {
-            logo: 'statics/logos_kdeneon_small.png',
-            name: 'KDE neon',
-            description: 'bla',
-            enabled: true,
-            website: '',
-            selectionKey: 'kdeneon'
-          },
-          {
-            logo: 'statics/logos_kubuntu_small.png',
-            name: 'Kubuntu',
-            description: 'bla',
-            enabled: false,
-            website: '',
-            selectionKey: 'kubuntu'
-          }
+        {
+          logo: 'statics/logos_debian_small.png',
+          name: 'Debian',
+          description: '100% FOSS, run by a large community, very stable and the distribution used on most servers. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
+          enabled: true,
+          website: 'https://www.debian.org/',
+          selectionKey: 'debian'
+        },
+        {
+          logo: 'statics/logos_kdeneon_small.png',
+          name: 'KDE neon',
+          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
+          enabled: true,
+          website: 'https://neon.kde.org/',
+          selectionKey: 'kdeneon'
+        },
+        {
+          logo: 'statics/logos_kubuntu_small.png',
+          name: 'Kubuntu',
+          description: 'Similar to KDE neon but "Kubuntu maintains stable releases and LTS version of Ubuntu while KDE neon focuses on updating developer editions of KDE applications without maintaining stable releases of Ubuntu unless the root user actively chooses to upgrade their systems". In short in KDE neon you\'ll have newer KDE applications while in Kubuntu you\'ll have newer Ubuntu software by default',
+          enabled: false,
+          website: 'https://kubuntu.org/',
+          selectionKey: 'kubuntu'
+        }
+        ]
+      }
+      if (val === "School") {
+        this.distributions = [
+        {
+          logo: 'statics/logos_debian_small.png',
+          name: 'Debian Edu/Skolelinux',
+          description: 'Debian is 100% FOSS, run by a large community, very stable and the distribution used most on servers. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>. Debian Edu/Skolelinux is an operating system intended for educational use. Skolelinux\'s literal translation is \"school linux\". It has been created as an overall free software computer solution designed to fit to schools\' resources and needs, and is currently being developed by a large and growing international community. More info about it <a target="_blank" rel="noopener noreferrer" href="https://wiki.debian.org/DebianEdu/Introduction" style="color: white; font-weight: bold;">here</a>.',
+          enabled: true,
+          website: 'https://www.debian.org/',
+          selectionKey: 'debian'
+        },
+        {
+          logo: 'statics/logos_kdeneon_small.png',
+          name: 'KDE neon',
+          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
+          enabled: true,
+          website: 'https://neon.kde.org/',
+          selectionKey: 'kdeneon'
+        },
+        {
+          logo: 'statics/logos_kubuntu_small.png',
+          name: 'Kubuntu',
+          description: 'Similar to KDE neon but "Kubuntu maintains stable releases and LTS version of Ubuntu while KDE neon focuses on updating developer editions of KDE applications without maintaining stable releases of Ubuntu unless the root user actively chooses to upgrade their systems". In short in KDE neon you\'ll have newer KDE applications while in Kubuntu you\'ll have newer Ubuntu software by default',
+          enabled: false,
+          website: 'https://kubuntu.org/',
+          selectionKey: 'kubuntu'
+        }
         ]
       } else {
         this.distributions = [
         {
           logo: 'statics/logos_kdeneon_small.png',
           name: 'KDE neon',
-          description: 'bla',
+          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
           enabled: true,
-          website: '',
+          website: 'https://neon.kde.org/',
           selectionKey: 'kdeneon'
         },
         {
           logo: 'statics/logos_kubuntu_small.png',
           name: 'Kubuntu',
-          description: 'bla',
+          description: 'Similar to KDE neon but "Kubuntu maintains stable releases and LTS version of Ubuntu while KDE neon focuses on updating developer editions of KDE applications without maintaining stable releases of Ubuntu unless the root user actively chooses to upgrade their systems". In short in KDE neon you\'ll have newer KDE applications while in Kubuntu you\'ll have newer Ubuntu software by default',
           enabled: false,
-          website: '',
+          website: 'https://kubuntu.org/',
           selectionKey: 'kubuntu'
         },
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian',
-          description: 'Not recommended for inexperienced users yet',
+          description: '100% FOSS, run by a large community, very stable and the distribution used on most servers. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
-          website: '',
+          website: 'https://www.debian.org/',
           selectionKey: 'debian'
         }
       ]
