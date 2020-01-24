@@ -74,10 +74,6 @@ body
     margin-left: 0px !important
     margin-right: 0px !important
 
-@media (max-width: 600px)
-    .why_how_row
-        display: none
-
 .why_how_row
     min-height: 8vh
     height: 8vh
@@ -631,6 +627,27 @@ reason_panel::-webkit-scrollbar
     margin-bottom: 15px
     padding-left: 0px !important
 
+@media (max-width: 600px)
+    .description_box
+        margin-bottom: 0px !important
+    .whatIsWebsiteBox
+        margin-top: -15px !important
+    .whatIsLinuxBox
+        margin-top: -10px !important
+
+@media (max-height: 520px)
+    .why_how_row
+        display: none
+p
+    margin-top: 0px !important
+    margin-bottom: 0px !important
+
+.why_how_row
+    padding-top: 0px !important
+
+#whatIsWebsiteBoxContent
+    margin-top: 20px
+
 .q-col-gutter-y-xl > *,
 .q-col-gutter-xl > *,
 .q-col-gutter-y-xl,
@@ -678,6 +695,12 @@ reason_panel::-webkit-scrollbar
 
 .slideshow_container > .q-carousel
     background-color: rgba(54, 60, 97, 0.5)
+
+.q-carousel__next-arrow
+    right: 0px
+
+.q-carousel__prev-arrow
+    left: 0px
 
 .twitter-tweet,
 .tweet,

@@ -5,7 +5,7 @@
         <Slideshow></Slideshow>
         <div class="what_row row justify-between items-start q-col-gutter-xl">
           <div
-            class="col-xs-12 col-sm-12 col-md-12 col-lg-6 description_box whatIsLinuxBox"
+            class="col-xs-12 col-sm-12 col-md-6 col-lg-6 description_box whatIsLinuxBox"
             @mouseover="showWhatIsLinux(true)"
           >
             <transition
@@ -22,7 +22,7 @@
             </transition>
           </div>
           <div
-            class="col-xs-12 col-sm-12 col-md-12 col-lg-6 description_box whatIsWebsiteBox"
+            class="col-xs-12 col-sm-12 col-md-6 col-lg-6 description_box whatIsWebsiteBox"
             @mouseover="showWhatIsWebsite(true)"
           >
             <transition
@@ -32,8 +32,7 @@
             ><div id="whatIsWebsiteBoxContent">
                 <h5>{{ $t('explanations.what_is_website_header') }}</h5>
                 <p><span v-html="$t('explanations.what_is_website')"/>
-                  <span class="hidden" id="what_is_website">{{ $t('explanations.what_is_website_hidden') }}
-                  </span>
+                  <span class="hidden" id="what_is_website">{{ $t('explanations.what_is_website_hidden') }}</span>
                 </p>
               </div>
             </transition>
@@ -187,31 +186,37 @@ export default {
       let carouselPrevArrowIcon = document.querySelectorAll(".q-carousel__prev-arrow .q-icon");
       let carouselNextArrowIcon = document.querySelectorAll(".q-carousel__next-arrow .q-icon");
 
+      // Get height for image dimensions and current window width
       let height = ((1080/1920) * window.innerWidth) - 6; //TODO replace -6 => maybe not .innerWidth
 
+      // Prevent slideshow from being larger than 75% of the page so that the panel below remains visible
       if (height < window.innerHeight * 0.75) {
+        // Apply the calculated height to the slideshow elements
         slideshow_row[0].style.height = Math.round(height) + 'px';
         slide_item[0].style.height = Math.round(height) + 'px';
 
+        // Get the width of the slideshow area and calculate the whitespace area from it
         let width = ((1920/1080) * Math.round(height))
         let whitespaceArea = window.innerWidth - width;
         if (whitespaceArea > 100) {
+          // Style the buttons and make them as wide as the whitespace area
           prev_arrow[0].style.borderRadius = '0%';
           next_arrow[0].style.borderRadius = '0%';
-          prev_arrow[0].style.width = (whitespaceArea - 20) / 2 + 'px';
-          next_arrow[0].style.width = (whitespaceArea - 20) / 2 + 'px';
           carouselPrevArrowIcon[0].style.fontSize = '80px';
           carouselNextArrowIcon[0].style.fontSize = '80px';
+          prev_arrow[0].style.width = (whitespaceArea - 13) / 2 + 'px';
+          next_arrow[0].style.width = (whitespaceArea - 13) / 2 + 'px';
         }
         else {
+          // Reset to default styles if the window width is so small that only the image or only 100px of whitespace is shown
           prev_arrow[0].style.height = 'auto';
           next_arrow[0].style.height = 'auto';
           prev_arrow[0].style.borderRadius = '50%';
           next_arrow[0].style.borderRadius = '50%';
-          prev_arrow[0].style.width = 'auto';
-          next_arrow[0].style.width = 'auto';
           carouselPrevArrowIcon[0].style.fontSize = '46px';
           carouselNextArrowIcon[0].style.fontSize = '46px';
+          prev_arrow[0].style.width = 'auto';
+          next_arrow[0].style.width = 'auto';
         }
       }
       else {
@@ -227,8 +232,8 @@ export default {
 
           prev_arrow[0].style.borderRadius = '0%';
           next_arrow[0].style.borderRadius = '0%';
-          prev_arrow[0].style.width = (whitespaceArea - 20) / 2 + 'px'; //TODO replace -20
-          next_arrow[0].style.width = (whitespaceArea - 20) / 2 + 'px';
+          prev_arrow[0].style.width = (whitespaceArea - 13) / 2 + 'px'; //TODO replace -13
+          next_arrow[0].style.width = (whitespaceArea - 13) / 2 + 'px';
           carouselPrevArrowIcon[0].style.fontSize = Math.round(window.innerWidth/15) + 'px';
           carouselNextArrowIcon[0].style.fontSize = Math.round(window.innerWidth/15) + 'px';
         } else {
