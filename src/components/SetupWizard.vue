@@ -124,7 +124,7 @@
                   :src="props.row.logo"/>
                 </q-td>
                 <q-td key="name" :props="props" style="text-align: left; width: 100px; font-weight: bold;">{{ props.row.name }}</q-td>
-                <q-td key="description" :props="props" style="text-align: left; white-space: normal; min-width: 180px;"><span v-html="props.row.description"></span></q-td>
+                <q-td key="description" :props="props" style="text-align: left; white-space: normal; min-width: 300px;"><span v-html="props.row.description"></span></q-td>
                 <q-td key="website" :props="props" style="text-align: right;">
                   <a target="_blank" rel="noopener noreferrer" :href="props.row.website" style="color: white; padding-right: 20px;">Website</a>
                 </q-td>
@@ -154,7 +154,7 @@
                   :src="props.row.logo"/>
                 </q-td>
                 <q-td key="name" :props="props" style="text-align: left; width: 100px; font-weight: bold;">{{ props.row.name }}</q-td>
-                <q-td key="description" :props="props" style="text-align: left; white-space: normal; min-width: 180px;">{{ props.row.description }}</q-td>
+                <q-td key="description" :props="props" style="text-align: left; white-space: normal; min-width: 300px;">{{ props.row.description }}</q-td>
                 <q-td key="website" :props="props" style="text-align: right; width: 100px;">
                   <a target="_blank" rel="noopener noreferrer" :href="props.row.website" style="color: white; padding-right: 20px;">Website</a>
                 </q-td>
@@ -284,7 +284,7 @@
         <ul>
           <li>Replace software you used that only runs on {{user_os}} or if there's no alternative use <span v-if="user_os === 'Windows'">Wine or </span>a virtual machine.</li>
           <li>Common software can be found by swiping the card <span @click="scrollToElement('reason_1')" style="text-decoration: underline;">here</span>.</li>
-          <span v-if="user_type === 'Developer'">For most developers it is recommended to install Visual Studio Code as your IDE. You might also be interested in QtCreator for developing cross-platform Qt apps.</li></span>
+          <span v-if="user_type === 'Developer'">For most developers it is recommended to install Visual Studio Code (VSCodium) as your IDE. You might also be interested in QtCreator for developing cross-platform Qt apps.</li></span>
           <li>If you can't find an alternative for some software you could also try sites like <a target="_blank" rel="noopener noreferrer" href="https://alternativeto.net/" style="color: white;">AlternativeTo</a> to find free software alternatives that run on GNU/Linux.</li>
           <span v-if="user_os === 'Windows'"><li>If you still need some software that only runs on Windows you can simply use Wine to run it. <a target="_blank" rel="noopener noreferrer" href="https://itsfoss.com/use-windows-applications-linux/" style="color: white;">Here is how to install and use Wine.</a></li></span>
           <li>As a last option you can create a virtual machine with {{user_os}} within Linux to use {{user_os}}-programs: <div class="expandableInfoContainer">
