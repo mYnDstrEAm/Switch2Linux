@@ -78,11 +78,7 @@
       >
         <q-card>
           <q-card-section>
-          A Linux distribution is a specific GNU/Linux operating system that
-          bundles various software with the Linux kernel and GNU software. Many
-          such distributions exist and this page will recommend the most
-          prospectful, used and user-friendly ones and help you decide which one
-          to pick.
+          A Linux distribution is a specific GNU/Linux operating system that bundles various software with the Linux kernel and GNU software. Many such distributions exist and this page will recommend the most prospectful, used and user-friendly ones and help you decide which one to pick.
           </q-card-section>
         </q-card>
       </q-expansion-item>
@@ -97,11 +93,7 @@
       >
         <q-card>
           <q-card-section>
-          Each distribution is used with a "desktop environment" which is
-          software for the graphical user interface like windows, icons and
-          related functionalities. Many such desktop environments exist and this
-          page will again recommend the most prospectful, used and user-friendly
-          ones.
+          Each distribution is used with a "desktop environment" which is software for the graphical user interface like windows, icons and related functionalities. Many such desktop environments exist and this page will again recommend the most prospectful, used and user-friendly ones.
           </q-card-section>
         </q-card>
       </q-expansion-item>
@@ -183,9 +175,9 @@
         title="Download iso & burn to DVD"
         prefix="4"
         :done="step > 4">
-        <!-- you can also copy it to USB stick -->
         <ul style="text-align: left;">
-          <li v-if="selection_distro === 'kdeneon'">Download the .iso file of your selected distribution (KDE neon): <a target="_blank" rel="noopener noreferrer" href="https://neon.kde.org/download" style="color: white; font-weight: bold;">here</a> by clicking on the button "User Edition Live/Install Image" on the left.</li>
+          <li>Instead of a DVD you can also use an usb flash drive with Rufus: <a target="_blank" rel="noopener noreferrer" href="https://www.howtogeek.com/howto/linux/create-a-bootable-ubuntu-usb-flash-drive-the-easy-way/" style="color: white; font-weight: bold;">here's how</a>.
+          <li>Download the .iso file of your selected distribution (KDE neon): <a target="_blank" rel="noopener noreferrer" href="https://neon.kde.org/download" style="color: white; font-weight: bold;">here</a> by clicking on the button "User Edition Live/Install Image" on the left.</li>
           <li>Insert an empty DVD into your DVD reader.</li>
           <li v-if="user_os === 'Windows'">Right click the downloaded .iso file and select Burn disc image. Select the DVD drive and check "Verify disc after burning". Then press Burn and wait for it to finish.</li>
           <li v-if="user_os === 'macOS'">Double click the disc, then drag the downloaded .iso file into the disc's window, choose File > Burn and wait for it to finish</li>
@@ -238,14 +230,20 @@
 
       <q-step :name="6" title="Install GNU/Linux" prefix="6" :done="step > 6">
         <ul>
+          <span v-if="user_type === 'Business'"><li>To make sure everything runs fine after roll-out you can test the installation and most things that needs to be working with either a Lice-CD or a virtual machine prior to the roll-out.</li></span>
+          <li>It's not recommended to dual-boot Windows and GNU/Linux: many things can go wrong, it unecessarily makes things more complicated and if you need to run Windows you can do so in a virtual machine. If you still want to have Windows installed somewhere for example to play some games you could install it on a separate hard drive and later make sure it's below the one where GNU/Linux installed on in the boot order (explained in later steps). If you do so don't forget to first disconnect all other drives so that you won't accidentally install it on the wrong partition.</li>
+          <!--TODO also include this step for inexperienced users somehow?-->
+          <span v-if="user_type !== 'Personal user (inexperienced)'"><li>If you aren't using a prebuilt computer or replaced the hard drive yourself you might want to partition the drive as GPT if it isn't yet. GPT is the successor of MBR, is more robust, supports volumes larger than 2 TB and allows for more partitions. GPT can only be used with UEFI. UEFI is the successor of BIOS and older mainboards might not support it. Go into the BIOS/UEFI settings like described in the steps below and set the <i>boot mode</i> to <i>UEFI only</i> before starting from DVD to install a GNU/Linux - the installer will do the rest so you don't need to partition the drive with GPT yourself. In short you should use GPT and UEFI if possible and whether or not you can do so depends on the mainboard you currently use. If you decide to replace your mainboard you need to make sure your other components - most importantly RAM, CPU and graphics card - are compatible with it.</li></span>
           <li>To install GNU/Linux from DVD you need to make your computer start the DVD before it starts {{user_os}}. This is called booting from DVD.</li>
           <li>To do this insert the DVD with GNU/Linux that you burned earlier into your disc drive. Then check that you really didn't forget to backup anything and shut your computer off.</li>
           <li>Now disconnect all storage devices except the internal hard drive that you want to install GNU/Linux on.</li>
           <li>Turn the computer on again. To make it boot from the DVD you need to change the boot order so that booting from DVD has the highest priority. To change this setting you need to press a key immediately after turning the computer on. This key is different for different computers but usually it's F2, F12 or Del. If it's not one of those you should look for the key in the texts that get displayed when you start your computer.</li>
           <li>If it displays "Press any key to boot from CD or DVD" you should press any key</li>
+          <li>If this does not work you may have to change some BIOS/UEFI settings. You can enter the BIOS or UEFI menu by pressing the key displayed right after starting your computer (likely F2, F12 or Del). You may have to disable <i>Secure Boot</i> or a setting like <i>"Windows 7 Installation"</i>.</li>
           <li>Once KDE neon has started click on "Install neon user" in the upper left</li>
           <li>Go through the installation wizard. <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/y4OWeQZD8h4?t=107" style="color: white;">Here is a video of how</a>.</li>
           <li>The installation wizard is mostly self-explanatory and you can also skip some steps like connecting to your WiFi. Once you complete step "Disk Setup" data on the selected hard drive will be lost. This is why it is important that you have backedup everything and that you don't select the wrong hard drive. It is recommended to select "Guided - use entire disk and set up encrypted LVM" because this allows you to protect your data with a password which you then have to enter every time you start (boot) your computer.</li>
+          <li>If the installer asks you for a user password and a root password for security purposes leave the root password empty so it won't a login as root.</li>
           <li>In step "User Info" select "Require my password to log in" and select a password that's not too short and simple. Make sure you remember your password/s for example by writing it down somewhere.</li>
         </ul>
         <q-stepper-navigation>
@@ -264,9 +262,10 @@
         <p>You might have to enter your password before making changes</p>
         <ul>
           <li>Connect to your WLAN or LAN if you aren't yet by clicking the WiFi icon in bottom right, selecting your WLAN and entering your password. You can configure the connection by clicking the button in the upper right of the box.</li>
-          <li>Once you're connected to your WLAN install the latest updates if you haven't yet by clicking the button in the bottom left > Software Center > Updates > Install</li>
+          <li>Once you're connected to your WLAN install the latest updates if you haven't yet by clicking the button in the bottom left > Software Center > Updates > Install. If you want to make sure that this works properly or in the case something doesn't work press the button in the bottom left, enter "Terminal" in the search, open the "Konsole", enter this command: <em>sudo apt-get update && sudo apt-get upgrade</em>, press enter and enter your password</li>
           <li>Connect other hardware to your computer if it isn't connected yet like your printer or your graphics card.</li>
-          <li>To get your printer to work click on the button in the bottom left and enter "printer" in the search field > Print Settings.</li>
+          <li>To get your printer to work click on the button in the bottom left and enter "printer" in the search field > Print Settings. If this does not work go <a target="_blank" rel="noopener noreferrer" href="https://www.howtogeek.com/215235/how-to-install-printer-drivers-on-linux/" style="color: white;">here</a> In short: you could try getting the printer to work by opening <em>localhost:631</em> in the browser and adding it there or by installing drivers from the manufacturer's homepage for the printer. If this does not work you have two options: get a printer that is guaranteed to work with GNU/Linux or <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">ask for help</span>.</li>
+          <li>If you have a graphics card you might need to install drivers for it.<span v-if="selection_distro === 'kdeneon'"> Press the button in the bottom left, enter "Terminal" in the search, open the "Konsole", enter this command: <em>sudo apt-get install kubuntu-driver-manager && sudo ubuntu-drivers autoinstall</em> and enter your password. Restart once it finished.</span></li>
         </ul>
         <q-stepper-navigation>
           <q-btn @click="increaseStep()" color="primary" label="Continue"/>
@@ -284,8 +283,9 @@
         <ul>
           <li>Replace software you used that only runs on {{user_os}} or if there's no alternative use <span v-if="user_os === 'Windows'">Wine or </span>a virtual machine.</li>
           <li>Common software can be found by swiping the card <span @click="scrollToElement('reason_1')" style="text-decoration: underline;">here</span>.</li>
-          <span v-if="user_type === 'Developer'">For most developers it is recommended to install Visual Studio Code (VSCodium) as your IDE. You might also be interested in QtCreator for developing cross-platform Qt apps.</li></span>
+          <span v-if="user_type === 'Developer'"><li>For most developers it is recommended to install Visual Studio Code (VSCodium) as your IDE. You might also be interested in QtCreator for developing cross-platform Qt apps.</li></span>
           <li>If you can't find an alternative for some software you could also try sites like <a target="_blank" rel="noopener noreferrer" href="https://alternativeto.net/" style="color: white;">AlternativeTo</a> to find free software alternatives that run on GNU/Linux.</li>
+          <li>Even if a software does not run under GNU/Linux there's often a web app version of it that you can use within your browser (Firefox)</li>
           <span v-if="user_os === 'Windows'"><li>If you still need some software that only runs on Windows you can simply use Wine to run it. <a target="_blank" rel="noopener noreferrer" href="https://itsfoss.com/use-windows-applications-linux/" style="color: white;">Here is how to install and use Wine.</a></li></span>
           <li>As a last option you can create a virtual machine with {{user_os}} within Linux to use {{user_os}}-programs: <div class="expandableInfoContainer">
               <q-expansion-item
@@ -331,6 +331,7 @@
           <li>The Firefox AddOn <a target="_blank" rel="noopener noreferrer" href="https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/" style="color: white;">Plasma Integration</a> better integrates the browser into KDE. For example it shows browser notifications within KDE.</li>
           <li>To view your files press the bottom left button and click on File Manager</li>
           <li>Connect the devices you stored your backups on and copy them to your hard drive. On the left side of your file manager "Dolphin" you can find folders for various types of content. You can add shortcuts there by right click > Add entry.</li>
+          <span v-if="user_type === 'Developer' || user_type === 'Geek (experienced)' || user_type === 'Business' || user_type === 'School' || user_type === 'Public administration'"><li>If you're looking for a firewall use nftables. Likely at some point an easy to use and fully working GUI for it will be build. As antivirus install rkhunter and ClamAV.</li></span>
         </ul>
         <q-stepper-navigation>
           <q-btn @click="increaseStep()" color="primary" label="Finish"/>

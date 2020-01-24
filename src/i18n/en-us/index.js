@@ -17,7 +17,7 @@ export default {
       main_text:
         "It gives the user the freedom to share, study and modify the software",
       text:
-        "Many arguments in favor of GNU/Linux listed here stem from it being free and open source software. It is called free software because the user is free.<br/>And the apps running on GNU/Linux are free software, too. You can also make most non-free Windows applications run under Linux with a program called \"<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>Wine</a>\".<br/>Free software include LibreOffice for office programs, GIMP for image editing, Kdenlive for video editing, Thunderbird for e-mail. <b>Swipe this card to see more free software alternatives</b>.",
+        "Many arguments in favor of GNU/Linux listed here stem from it being free and open source software. It is called free software because the user is free to share, study and modify the software due to its license and code-publication.<br/>And the apps running on GNU/Linux are free software, too. You can also make most non-free Windows applications run under Linux with a program called \"<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>Wine</a>\".<br/>Free software include LibreOffice for office programs, GIMP for image editing, Kdenlive for video editing, Thunderbird for e-mail. <b>Swipe this card to see more free software alternatives</b>.",
       image_src: "statics/reasons_foss.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.fsf.org/about/what-is-free-software>What is free software and why is it so important for society? by FSF</a>", "<a href=https://www.wired.com/2013/09/why-free-software-is-more-important-now-than-ever-before/>Why Free Software Is More Important Now Than Ever Before by Angela Watercutter on WIRED</a>", "Recommended software alternatives:"],
       source_background_details_tiles: [
@@ -49,9 +49,9 @@ export default {
     {
       title: "Update mechanism and software repository",
       main_text:
-        "All software in GNU/Linux is supposed to be managed with a single program",
+        "All software in GNU/Linux is supposed to be managed with a single program and updating is quick and easy",
       text:
-        "This allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password and wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program. You can also configure it to run updates automatically.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the screenshot).<br/>Sometimes you still might need to install software by other means though (like installing .deb files).",
+        "The GNU/Linux updating system allows simple, timely and fast updates, ensures security and provides a great level of convenience for quickly installing and removing software.<br/>For example if you want to test out a new software you only need to enter its name in your software-manager, click on install, enter your password and wait a short time for it to install. Afterwards you can easily uninstall or update it with a click of a button in the same software-management program. You can also configure it to run updates automatically.<br/>Different distributions have different such \"package-managers\" preinstalled. Two examples are \"Apper\" and \"Discover\" (in the screenshot).<br/>Sometimes you still might need to install software by other means though (like installing .deb files).<br/>Normal updates don't require a restart.",
       image_src: "statics/reasons_update.png",
       source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://userbase.kde.org/Discover>Intro to Discover by KDE</a>",
         "To install a .deb file open the terminal (\"Konsole\" in the search), navigate to the downloads folder with <i>cd ~/Downloads</i> and enter: <i>sudo dpkg -i filename.deb</i>"]
@@ -64,7 +64,7 @@ export default {
         '<b>Open source software is a development-model that can deliver inherently more secure software.</b><br/>Because the code is open to the public and other developers security vulnerabilities can be fixed quickly. Open source software allows more people to check the code. In practice the security also depends on how many developers are actively watching changes to the code and have audited it. But software that is not open source can never reach the level of security of an open source project that is sufficiently watched and maintained. This is mainly because it could contain hidden "backdoors", by which third parties can bypass security mechanisms and intrude the user\'s device, and bugs and because there\'s no dependence on a single company to fix security issues.',
         "<b>GNU/Linux still doesn't have a market share as large as Windows so less malware is designed for it.</b><br/>While GNU/Linux is running on virtually all supercomputers, almost all routers and web servers and is therefore a valuable target for sophisticated malware, the market share of personal computer users - which is the target population of more common malware - is too small for typical, criminal hackers to develop malware for. However, a high level of computer security under GNU/Linux does not depend on the market share being small.",
         "<b>GNU/Linux better protects privacy</b><br/>Details on this in a separate card below.",
-        "<b>GNU/Linux has better security designs including its implementation of privileges and its updating-processes.</b><br/>For example it requires the password to be entered for making some changes and allows very timely software-updates. And more technologies like sandboxing are already getting picked up by developers to be included in the OS. More details can be found by swiping this card."
+        "<b>GNU/Linux has better security and stability designs including its implementation of privileges and its installation and updating-processes.</b><br/>For example it requires the password to be entered for making some changes and allows very timely software-updates. And more technologies like sandboxing are already getting picked up by developers to be included in the OS. It is also more stable and reliable and many GNU/Linux computers run for years without a restart or failure.<br/>More details can be found by swiping this card."
       ],
       image_src: "statics/reasons_security.png",
       source_background_details: ["More: <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.pcworld.com/article/202452/why_linux_is_more_secure_than_windows.html>Why Linux Is More Secure Than Windows, by Katherine Noyes, PCWorld </a>"]
@@ -92,7 +92,7 @@ export default {
     {
       title: "Also runs on old hardware and mini computers",
       main_text: "A universal operating system for all devices",
-      text: "This allows more convergent software that runs on many different devices, broader or additional areas of application, standardization and familiarity. GNU/Linux runs on phones, old laptops, supercomputers and small embedded devices.",
+      text: "This allows more convergent software that runs on many different devices, broader or additional areas of application, standardization and familiarity. GNU/Linux runs on phones, old laptops, supercomputers and small embedded devices. The lower system specifications also mean that older hardware can be kept in use or be used again or simply to run smoother.",
       image_src: "statics/reasons_hardware.png",
       source_background_details: ["This is because the software is free and because it can be lightweight."]
     },
@@ -102,13 +102,14 @@ export default {
         "By using GNU/Linux you don't depend on a company or its decisions",
       text: "This is especially relevant for nations' federal agencies and businesses.",
       image_src: "statics/reasons_sovereignty.png",
-      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.zdnet.com/article/microsoft-poses-threat-to-germanys-digital-sovereignty-warns-study/>Microsoft poses threat to Germany's digital sovereignty, warns study, ZDNet</a>"]
+      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.zdnet.com/article/microsoft-poses-threat-to-germanys-digital-sovereignty-warns-study/>Microsoft poses threat to Germany's digital sovereignty, warns study, ZDNet</a>",
+      "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.zdnet.com/article/south-korea-eyes-linux-as-windows-7-end-of-support-nears/>South Korea eyes Linux as Windows 7 end of support nears, ZDNet</a>"]
     },
     {
       title: "Highly customizable",
       main_text: "Especially KDE is highly customizable and can also be made to look like Windows or macOS",
       text:
-        "Swipe this card to see an exemplary guide to reproduce the setup of the screenshot.",
+        "Especially businesses and other organisations can use pre-configured and pre-packaged distributions complete with needed drivers and applications for their specific use cases. Swipe this card to see an exemplary guide to reproduce the setup of the screenshot.",
       // Click on a screenshot below to view a tutorial for the set-up or simply follow the guide below which includes customization.
       image_src: "statics/kdeneon_2.jpg",
       source_background_details: ["Guide: 1. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://store.kde.org/content/show.php/Kvantum?content=166241>Kvantum</a> 2. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://github.com/PapirusDevelopmentTeam/papirus-icon-theme>Papirus Icons</a> 3. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.techrepublic.com/article/how-to-install-the-latte-dock-on-kde/>Latte Dock</a>"]
@@ -123,6 +124,15 @@ export default {
       source_background_details: ["A guide for making it look more like Windows will be added above (swipe card)",
         "A guide for making it look more like macOS will be added above (swipe card)"]
     },
+    // {
+    //   title: "Unique features and better performance",
+    //   main_text:
+    //     "GNU/Linux has features not to be found in macOS or Windows and doesn't slow down over time",
+    //   text:
+    //     "For instance beyond features related to appearance and customizability it features multiple desktop workspaces. More unique features are likely to be added due to a high level of enthusiasm for GNU/Linux by developers. It is designed so that it doesn't slow down over time.",
+    //   image_src: "statics/",
+    //   source_background_details: [""]
+    // },
     {
       title: "Realizes a free and open society",
       main_text:
