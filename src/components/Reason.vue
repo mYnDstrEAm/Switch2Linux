@@ -198,6 +198,8 @@
 </template>
 
 <script>
+import styles from "../assets/styles/reason.sass";
+
 export default {
   name: "Reason",
   props: {

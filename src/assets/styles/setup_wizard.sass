@@ -1,0 +1,156 @@
+// #stepper_module
+
+#setup_wizard
+    background-color: #363B41
+    color: white
+    
+#setup_wizard_left_side .q-icon
+    display: none
+
+#setup_wizard_left_side:hover > .q-icon
+    display: block
+
+#setup_wizard_left_side
+    width: 5%
+    height: 100%
+    position: absolute
+
+.steps_selection_buttons
+    background-color: #363B41
+    border-radius: 4px
+    margin-left: 38px
+    padding-left: 40px !important
+    padding-right: 40px
+
+.steps_selection_buttons > p
+    padding-top: 10px
+
+.steps_selection_buttons > .q-option-group
+    padding-bottom: 10px
+
+.q-stepper__tab--active > .q-stepper__dot > .row > .q-icon
+    display: none
+
+.q-stepper__tab--active > .q-stepper__dot > .row:after
+    content: ">"
+
+.q-stepper__step-inner > p
+    text-align: center
+
+.q-stepper__nav
+    padding: 24px 24px 30px !important
+
+#setup_wizard .q-btn
+    background-color: #2B908E !important
+#setup_wizard .q-btn__content
+    color: white !important
+#setup_wizard .q-stepper__title
+    color: #2B908E !important
+#setup_wizard .q-stepper__dot
+    color: #2B908E !important
+
+.share-button__icon > path
+    fill: black !important
+
+/* #region Distro & DE options */
+
+.options_container_container
+    display: flex
+    justify-content: center
+
+.options_container
+    text-align: left
+
+/* #endregion */
+
+/* #region expandableInfo */
+
+.q-expansion-item__content > .q-card
+    background: transparent
+    border: 1px solid gray
+
+.q-card__section
+    padding-top: 0px
+    padding-bottom: 0px
+
+#distributionContainer,
+#desktopEnvironmentContainer
+    margin-top: 20px
+
+.expandableInfo .q-item__label
+    background: transparent
+
+.expandableInfoContainer
+    max-width: 650px
+    margin: auto
+
+.q-item__label
+    text-align: center
+
+/* #endregion */
+
+/* #region Fullscreen Button */
+
+.fullscreen_btn
+    cursor: pointer
+    font-size: calc(2vh + 0.8vh + 10px)
+    opacity: 0.7
+    color: white
+    vertical-align: top
+    horizontal-align: right
+    right: 7px
+    float: right
+
+@media (max-width: 700px)
+    .fullscreen_btn
+        font-size: 25px
+@media (min-width: 1700px)
+    .fullscreen_btn
+        font-size: 80px
+
+.setup_wizard_fullscreen
+    position: fixed
+    height: 100%
+    width: 100%
+    top: 0
+    bottom: 0px
+    left: 0
+    right: 0px
+    z-index: 10000
+    overflow-y: scroll
+
+/* #endregion */
+
+/* #region Table */
+
+.distributionsTable,
+.desktopEnvironmentsTable
+    background: #444A52
+    color: white
+
+.distributionsTable td
+    text-align: left
+
+.disabledTableRow
+    background-color: #535A63
+    pointer-events: none
+
+.q-table tbody td
+    font-size: calc(0.5vw + 0.5vh + 12px)
+
+.q-td,
+.q-radio__label
+    font-size: calc(0.5vw + 0.5vh + 12px)
+
+@media (min-width: 1300px) and (min-height: 1000px)
+    .q-td,
+    .q-radio__label
+        font-size: 24px
+
+.q-table td
+    padding: 3px 7px !important
+
+.column > div
+    background: rgba(86, 61, 124, .15)
+
+/* #endregion */

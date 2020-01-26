@@ -1,3 +1,5 @@
+/* #region Page */
+
 .page,
 .page_container
     padding: 0px
@@ -17,14 +19,116 @@
 body
     line-height: 1.2
 
+.page_container
+    background-color: #363B41
+
 .pre-formatted
     white-space: pre-wrap
 
-.reason_subpoints
-    white-space: nowrap
+.row
+    text-align: center
 
-.reason_subpoint
-    white-space: normal
+/* #endregion */
+
+.page_upper
+    min-height: 90vh
+
+p,
+li,
+.q-item__label
+    font-size: calc(0.7vw + 0.7vh + 9px)
+    font-family: Roboto,sans-serif
+    letter-spacing: -.1px
+    opacity: 0.7
+    color: white
+    margin-bottom: 7px
+    text-align: left
+
+p
+    margin-top: 0px !important
+    margin-bottom: 0px !important
+
+@media (max-width: 600px)
+    li
+        font-size: calc(0.1vw + 0.1vh + 14px) !important
+
+.col-xs-12 > div > h6
+    font-size: calc(0.4vw + 0.4vh + 16px)
+    font-family: Roboto,sans-serif
+    font-weight: 500
+    margin-top: 0px
+    margin-bottom: 0px
+    opacity: 0.8
+    color: white
+
+@media screen and (min-height: 1300px) and (min-width: 1000px)
+    .col-xs-12 > div > h6
+        font-size: 38px
+
+.col-xs-12 > h5,
+.col-xs-12 > div > h4,
+.col-xs-6 > h5,
+.col-xs-6 > div > h4,
+.col-xs-12 > div > h5,
+.col-xs-12 > div > h4
+    font-size: calc(0.6vw + 0.6vh + 28px)
+    margin-top: 10px
+    margin-bottom: 0px
+    font-family: Roboto,sans-serif
+    font-weight: 500
+    line-height: normal !important
+    opacity: 0.9
+    color: white
+
+@media screen and (min-height: 1300px) and (min-width: 1000px)
+    .col-xs-12 > div > h5,
+    .col-xs-12 > div > h4,
+    .col-xs-6 > div > h5,
+    .col-xs-6 > div > h4,
+    .col-xs-12 > div > h5,
+    .col-xs-12 > div > h4,
+    .why_how_row_3 > h5,
+    .why_how_row_2 > h5,
+    #why > h5,
+    #how > h5
+        font-size: 50px
+
+.q-col-gutter-y-xl > *,
+.q-col-gutter-xl > *,
+.q-col-gutter-y-xl,
+.q-col-gutter-xl
+    padding-top: 5px
+    margin-top: 0px
+
+.slide_item,
+.qcarousel,
+.q-panel,
+.scroll
+    object-fit: contain
+    height: 100%
+
+/* #region Page title */
+
+.qcarousel:before
+    content: "#Switch2Linux"
+    padding-top: calc((2vw + 1.3vh) / 6)
+    font-size: calc(1.3vw + 2vh)
+    color: white
+    text-align: center
+    vertical-align: center
+    vertical-alignment: center
+    font-weight: bold
+    width: 100%
+    height: calc(3vw + 3vh)
+    position: absolute
+    z-index: 3
+    top: 0
+    left: 0
+    background-color: rgba(0, 0, 0, .3)
+
+/* #endregion */
+
+/* #region Slideshow */
 
 .slideshow_row
     max-height: 75vh
@@ -41,8 +145,37 @@ body
 //         height: calc(20vw + 20vh)
 //         min-height: 25vh
 
-.page_upper
-    min-height: 90vh
+.q-carousel__slide
+    padding: 0px !important
+
+.qcarousel,
+.slideshow_container
+    width: 100%
+    height: 100%
+    padding: 0px
+    left: 0px
+    top: 0px
+    border: 0px
+
+.q-carousel__slides-container::-webkit-scrollbar,
+.q-panel::-webkit-scrollbar
+    display: none
+.q-carousel__slides-container,
+.q-panel
+    overflow: hidden
+
+.slideshow_container > .q-carousel
+    background-color: rgba(54, 60, 97, 0.5)
+
+.q-carousel__next-arrow
+    right: 0px
+
+.q-carousel__prev-arrow
+    left: 0px
+
+/* #endregion */
+
+/* #region Why How */
 
 .what_row
     background-color: #363B41 //#0079C1
@@ -61,9 +194,6 @@ body
 
 .why_how_row
     padding-left: 1vw
-
-.page_container
-    background-color: #363B41
 
 .hidden
     display: none !important
@@ -95,6 +225,86 @@ body
     bottom: 0px
     padding-left: 0px !important
 
+.what_row p
+    font-size: calc(0.6vw + 0.28vh + 0.9vmin) !important
+
+@media (max-width: 600px)
+    .what_row p
+        font-size: 15px !important
+
+@media (min-width: 600px)
+    .whatIsWebsiteBox
+        // padding-left: calc(48px - ((3000px - 0.3vh)/100))
+    #whatIsWebsiteBoxContent
+        padding-left: 20px
+
+.whatIsWebsiteBox p,
+.whatIsLinuxBox p
+    padding-top: calc(0.1vw + 0.1vh + 1px)
+
+@media screen and (min-height: 1300px) and (min-width: 1000px)
+    .whatIsWebsiteBox p,
+    .whatIsLinuxBox p
+        padding-top: 17px
+
+.description_box
+    margin-bottom: 15px
+    padding-left: 0px !important
+
+@media (max-width: 600px)
+    .description_box
+        margin-bottom: 0px !important
+    .whatIsWebsiteBox
+        margin-top: -15px !important
+    .whatIsLinuxBox
+        margin-top: -10px !important
+
+@media (max-height: 520px)
+    .why_how_row
+        display: none
+
+.why_how_row
+    padding-top: 0px !important
+
+#whatIsWebsiteBoxContent
+    margin-top: 20px
+
+.whatIsWebsiteBox p,
+.whatIsLinuxBox p,
+    text-align: center
+
+.why_how
+    margin-top: 0px !important
+
+.justify-between
+    justify-content: space-between
+    text-align: center
+    horizontal-align: center
+
+#why
+    background-color: #2B908E
+    text-align: center
+    padding-bottom: 10px
+    padding-top: 10px
+
+#how
+    background-color: #2B908E
+    text-align: center
+    color: white
+    padding-bottom: 15px
+
+#how > p,
+#why > p
+    text-align: center
+    padding-top: 2px
+    font-size: calc(0.5vw + 0.5vh + 14px)
+
+@media (min-width: 1300px) and (min-height: 1000px)
+    #how > p,
+    #why > p
+        font-size: 30px
+
+/* #region Arrow styling */
 
 .arrow_down
     cursor: pointer
@@ -111,7 +321,6 @@ body
     .arrow_down
         font-size: 80px
 
-
 .arrow_down_2,
 .arrow_up_2
     cursor: pointer
@@ -127,76 +336,6 @@ body
     .arrow_down_2,
     .arrow_up_2
         font-size: 80px
-
-
-.arrow_left
-    cursor: pointer
-    font-size: calc(3vh + 1vh + 10px)
-    opacity: 0.9
-    color: white
-
-@media (max-width: 700px)
-    .arrow_left
-        font-size: 25px
-@media (min-width: 1700px)
-    .arrow_left
-        font-size: 80px
-
-
-.fullscreen_btn
-    cursor: pointer
-    font-size: calc(2vh + 0.8vh + 10px)
-    opacity: 0.7
-    color: white
-    vertical-align: top
-    horizontal-align: right
-    right: 7px
-    float: right
-
-@media (max-width: 700px)
-    .fullscreen_btn
-        font-size: 25px
-@media (min-width: 1700px)
-    .fullscreen_btn
-        font-size: 80px
-
-.setup_wizard_fullscreen
-    position: fixed
-    height: 100%
-    width: 100%
-    top: 0
-    bottom: 0px
-    left: 0
-    right: 0px
-    z-index: 10000
-    overflow-y: scroll
-
-.q-stepper__nav
-    padding: 24px 24px 30px !important
-
-
-.arrow_right
-    cursor: pointer
-    vertical-align: bottom
-    float: right !important
-    bottom: 0px
-    right: 0px
-    margin-right: 16px
-    font-size: 20pt
-    position: absolute
-    display: none
-
-@media (min-width: 500px)
-    @media (min-height: 500px)
-        .reason_box:hover .arrow_right
-            display: block
-
-#rss
-    max-height: 350px
-    overflow-y: auto
-
-.logo_icon
-    font-size: 32px !important
 
 @keyframes landing-bounce
     0%, 20%, 50%, 80%, 100%
@@ -229,514 +368,34 @@ body
         60%
             transform: translate3d(0,-5px,0)
 
-.why_how
-    margin-top: 0px !important
+/* #endregion */
 
-.justify-between
-    justify-content: space-between
-    text-align: center
-    horizontal-align: center
+/* #endregion */
 
-#how
-    background-color: #2B908E
-    text-align: center
-    color: white
-    padding-bottom: 15px
-
-#stepper_module
-    background-color: #2B908E
-
-#setup_wizard
-    background-color: #363B41
-    color: white
-
-#setup_wizard .q-btn
-    background-color: #2B908E !important
-#setup_wizard .q-btn__content
-    color: white !important
-#setup_wizard .q-stepper__title
-    color: #2B908E !important
-#setup_wizard .q-stepper__dot
-    color: #2B908E !important
-
-.slow
-    animation-duration: 1s
-    transition-duration: 1s
-    -webkit-animation-duration: 1s
-
-.scroll_button
-    font-size: 8em
-    -webkit-animation-iteration-count: infinite
-    animation-iteration-count: infinite
-    transition: .4s ease-in
-
-.row
-    text-align: center
-
-.what_row p
-    font-size: calc(0.6vw + 0.28vh + 0.9vmin) !important
-
-@media (max-width: 600px)
-    .what_row p
-        font-size: 15px !important
-
-@media (min-width: 600px)
-    .whatIsWebsiteBox
-        // padding-left: calc(48px - ((3000px - 0.3vh)/100))
-    #whatIsWebsiteBoxContent
-        padding-left: 20px
-p,
-li,
-.q-item__label
-    font-family: Roboto,sans-serif
-    font-size: calc(0.7vw + 0.7vh + 9px)
-    // line-height: calc(0.6vw + 0.6vh + 1.5vmin)
-    letter-spacing: -.1px
-    opacity: 0.7
-    color: white
-    margin-bottom: 7px
-    text-align: left
-
-.q-table tbody td
-    font-size: calc(0.5vw + 0.5vh + 12px)
-
-@media (max-width: 600px)
-    li
-        // line-height: calc(1vw + 1vh + 1.9vmin) !important
-        font-size: calc(0.1vw + 0.1vh + 14px) !important
-
-.q-item__label,
-.whatIsWebsiteBox p,
-.whatIsLinuxBox p,
-    text-align: center
-
-#how > p,
-#why > p
-    text-align: center
-    padding-top: 2px
-    font-size: calc(0.5vw + 0.5vh + 14px)
-
-@media (min-width: 1300px) and (min-height: 1000px)
-    #how > p,
-    #why > p
-        font-size: 30px
-
-.q-td,
-.q-radio__label
-    font-size: calc(0.5vw + 0.5vh + 12px)
-
-@media (min-width: 1300px) and (min-height: 1000px)
-    .q-td,
-    .q-radio__label
-        font-size: 24px
-
-.text-amber
-    color: white !important
-
-#distributionContainer,
-#desktopEnvironmentContainer
-    margin-top: 20px
-
-#why
-    background-color: #2B908E
-    text-align: center
-    padding-bottom: 10px
-    padding-top: 10px
-
-.reason
-    background-color: #363B41
-    text-align: center
-    border-radius: 4px
+/* #region Reasons */
 
 .reasons
     z-index: 1000
     max-width: 1750px
     margin: auto
 
-.reason::-webkit-scrollbar,
-.q-tab-panel::-webkit-scrollbar,
-.reason_box::-webkit-scrollbar,
-reason_panels::-webkit-scrollbar,
-reason_panel::-webkit-scrollbar
-    display: none
-
-.reason,
-.q-tab-panel,
-.reason_box,
-.reason_panels,
-.reason_panel
-    overflow: hidden
-
-.q-tab-panel
-    padding: 0px
-
-.reason_box
-    background-color: #363B41
-    margin-left: 16px
-    margin-right: 16px
-    margin-top: 10px
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12)
-    border-radius: 4px
-
-.delay
-    animation-delay: 0.3s
-
-.reason > div > h5,
-.reason > div > h4,
-.reason > div > p
-    margin: 0px
-    padding-right: 15px
-    padding-bottom: 3px
-    text-align: left
-
-@media (min-width: 600px)
-    .reason > div > h4
-        // margin-top: 10px !important
-
-.reason > div > h5,
-.reason > div > h4,
-    padding-left: 15px
-
-.reason > div > p
-    padding-left: 20px
-    margin-bottom: 10px
-    padding-top: 2px
-    padding-bottom: 10px
-
-.reason > div > h6
-    margin: 0px
-    padding-left: 20px
-    padding-right: 20px
-    // padding-top: 12px
-    padding-bottom: 4px
-    text-align: left
-    line-height: normal !important
-
-.col-xs-12 > div > h6
-    margin-top: 0px
-    margin-bottom: 0px
-    font-family: Roboto,sans-serif
-    font-weight: 500
-    font-size: calc(0.4vw + 0.4vh + 16px)
-    // line-height: 2.8vh
-    opacity: 0.8
-    color: white
-
-@media screen and (min-height: 1300px) and (min-width: 1000px)
-    .col-xs-12 > div > h6
-        font-size: 38px
-
-.whatIsWebsiteBox p,
-.whatIsLinuxBox p
-    padding-top: calc(0.1vw + 0.1vh + 1px)
-
-@media screen and (min-height: 1300px) and (min-width: 1000px)
-    .whatIsWebsiteBox p,
-    .whatIsLinuxBox p
-        padding-top: 17px
-
-.col-xs-12 > h5,
-.col-xs-12 > div > h4,
-.col-xs-6 > h5,
-.col-xs-6 > div > h4,
-.col-xs-12 > div > h5,
-.col-xs-12 > div > h4
-    margin-top: 10px
-    margin-bottom: 0px
-    font-family: Roboto,sans-serif
-    font-weight: 500
-    font-size: calc(0.6vw + 0.6vh + 28px)
-    line-height: normal !important
-    opacity: 0.9
-    color: white
-
-@media screen and (min-height: 1300px) and (min-width: 1000px)
-    .col-xs-12 > div > h5,
-    .col-xs-12 > div > h4,
-    .col-xs-6 > div > h5,
-    .col-xs-6 > div > h4,
-    .col-xs-12 > div > h5,
-    .col-xs-12 > div > h4,
-    .why_how_row_3 > h5,
-    .why_how_row_2 > h5,
-    #why > h5,
-    #how > h5
-        font-size: 50px
-
-.col-xs-12 > div > div > ul > li
-    // line-height: calc(0.6vw + 0.6vh + 1.5vmin)
-
-.reason_box > ul
-    padding-top: 20px
-    padding-right: 20px
-
-.reason_box > ul > li
-    padding-bottom: 7px
-
-.reason_panels a
-    color: white
-
-.reason_img_container_topdown,
-.reason_img_container_left,
-.reason_img_container_right
-    padding-top: 10px
-    padding-bottom: 10px
-
-.reason_img_container_left,
-.reason_img_container_right
-    padding-right: 5px
-
-.reason_img_container_right
-    text-align: right
-    float: right
-    right: 0px
-
-.reason_img_container_left > .q-img
-    text-align: left
-    float: left
-    margin-left: 10px
-
-@media (max-width: 600px)
-    .q-img
-        max-height: 180px
-
-.reason_img_container_topdown
-    max-width: 1000px
-    max-height: 400px
-    margin: auto
-
-.q-img__image
-    background-size: contain !important
-    max-height: 380px
-
-.reason_subpoint
-    padding-top: 10px
-    text-align: left
-    opacity: 0.9
-    color: white
-
-.reason_subpoints
-    margin-top: -10px
-
-.source_background_detail
-    color: white
-    text-align: left
-
-/*#region tooltip*/
-.tooltip
-    text-decoration: none
-    position: relative
-
-.tooltip span
-    display: none
-
-.tooltip:hover span
-    display: block
-    position: fixed
-    overflow: hidden
-
-.tooltiptext
-    text-align: left
-    z-index: 1000
-
-.tooltiptext p
-    opacity: 1 !important
-    color: white !important
-    z-index: 1000
-/*#endregion tooltip*/
-
-#setup_wizard_left_side .q-icon
-    display: none
-
-#setup_wizard_left_side:hover > .q-icon
-    display: block
-
-#setup_wizard_left_side
-    width: 5%
-    height: 100%
-    position: absolute
-
-.steps_selection_buttons
-    background-color: #363B41
-    border-radius: 4px
-    margin-left: 38px
-    padding-left: 40px !important
-    padding-right: 40px
-
-.steps_selection_buttons > p
-    padding-top: 10px
-
-.steps_selection_buttons > .q-option-group
-    padding-bottom: 10px
-
-.expandableInfo .q-item__label
-    background: transparent
-
-.expandableInfoContainer
-    max-width: 650px
-    margin: auto
-
-.q-expansion-item__content > .q-card
-    background: transparent
-    border: 1px solid gray
-
-.q-card__section
-    padding-top: 0px
-    padding-bottom: 0px
-
-.distributionsTable,
-.desktopEnvironmentsTable
-    background: #444A52
-    color: white
-
-.distributionsTable td
-    text-align: left
-
-.disabledTableRow
-    background-color: #535A63
-    pointer-events: none
-
-.share-button__icon > path
-    fill: black !important
-
-.q-stepper__tab--active > .q-stepper__dot > .row > .q-icon
-    display: none
-
-.q-stepper__tab--active > .q-stepper__dot > .row:after
-    content: ">"
-
-.q-stepper__step-inner > p
-    text-align: center
-
-.options_container_container
-    display: flex
-    justify-content: center
-
-.options_container
-    text-align: left
-
-.description_box
-    margin-bottom: 15px
-    padding-left: 0px !important
-
-@media (max-width: 600px)
-    .description_box
-        margin-bottom: 0px !important
-    .whatIsWebsiteBox
-        margin-top: -15px !important
-    .whatIsLinuxBox
-        margin-top: -10px !important
-
-@media (max-height: 520px)
-    .why_how_row
-        display: none
-p
-    margin-top: 0px !important
-    margin-bottom: 0px !important
-
-.why_how_row
-    padding-top: 0px !important
-
-#whatIsWebsiteBoxContent
-    margin-top: 20px
-
-.q-col-gutter-y-xl > *,
-.q-col-gutter-xl > *,
-.q-col-gutter-y-xl,
-.q-col-gutter-xl
-    padding-top: 5px
-    margin-top: 0px
-
-.bold
-    font-weight: bold
-
-.slide_item,
-.qcarousel,
-.q-panel,
-.scroll
-    object-fit: contain
-    height: 100%
-
-.column > div
-    background: rgba(86, 61, 124, .15)
-
-.q-carousel__slide
-    padding: 0px !important
-
-.qcarousel,
-.slideshow_container
-    width: 100%
-    height: 100%
-    padding: 0px
-    left: 0px
-    top: 0px
-    border: 0px
-
-.qcarousel2
-    height: auto !important
-    background-color: #245f5e
-
-.qcarousel2::-webkit-scrollbar,
-.q-carousel__slides-container::-webkit-scrollbar,
-.q-panel::-webkit-scrollbar
-    display: none
-.qcarousel2,
-.q-carousel__slides-container,
-.q-panel
-    overflow: hidden
-
-.slideshow_container > .q-carousel
-    background-color: rgba(54, 60, 97, 0.5)
-
-.q-carousel__next-arrow
-    right: 0px
-
-.q-carousel__prev-arrow
-    left: 0px
-
-.twitter-tweet,
-.tweet,
-.slide_item,
-.reddit_post
-    white-space: normal !important
-
-.perma_hidden
-    display: none
+.slow
+    animation-duration: 1s
+    transition-duration: 1s
+    -webkit-animation-duration: 1s
 
 .perma_hidden2
     visibility: collapse
 
-.overlay
-    z-index: 2
-    pointer-events: none
-    text-align: center
+/* #endregion */
 
-.caption
-    text-align: center
-    padding: 12px
-    color: white
-    background-color: rgba(0, 0, 0, .3)
-    font-size: 50px
-    color: black
+/* region Footer */
 
-.qcarousel:before
-    content: "#Switch2Linux"
-    padding-top: calc((2vw + 1.3vh) / 6)
-    font-size: calc(1.3vw + 2vh)
-    color: white
-    text-align: center
-    vertical-align: center
-    vertical-alignment: center
-    font-weight: bold
-    width: 100%
-    height: calc(3vw + 3vh)
-    position: absolute
-    z-index: 3
-    top: 0
-    left: 0
-    background-color: rgba(0, 0, 0, .3)
+.logo_icon
+    font-size: 32px !important
 
-// override & apply quasar dialog box styles
+/* #region Override & apply quasar dialog box styles */
+
 .q-dialog__inner--minimized > div
     max-width: none !important
 .q-dialog-plugin
@@ -748,8 +407,9 @@ p
 .q-dialog__message > ul
     margin-top: 0px
 
-.q-table td
-    padding: 3px 7px !important
+.text-amber
+    color: white !important
 
-.reason_subpoints_container
-    padding-left: 20px
+/* #endregion */
+
+/* #endregion */

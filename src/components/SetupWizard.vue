@@ -241,7 +241,7 @@
             </q-expansion-item>
             </div>
           </li>
-          <li>If you play computer games not all of them might work on GNU/Linux. To play games on GNU/Linux use <a target="_blank" rel="noopener noreferrer" href="https://lutris.net/" style="color: white;">Lutris</a>, <a target="_blank" rel="noopener noreferrer" href="https://www.protondb.com/" style="color: white;">ProtonDB</a> and/or <a target="_blank" rel="noopener noreferrer" href="https://steamcommunity.com/linux/" style="color: white;">Steam for Linux</a><br/>You can also play console games with emulators. For example PlayStation2 games with <a target="_blank" rel="noopener noreferrer" href="https://pcsx2.net/download/releases/linux.html" style="color: white;">PCSX2</a>.<br/>And there are also some games that were made for GNU/Linux. You can install many of those with your software manager the same way you can install any other software. One such game is <a target="_blank" rel="noopener noreferrer" href="https://supertuxkart.net/Main_Page" style="color: white;">SuperTuxKart</a>.</li>
+          <li>If you play computer games not all of them might work on GNU/Linux. To play games on GNU/Linux use <a target="_blank" rel="noopener noreferrer" href="https://lutris.net/" style="color: white;">Lutris</a> (<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=oHDkeQ9eDrc" style="color: white;">video</a>). With Lutris you can install and start games for Wine, console emulators like Dolphin or <a target="_blank" rel="noopener noreferrer" href="https://pcsx2.net/download/releases/linux.html" style="color: white;">PCSX2</a> for PlayStation 2 and use <a target="_blank" rel="noopener noreferrer" href="https://www.protondb.com/" style="color: white;">ProtonDB</a> and <a target="_blank" rel="noopener noreferrer" href="https://steamcommunity.com/linux/" style="color: white;">Steam for Linux</a>. (You can also use those separately but Lutris makes things easy and allows you to organize all your games from a single place.)<br/>And there are also some games that were made for GNU/Linux. You can install many of those with your software manager the same way you can install any other software. One such game is <a target="_blank" rel="noopener noreferrer" href="https://supertuxkart.net/Main_Page" style="color: white;">SuperTuxKart</a>.</li>
           <li>Your software manager in KDE neon is <a target="_blank" rel="noopener noreferrer" href=https://userbase.kde.org/Discover style="color: white;">Discover</a>. But it doesn't yet work with packages so you also have a second software-manager "Apper". You can open them by entering the name in the search after pressing the button in the bottom left. To install something simply enter the name in the search bar of the software manager, press install and enter your password. The software manager is also used to do updates for all of your software.</li>
           <li>Never run software as root. Apps should be installed via your software manager only except if it's not available in the "repositories" it has configured.</li>
         </ul>
@@ -288,6 +288,7 @@
 
 <script>
 import { i18n } from "../boot/i18n.js";
+import styles from "../assets/styles/setup_wizard.sass";
 
 export default {
   name: "SetupWizard",

@@ -1,0 +1,181 @@
+.reason
+    background-color: #363B41
+    text-align: center
+    border-radius: 4px
+
+.reason_box
+    background-color: #363B41
+    margin-left: 16px
+    margin-right: 16px
+    margin-top: 10px
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12)
+    border-radius: 4px
+
+.reason::-webkit-scrollbar,
+.q-tab-panel::-webkit-scrollbar,
+.reason_box::-webkit-scrollbar,
+reason_panels::-webkit-scrollbar,
+reason_panel::-webkit-scrollbar
+    display: none
+
+.reason,
+.q-tab-panel,
+.reason_box,
+.reason_panels,
+.reason_panel
+    overflow: hidden
+
+.q-tab-panel
+    padding: 0px
+
+.delay
+    animation-delay: 0.3s
+
+/* #region Texts */
+
+.reason > div > h5,
+.reason > div > h4,
+.reason > div > p
+    margin: 0px
+    padding-right: 15px
+    padding-bottom: 3px
+    text-align: left
+
+// @media (min-width: 600px)
+//     .reason > div > h4
+//           margin-top: 10px !important
+
+.reason > div > h5,
+.reason > div > h4,
+    padding-left: 15px
+
+.reason > div > p
+    padding-left: 20px
+    margin-bottom: 10px
+    padding-top: 2px
+    padding-bottom: 10px
+
+.reason > div > h6
+    margin: 0px
+    padding-left: 20px
+    padding-right: 20px
+    // padding-top: 12px
+    padding-bottom: 4px
+    text-align: left
+    line-height: normal !important
+
+.reason_panels a
+    color: white
+
+/* #endregion */
+
+/* #region Subpoints */
+
+.reason_subpoints_container
+    padding-left: 20px
+
+.reason_subpoints
+    white-space: nowrap
+
+.reason_subpoint
+    white-space: normal
+
+.reason_subpoint
+    padding-top: 10px
+    text-align: left
+    opacity: 0.9
+    color: white
+
+.reason_subpoints
+    margin-top: -10px
+
+.reason_box > ul
+    padding-top: 20px
+    padding-right: 20px
+
+.reason_box > ul > li
+    padding-bottom: 7px
+
+/* #endregion */
+
+/* #region Image */
+
+.reason_img_container_topdown,
+.reason_img_container_left,
+.reason_img_container_right
+    padding-top: 10px
+    padding-bottom: 10px
+
+.reason_img_container_left,
+.reason_img_container_right
+    padding-right: 5px
+
+.reason_img_container_right
+    text-align: right
+    float: right
+    right: 0px
+
+.reason_img_container_left > .q-img
+    text-align: left
+    float: left
+    margin-left: 10px
+
+@media (max-width: 600px)
+    .q-img
+        max-height: 180px
+
+.reason_img_container_topdown
+    max-width: 1000px
+    max-height: 400px
+    margin: auto
+
+.q-img__image
+    background-size: contain !important
+    max-height: 380px
+
+/* #endregion */
+
+/* #region Tooltip */
+
+.tooltip
+    text-decoration: none
+    position: relative
+
+.tooltip span
+    display: none
+
+.tooltip:hover span
+    display: block
+    position: fixed
+    overflow: hidden
+
+.tooltiptext
+    text-align: left
+    z-index: 1000
+
+.tooltiptext p
+    opacity: 1 !important
+    color: white !important
+    z-index: 1000
+
+/* #endregion */
+
+.arrow_right
+    cursor: pointer
+    vertical-align: bottom
+    float: right !important
+    bottom: 0px
+    right: 0px
+    margin-right: 16px
+    font-size: 20pt
+    position: absolute
+    display: none
+
+@media (min-width: 500px)
+    @media (min-height: 500px)
+        .reason_box:hover .arrow_right
+            display: block
+
+.source_background_detail
+    color: white
+    text-align: left

@@ -100,6 +100,7 @@
 <script>
 import axios from "axios";
 import dateFormat from "dateformat";
+import styles from "../assets/styles/social_feed.sass";
 
 const API = "https://api.rss2json.com/v1/api.json?rss_url=";
 

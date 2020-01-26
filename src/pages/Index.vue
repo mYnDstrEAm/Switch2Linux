@@ -311,7 +311,7 @@ export default {
         el.classList.remove("hidden");
 
         // let el3 = document.getElementById("to_hide");
-        // el3.classList.add("perma_hidden");
+        // el3.classList.add("perma_hidden"); (display: none)
         if (isMouseOver) {
           let ell = document.getElementById("scroll_arrow");
           let offset = ell.offsetTop;
