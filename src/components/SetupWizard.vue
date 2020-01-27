@@ -180,7 +180,7 @@
             <li>You might lose all passwords saved in your browser and other things stored in apps.</li>
           </div>
           <li>You might also want to backup data on storage devices which have a filesystem that don't work with GNU/Linux. For example usb sticks. But most likely they will work under GNU/Linux. If it is a FAT32 filesystem there might be problems with long filenames. NTFS filesystems work perfectly fine. Ext2, Ext3, and Ext4 filesystems only work properly on GNU/Linux. You can change the filesystem with GParted but will lose all data on the device.</li>
-          <li v-if="user_os === 'Windows'">Windows programs like .exe files won't work in GNU/Linux by default. But you usually can make them work by using a program called \"Wine\".</li>
+          <li v-if="user_os === 'Windows'">Windows programs like .exe files won't work in GNU/Linux by default. But you usually can make them work by using a program called "Wine".</li>
           <li v-if="user_os === 'macOS'">macOS programs won't work in GNU/Linux.</li>
           <li>Before you continue verify that the backup worked correctly and that you have backedup all important data: go through some of the folders, check if the filesize of the entire backup is as large as the folders you backedup and check if the backup program had errors.</li>
         </ul>
@@ -278,8 +278,8 @@
 
       <template v-slot:navigation>
         <q-stepper-navigation>
-          <q-btn v-if="step < 10" @click="$refs.stepper.next()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
-          <q-btn v-if="step > 1" flat color="primary" @click="$refs.stepper.previous()" label="Back" class="q-ml-sm" />
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
       </template>
     </q-stepper>
@@ -477,6 +477,23 @@ export default {
     },
     decreaseStep(){
       this.step = this.step - 1;
+    },
+    wizardStepBack(){
+      this.$refs.stepper.previous();
+      let elements = document.getElementsByClassName("q-stepper__tab--active");
+      elements[0].parentElement.previousElementSibling.scrollIntoView();
+    },
+    wizardStepForward(){
+      this.$refs.stepper.next();
+      let elements = document.getElementsByClassName("q-stepper__tab--active");
+      elements[0].scrollIntoView();
+      // TODO make it select the correct header element - .nextElementSibling doesn't work nor does:
+      //let elements = document.getElementsByClassName("q-stepper__label");
+      //elements[this.step-1].scrollIntoView();
+      // or this:
+      // let x = elements[0].parentElement.nextElementSibling;
+      // let y = x.getElementsByClassName("q-stepper__tab--navigation");//q-stepper__tab--active
+      // y[0].scrollIntoView();
     }
   },
   watch : {
