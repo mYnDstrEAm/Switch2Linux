@@ -11,6 +11,71 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12)
     border-radius: 4px
 
+.reason_box > div
+    padding: 10px
+
+.source_background_details_tile
+    box-shadow: none
+    margin: 0px !important
+    border: 1px solid #363B41
+    border-radius: 0px
+
+.tile_title,
+.tile_content
+    font-size: 21px
+
+/* #region Apps slideshow */
+
+//TODO qcarousel with screenshots > isactive changes background-color
+
+.slideshow_row_2
+    width: 100%
+
+.qcarousel_apps,
+.q-panel,
+.slide_item_apps,
+.q-carousel__slide
+    background-size: contain !important
+    background-repeat: no-repeat
+    padding: 0px !important
+
+// .slideshow_container_2
+//     width: 1000px
+//     height: 1000px
+
+.qcarousel_apps,
+.slideshow_container_2
+    min-width: 300px
+    height: 600px
+    padding: 0px
+    left: 0px
+    top: 0px
+    border: 0px
+    background-size: contain !important
+    background-repeat: no-repeat
+
+.slideshow_container_2
+    width: 100%
+
+.q-carousel__slides-container::-webkit-scrollbar,
+.q-panel::-webkit-scrollbar
+    display: none
+.q-carousel__slides-container,
+.q-panel
+    overflow: hidden
+
+.slideshow_container_2 > .qcarousel_apps
+    background-color: rgba(54, 60, 97, 0.5)
+
+.custom-caption
+  text-align: center
+  padding: 12px
+  color: white
+  background-color: rgba(0, 0, 0, .3)
+
+/* #endregion */
+
+
 .reason::-webkit-scrollbar,
 .q-tab-panel::-webkit-scrollbar,
 .reason_box::-webkit-scrollbar,

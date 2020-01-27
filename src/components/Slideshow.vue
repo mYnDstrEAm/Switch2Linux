@@ -23,17 +23,17 @@
 
         <q-carousel-slide
           class="slide_item"
-          :name="1"
+          name="1"
           img-src="../statics/kdeneon_1.jpg"
         />
         <q-carousel-slide
           class="slide_item"
-          :name="2"
+          name="2"
           img-src="../statics/kdeneon_2.jpg"
         />
         <q-carousel-slide
           class="slide_item"
-          :name="3"
+          name="3"
           img-src="../statics/kde_3.jpg"
         />
       </q-carousel>

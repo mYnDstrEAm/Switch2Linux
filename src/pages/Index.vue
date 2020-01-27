@@ -47,7 +47,7 @@
       <div class="row why_how_row_top"></div>
       <div class="row why_how_row justify-between items-start q-col-gutter-xl">
         <div class="col-xs-6 col-sm-6 col-md-6 why_how_row_2">
-          <h5 class="why_how">{{ $t('explanations.why') }}</h5>
+          <h5 class="why_how" @click="scrollToElement2('why')">{{ $t('explanations.why') }}</h5>
           <q-icon
             name="keyboard_arrow_down"
             class="arrow_down"
@@ -56,7 +56,7 @@
           />
         </div>
         <div class="col-xs-6 col-sm-6 why_how_row_3">
-          <h5 class="why_how">{{ $t('explanations.how') }}</h5>
+          <h5 class="why_how" @click="scrollToElement2('how')">{{ $t('explanations.how') }}</h5>
           <q-icon
             name="keyboard_arrow_down"
             class="arrow_down"
@@ -352,6 +352,8 @@ export default {
           '<li><strong>Screenshots</strong>: <a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/unixporn/comments/b62mqc/kde_neon_mountains/" style="color: white;">1 by reddit user u/MrChrobok</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Kde-neon-5.14.png" style="color: white;">2 by Wikipedia User Ulexer Miner</a> <a target="_blank" rel="noopener noreferrer" href="https://dot.kde.org/2020/01/15/moving-windows-7-plasma-do-it-easy-way" style="color: white;">3 by KDE, David Cahalane</a>' +
           '<li>More Screenshots will be added. The images have been modified.</li>' +
           '</ul>'
+          // thunderbird icon: https://id.wikipedia.org/wiki/Berkas:Mozilla_Thunderbird_logo.png
+          // thunderbird screenshot: https://commons.wikimedia.org/wiki/File:Thunderbird_60_Windows.png
       }).onOk(() => {})
     }
   },

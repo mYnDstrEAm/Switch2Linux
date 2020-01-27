@@ -9,7 +9,7 @@
     style="overflow: visible; white-space: normal;"
     :id="'reason_' + reason.id"
   >
-    <q-tab-panel name="bla" class="reason_panel">
+    <q-tab-panel name="front" class="reason_panel">
       <div class="reason_box">
         <div
           v-if="
@@ -63,7 +63,8 @@
               <p v-if="reason.reason_text">
                 <span v-html="reason.reason_text" />
               </p>
-              <div class="reason_subpoints_container"
+              <div
+                class="reason_subpoints_container"
                 v-if="
                   reason.reason_subpoints !== undefined &&
                     reason.reason_subpoints !== null
@@ -122,76 +123,113 @@
         />
       </div>
     </q-tab-panel>
-    <q-tab-panel name="bla2" style="overflow: visible;"
+    <q-tab-panel name="back" style="overflow: visible;"
       ><div class="reason_box" style="min-height: 400px;overflow: visible;">
-        <ul>
-          <li
-            class="source_background_detail"
-            v-for="source_background_detail in reason.source_background_details"
-            :key="source_background_detail"
-          >
-            <span v-html="source_background_detail" />
-          </li>
-        </ul>
-        <div
-          class="q-pa-md row items-start q-gutter-md"
-          style="overflow: visible;"
-          v-if="
-            reason.source_background_details_tiles !== undefined &&
-              reason.source_background_details_tiles !== null &&
-              reason.source_background_details_tiles.length > 0
-          "
-        >
-          <q-card
-            v-for="source_background_details_tile in reason.source_background_details_tiles"
-            :key="source_background_details_tile.title"
-            class="my-card text-white tooltip"
-            style="background-color: #2B2B2B;overflow: visible;"
-          >
-            <span
-              class="tooltiptext"
-              v-if="
-                source_background_details_tile.previous !== undefined &&
-                  source_background_details_tile.previous !== null &&
-                  source_background_details_tile.previous.length > 0
-              "
-              ><p>Replaces:</p>
-              <p
-                v-for="source_background_details_tile_previous in source_background_details_tile.previous"
-                :key="source_background_details_tile_previous"
-              >
-                {{ source_background_details_tile_previous }}
-              </p></span
+        <div>
+          <ul>
+            <li
+              class="source_background_detail"
+              v-for="source_background_detail in reason.source_background_details"
+              :key="source_background_detail"
             >
-            <a
-              :href="source_background_details_tile.link"
-              style="color:white; text-decoration: none;"
+              <span v-html="source_background_detail" />
+            </li>
+          </ul>
+          <div
+            class="q-pa-md row items-start q-gutter-md"
+            style="overflow: visible;"
+            v-if="
+              reason.source_background_details_tiles !== undefined &&
+                reason.source_background_details_tiles !== null &&
+                reason.source_background_details_tiles.length > 0
+            "
+          >
+            <q-card
+              v-for="source_background_details_tile in reason.source_background_details_tiles"
+              :key="source_background_details_tile.title"
+              class="source_background_details_tile text-white tooltip col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3"
+              style="background-color: #2B2B2B;overflow: visible;"
             >
-              <q-card-section
-                style="word-wrap: normal; padding-bottom: 3px; padding-top: 3px; text-align: center;"
+              <!-- <span
+                class="tooltiptext"
+                v-if="
+                  source_background_details_tile.previous !== undefined &&
+                    source_background_details_tile.previous !== null &&
+                    source_background_details_tile.previous.length > 0
+                "
+                ><p>Replaces:</p>
+                <p
+                  v-for="source_background_details_tile_previous in source_background_details_tile.previous"
+                  :key="source_background_details_tile_previous"
+                >
+                  {{ source_background_details_tile_previous }}
+                </p></span> -->
+              <a
+                :href="source_background_details_tile.link"
+                style="color:white; text-decoration: none;"
               >
-                <q-icon
-                  :name="source_background_details_tile.icon"
-                  style="font-size:20pt; text-align: center;"
-                />
-                <div>{{ source_background_details_tile.title }}</div>
-              </q-card-section>
-              <q-separator dark inset />
-              <q-card-section
-                style="word-wrap: normal; padding-bottom: 3px; padding-top: 3px;"
-              >
-                <div>
-                  <div>{{ source_background_details_tile.content }}</div>
-                </div>
-              </q-card-section>
-            </a>
-          </q-card>
+                <q-card-section
+                  style="word-wrap: normal; padding-bottom: 3px; padding-top: 3px; text-align: center;"
+                >
+                  <q-icon
+                    :name="source_background_details_tile.icon"
+                    style="font-size:20pt; text-align: center;"
+                  />
+                  <div class="tile_title">
+                    {{ source_background_details_tile.title }}
+                  </div>
+                </q-card-section>
+                <q-separator dark inset />
+                <q-card-section
+                  style="word-wrap: normal; padding-bottom: 3px; padding-top: 3px; text-align: center;"
+                >
+                  <div class="row justify-center" style="text-align: center;">
+                    <q-img
+                      class=""
+                      :src="source_background_details_tile.image"
+                      contain
+                      style="width: 30px; height:30px; margin-right: 7px;"
+                    />
+                    <div class="tile_content">
+                      {{ source_background_details_tile.content }}
+                    </div>
+                  </div>
+                </q-card-section>
+              </a>
+            </q-card>
+            <div class="row slideshow_row_2">
+              <div class="slideshow_container_2">
+                <q-carousel
+                  class="qcarousel_apps"
+                  v-model="slide"
+                  animated
+                  infinite
+                  autoplay
+                  transition-prev="slide-right"
+                  transition-next="slide-left"
+                >
+                  <!-- navigation
+                  arrows -->
+                  <q-carousel-slide
+                    v-for="source_background_details_slideshow in reason.source_background_details_slideshow"
+                    :key="source_background_details_slideshow"
+                    :name="source_background_details_slideshow"
+                    :img-src="source_background_details_slideshow">
+                    <div class="absolute-bottom custom-caption">
+                      <div class="text-h2">Thunderbird</div>
+                      <div class="text-subtitle1">Replaces: Outlook</div>
+                    </div>
+                  </q-carousel-slide>
+                </q-carousel>
+              </div>
+            </div>
+            <q-icon
+              name="keyboard_arrow_right"
+              class="arrow_right slide_item_apps"
+              @click="slidePanel()"
+            />
+          </div>
         </div>
-        <q-icon
-          name="keyboard_arrow_right"
-          class="arrow_right"
-          @click="slidePanel()"
-        />
       </div>
     </q-tab-panel>
   </q-tab-panels>
@@ -210,7 +248,8 @@ export default {
   },
   data() {
     return {
-      panel: "bla",
+      slide: "statics/kdeneon_1.jpg",
+      panel: "front",
       isWindowSmallBool: false
     };
   },

@@ -36,7 +36,7 @@ export var reasons = [
       {
         title: i18n.t(`reasons[${id}].source_background_details_tiles[0]`),
         icon: "email",
-        image: null,
+        image: "statics/icon_thunderbird.png",
         previous: ["Outlook"],
         content: "Thunderbird",
         link: "https://www.thunderbird.net/en-US/"
@@ -167,6 +167,9 @@ export var reasons = [
       //   link: ""
       // }
       // Software management discover/apper/..
+    ],
+    source_background_details_slideshow: [
+      "statics/screenshots_thunderbird.png"
     ]
   },
   {
