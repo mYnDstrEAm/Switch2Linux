@@ -61,6 +61,12 @@ p
     opacity: 0.8
     color: white
 
+.col-md-6 > div > h5
+    vertical-align: top !important
+    top: 0px !important
+    margin-top: 0px !important
+    padding-top: 0px !important
+
 @media screen and (min-height: 1300px) and (min-width: 1000px)
     .col-xs-12 > div > h6
         font-size: 38px
@@ -71,7 +77,7 @@ p
 .col-xs-6 > div > h4,
 .col-xs-12 > div > h5,
 .col-xs-12 > div > h4
-    font-size: calc(0.6vw + 0.6vh + 28px)
+    font-size: calc(0.5vw + 2vh + 5px)
     margin-top: 10px
     margin-bottom: 0px
     font-family: Roboto,sans-serif
@@ -79,6 +85,16 @@ p
     line-height: normal !important
     opacity: 0.9
     color: white
+
+@media screen and (max-height: 1000px)
+    .why_how_row_2 > h5,
+    .why_how_row_3 > h5
+        font-size: calc(0.25vw + 1vh + 5px)
+@media screen and (max-height: 1200px)
+    .arrow_down
+        font-size: calc(1.1vh + 0.35vw + 2px) !important
+        animation: landing-bounce-small 2s infinite !important
+        margin-top: -19px
 
 @media screen and (min-height: 1300px) and (min-width: 1000px)
     .col-xs-12 > div > h5,
@@ -192,9 +208,6 @@ p
         position: relative
         top: 0px
 
-.why_how_row
-    padding-left: 1vw
-
 .hidden
     display: none !important
 
@@ -205,8 +218,8 @@ p
     margin-right: 0px !important
 
 .why_how_row
-    min-height: 8vh
-    height: 8vh
+    // min-height: 8vh
+    // height: 8vh
     position: absolute
     padding-top: 7px
     bottom: 0px
@@ -214,11 +227,19 @@ p
     left: 0px
     right: 0px
     margin: 0px
+    padding-left: 1vw !important
+    padding-right: 1vw !important
 
 .why_how_row_top
     background-color: red
 
-.why_how_row,
+.why_how_row
+// .why_how_row_2,
+// .why_how_row_3
+    vertical-align: bottom
+    bottom: 0px
+    // padding-left: 0px !important
+
 .why_how_row_2,
 .why_how_row_3
     vertical-align: bottom
@@ -226,26 +247,53 @@ p
     padding-left: 0px !important
 
 .what_row p
-    font-size: calc(0.6vw + 0.28vh + 0.9vmin) !important
+    font-size: calc(0.3vw + 1.5vh + 2px) !important
 
-@media (max-width: 600px)
+@media (max-width: 600px) and (max-height: 700px) 
     .what_row p
         font-size: 15px !important
 
-@media (min-width: 600px)
-    .whatIsWebsiteBox
-        // padding-left: calc(48px - ((3000px - 0.3vh)/100))
-    #whatIsWebsiteBoxContent
-        padding-left: 20px
+// @media (min-width: 600px)
+//     .whatIsWebsiteBox
+//         padding-left: calc(48px - ((3000px - 0.3vh)/100))
+//     #whatIsWebsiteBoxContent
+//         padding-left: 20px
 
-.whatIsWebsiteBox p,
-.whatIsLinuxBox p
-    padding-top: calc(0.1vw + 0.1vh + 1px)
+#whatIsWebsiteBoxContent,
+#whatIsLinuxBoxContent
+    text-align: center
+    margin: auto
+
+@media screen and (max-width: 1900px) and (min-width: 720px)
+    #whatIsLinuxBoxContent,
+    .why_how_row_2 > h5,
+    .why_how_row_2 > .arrow_down
+        margin-right: 25px
+    #whatIsWebsiteBoxContent,
+    .why_how_row_3 > h5,
+    .why_how_row_3 > .arrow_down
+        margin-left: 25px
+
+#whatIsWebsiteBoxContent p,
+#whatIsLinuxBoxContent p
+    max-width: 1200px !important
+    text-align: center
+    margin: auto
+
+@media screen and (min-height: 1300px) and (max-width: 700px)
+    #whatIsWebsiteBoxContent p,
+    #whatIsLinuxBoxContent p
+        margin-top: 0px !important
+
+@media screen and (min-width: 1700px) and (max-height: 1700px)
+    #whatIsWebsiteBoxContent p,
+    #whatIsLinuxBoxContent p
+        margin-top: calc(0.1vw - 25px) !important
 
 @media screen and (min-height: 1300px) and (min-width: 1000px)
     .whatIsWebsiteBox p,
     .whatIsLinuxBox p
-        padding-top: 17px
+        padding-top: 0px//17px
 
 .description_box
     margin-bottom: 15px
@@ -254,24 +302,37 @@ p
 @media (max-width: 600px)
     .description_box
         margin-bottom: 0px !important
-    .whatIsWebsiteBox
-        margin-top: -15px !important
-    .whatIsLinuxBox
-        margin-top: -10px !important
+    // .whatIsLinuxBox
+    //     margin-top: -10px !important
+    #whatIsLinuxBoxContent
+        margin-top: 20px
+    #whatIsWebsiteBoxContent
+        margin-top: 30px
+    #whatIsWebsiteBoxContent > h5
+        line-height: 30px !important
 
-@media (max-height: 520px)
+@media (max-height: 500px)
     .why_how_row
         display: none
+@media (max-height: 1000px)
+    #whatIsWebsiteBoxContent p,
+    #whatIsLinuxBoxContent p
+        margin-top: 0px !important
 
 .why_how_row
     padding-top: 0px !important
 
-#whatIsWebsiteBoxContent
-    margin-top: 20px
+// #whatIsWebsiteBoxContent
+//     margin-top: 0px//20px
 
 .whatIsWebsiteBox p,
 .whatIsLinuxBox p,
     text-align: center
+
+@media (min-height: 1280px)
+    .whatIsWebsiteBox p,
+    .whatIsLinuxBox p,
+        padding-top: calc(0.4vw + 0.4vh)
 
 .why_how
     margin-top: 0px !important
@@ -310,9 +371,10 @@ p
     cursor: pointer
     animation: landing-bounce 2s infinite
     -webkit-animation: landing-bounce 2s infinite
-    font-size: calc(3vh + 1vh + 10px)
+    font-size: calc(2.7vh + 0.7vw + 2px)
     opacity: 0.9
     color: white
+    bottom: -10px
 
 @media (max-height: 700px)
     .arrow_down
@@ -324,7 +386,7 @@ p
 .arrow_down_2,
 .arrow_up_2
     cursor: pointer
-    font-size: calc(3vh + 1vh + 10px)
+    font-size: calc(2.2vh + 0.7vw + 2px)
     opacity: 0.9
     color: white
 
@@ -341,32 +403,16 @@ p
     0%, 20%, 50%, 80%, 100%
         transform: translate3d(0,0,0)
     40%
-        transform: translate3d(0,-10px,0)
+        transform: translate3d(0,-24px,0)
     60%
-        transform: translate3d(0,-10px,0)
-@keyframes landing-bounce2
-    0%, 15%, 45%, 75%, 100%
+        transform: translate3d(0,-12px,0)
+@keyframes landing-bounce-small
+    0%, 20%, 50%, 80%, 100%
         transform: translate3d(0,0,0)
-    50%
-        transform: translate3d(0,-10px,0)
+    40%
+        transform: translate3d(0,-6px,0)
     60%
-        transform: translate3d(0,-10px,0)
-
-@media (max-height: 1200px)
-    @keyframes landing-bounce
-        0%, 20%, 50%, 80%, 100%
-            transform: translate3d(0,0,0)
-        40%
-            transform: translate3d(0,-10px,0)
-        60%
-            transform: translate3d(0,-5px,0)
-    @keyframes landing-bounce2
-        0%, 15%, 45%, 75%, 100%
-            transform: translate3d(0,0,0)
-        50%
-            transform: translate3d(0,-10px,0)
-        60%
-            transform: translate3d(0,-5px,0)
+        transform: translate3d(0,-3px,0)
 
 /* #endregion */
 
