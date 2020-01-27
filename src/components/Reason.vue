@@ -197,7 +197,11 @@
                 </q-card-section>
               </a>
             </q-card>
-            <div class="row slideshow_row_2">
+            <div class="row slideshow_row_2"
+              v-if="reason.source_background_details_slideshow !== null &&
+              reason.source_background_details_slideshow !== undefined &&
+              reason.source_background_details_slideshow.length > 0 &&
+              panel === 'back'">
               <div class="slideshow_container_2">
                 <q-carousel
                   class="qcarousel_apps"
@@ -223,12 +227,12 @@
                 </q-carousel>
               </div>
             </div>
-            <q-icon
-              name="keyboard_arrow_right"
-              class="arrow_right slide_item_apps"
-              @click="slidePanel()"
-            />
           </div>
+          <q-icon
+            name="keyboard_arrow_right"
+            class="arrow_right"
+            @click="slidePanel()"
+          />
         </div>
       </div>
     </q-tab-panel>

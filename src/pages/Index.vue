@@ -177,9 +177,9 @@ export default {
     },
 
     init() {
-      this.resizeTopSlideshow();
       this.elements = document.querySelectorAll(".hidden");
       this.windowHeight = window.innerHeight;
+      this.resizeTopSlideshow();
       this.checkPosition();
     },
     resizeTopSlideshow() {
