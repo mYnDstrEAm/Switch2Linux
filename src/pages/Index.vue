@@ -83,7 +83,7 @@
       <SetupWizard></SetupWizard>
     </div>
     <div
-      style="margin: auto; padding-bottom: 20px; background-color: #245f5e;"
+      style="margin: auto; padding-bottom: 20px; padding-top: 10px; background-color: #245f5e;"
     >
       <div class="row justify-center">
       <q-icon
@@ -104,7 +104,7 @@
         @click="openUrl('https://twitter.com/hashtag/Switch2Linux')"
         style="cursor: pointer;"
       ></q-icon>
-      <div style="position: absolute; right: 0px; text-align: right; padding-right: 10px; cursor: pointer;"><p @click="showImageSources()">Image sources</p></div></td>
+      <div style="position: absolute; right: 0px; text-align: right; padding-right: 20px; cursor: pointer;"><p style="font-size: 22px !important;" @click="showImageSources()">View image sources</p></div></td>
       </div>
     </div>
     <SocialFeed></SocialFeed>
@@ -348,12 +348,14 @@ export default {
           '<li><strong>Reason \"Only few barriers left\"</strong>: <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Usage_share_of_operating_systems#Desktop_and_laptop_computers" style="color: white;">1</a></li>' +
           '<li><strong>Logos</strong>: <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Debian-OpenLogo.svg" style="color: white;">Debian</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Neon-logo.svg" style="color: white;">KDE neon</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Kubuntu_logo.svg" style="color: white;">Kubuntu</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:KDE_logo.svg" style="color: white;">KDE</a> <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/File:Gnomelogo.svg" style="color: white;">GNOME</a></li>' +
           '<li><strong>Screenshots</strong>: <a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/unixporn/comments/b62mqc/kde_neon_mountains/" style="color: white;">1 by reddit user u/MrChrobok</a> <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Kde-neon-5.14.png" style="color: white;">2 by Wikipedia User Ulexer Miner</a> <a target="_blank" rel="noopener noreferrer" href="https://dot.kde.org/2020/01/15/moving-windows-7-plasma-do-it-easy-way" style="color: white;">3 by KDE, David Cahalane</a>' +
-          '<li>More Screenshots will be added. The images have been modified.</li>' +
+          '<li>Sources for icons and screenshots of reason-card #2 are in the code in file index.vue.</li>' +
+          '<li>The images have been modified.</li>' +
           '</ul>'
-          // thunderbird icon: https://id.wikipedia.org/wiki/Berkas:Mozilla_Thunderbird_logo.png
-          // thunderbird screenshot: https://commons.wikimedia.org/wiki/File:Thunderbird_60_Windows.png
-          // libreoffice icon: https://en.wikipedia.org/wiki/File:LibreOffice_4.0_Main_Icon.svg
-          // libreoffice screenshot: https://commons.wikimedia.org/wiki/File:LibreOffice_6.0.6.2_Writer.png
+          // Sources for icons and screenshots of reason-card #2:
+          // Thunderbird icon: https://id.wikipedia.org/wiki/Berkas:Mozilla_Thunderbird_logo.png
+          // Thunderbird screenshot: https://commons.wikimedia.org/wiki/File:Thunderbird_60_Windows.png
+          // LibreOffice icon: https://en.wikipedia.org/wiki/File:LibreOffice_4.0_Main_Icon.svg
+          // LibreOffice screenshot: https://commons.wikimedia.org/wiki/File:LibreOffice_6.0.6.2_Writer.png
           // Okular icon: https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-okular.svg
           // Dolphin icon: https://commons.wikimedia.org/wiki/File:Dolphin_icon_in_Plasma_5.svg
           // Gwenview icon: https://en.wikipedia.org/wiki/File:Gwenview_Icon.svg

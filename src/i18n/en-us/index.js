@@ -9,7 +9,7 @@ export default {
       image_src: "statics/reasons_free.png",
       source_background_details: ["GNU/Linux software is made by volunteers, for-profit and non-profit developers and simply anybody with an interest in advancing the common good through code this way.",
         "It is published under licenses that allow use free of charge even for commercial purposes.",
-        "Many people see an advantage to the software being free of charge and a lot of money can be saved in larger orders"
+        "Many people see an advantage to the software being free of charge and a lot of money can be saved in larger orders."
     ]
     },
     {
