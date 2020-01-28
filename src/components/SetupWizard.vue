@@ -259,6 +259,7 @@
           <li>The Firefox AddOn <a target="_blank" rel="noopener noreferrer" href="https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/" style="color: white;">Plasma Integration</a> better integrates the browser into KDE. For example it shows browser notifications within KDE.</li>
           <li>To view your files press the bottom left button and click on File Manager</li>
           <li>Connect the devices you stored your backups on and copy them to your hard drive. On the left side of your file manager "Dolphin" you can find folders for various types of content. You can add shortcuts there by right click > Add entry.</li>
+          <li>To configure your system to look like Windows or macOS or like in other screenshots swipe <span @click="scrollToElement('reason_9')" style="text-decoration: underline; cursor: pointer;">this card</span>.</li>
           <span v-if="user_type === 'Developer' || user_type === 'Geek (experienced)' || user_type === 'Business' || user_type === 'School' || user_type === 'Public administration'"><li>If you're looking for a firewall use nftables. Likely at some point an easy to use and fully working GUI for it will be build. As antivirus install rkhunter and ClamAV.</li></span>
         </ul>
       </q-step>
@@ -513,15 +514,14 @@ export default {
     }
   },
   watch : {
-    user_os: function(val) {},// Todo
+    user_os: function(val) {},// TODO
     user_type:function(val) {
-      console.log(val)
-      if (val === "Geek (experienced)") {
+      if (val === "Geek (experienced)" || val === "Developer") {
         this.distributions = [
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian',
-          description: '100% FOSS, run by a large community, very stable and the distribution used on most servers. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
+          description: '100% FOSS, run by a large community and the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions are based and contributors to it adhere to a Social Contract. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'
@@ -565,7 +565,7 @@ export default {
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian Edu/Skolelinux',
-          description: 'Debian is 100% FOSS, run by a large community, very stable and the distribution used most on servers. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>. Debian Edu/Skolelinux is an operating system intended for educational use. Skolelinux\'s literal translation is \"school linux\". It has been created as an overall free software computer solution designed to fit to schools\' resources and needs, and is currently being developed by a large and growing international community. More info about it <a target="_blank" rel="noopener noreferrer" href="https://wiki.debian.org/DebianEdu/Introduction" style="color: white; font-weight: bold;">here</a>.',
+          description: '100% FOSS, run by a large community and the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions are based and contributors to it adhere to a Social Contract. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.<br/>Debian Edu/Skolelinux is an operating system intended for educational use. Skolelinux\'s literal translation is \"school linux\". It has been created as an overall free software computer solution designed to fit to schools\' resources and needs, and is currently being developed by a large and growing international community. More info about it <a target="_blank" rel="noopener noreferrer" href="https://wiki.debian.org/DebianEdu/Introduction" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'
@@ -624,7 +624,7 @@ export default {
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian',
-          description: '100% FOSS, run by a large community, very stable and the distribution used on most servers. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
+          description: '100% FOSS, run by a large community and the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions are based and contributors to it adhere to a Social Contract. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'

@@ -112,7 +112,9 @@ export default {
         "Especially businesses and other organizations can use pre-configured and pre-packaged distributions complete with needed drivers and applications for their specific use cases. Swipe this card to see an exemplary guide to reproduce the setup of the screenshot.",
       // Click on a screenshot below to view a tutorial for the set-up or simply follow the guide below which includes customization.
       image_src: "statics/kdeneon_2.jpg",
-      source_background_details: ["Guide: 1. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://store.kde.org/content/show.php/Kvantum?content=166241>Kvantum</a> 2. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://github.com/PapirusDevelopmentTeam/papirus-icon-theme>Papirus Icons</a> 3. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.techrepublic.com/article/how-to-install-the-latte-dock-on-kde/>Latte Dock</a>"]
+      source_background_details: ["Guide macOS: 1. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://store.kde.org/content/show.php/Kvantum?content=166241>Kvantum</a> 2. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://github.com/PapirusDevelopmentTeam/papirus-icon-theme>Papirus Icons</a> 3. <a target=\"_blank\" rel=\"noopener noreferrer\" href=https://www.techrepublic.com/article/how-to-install-the-latte-dock-on-kde/>Latte Dock</a> 4. Wallpaper: macOS Sierra Wallpaper",
+        "Guide Windows: Plasma Theme: Seven Black Window Decorations: Seven Black Application Style: gtk2GTK Theme: Windows Se7en by Elbullazul Icons: Darkine Colours: Breeze Light Cursors: DMZ White Splash Screen: Feren OS Panel: 38 height Widgets: Default Apps Menu, I-O Task Manager, Stock System Tray, Feren Calendar or Event Calendar, Win7 Show Desktop",
+        "These guides will be improved and more will be added. Maybe at some point you can reproduce the setups of screenshots with the click of a button."]
     },
     {
       title: "Can look better than Windows and macOS",

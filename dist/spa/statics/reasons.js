@@ -171,7 +171,7 @@ export var reasons = [
     source_background_details_slideshow: [
       { name: "Thunderbird", subtitle: "Replaces Outlook", src: "statics/apps/screenshot_thunderbird.png" },
       { name: "LibreOffice", subtitle: "Replaces Microsoft Office (Word, Excel, ...)", src: "statics/apps/screenshot_libreoffice.png" },
-      { name: "Kdenlive", subtitle: "Easy to use video editor", src: "statics/apps/screenshot_kdenlive.png" },
+      { name: "Kdenlive", subtitle: "Easy to use video editor", src: "statics/apps/screenshot_kdenlive.jpg" },
       { name: "GIMP", subtitle: "Replaces Photoshop", src: "statics/apps/screenshot_gimp.jpg" }
     ]
   },
