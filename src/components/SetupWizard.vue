@@ -56,7 +56,7 @@
         prefix="3"
         :done="step > 3"
       >
-        <p>First you have to choose a linux "distribution" and a "desktop environment" to use with that distribution.</p>
+        <p>First you have to choose a GNU/Linux "distribution" and a "desktop environment" to use with that distribution.</p>
       <div class="expandableInfoContainer">
         <q-expansion-item
         dense
@@ -159,7 +159,7 @@
           <li>Insert an empty DVD into your DVD reader.</li>
           <li v-if="user_os === 'Windows'">Right click the downloaded .iso file and select Burn disc image. Select the DVD drive and check "Verify disc after burning". Then press Burn and wait for it to finish.</li>
           <li v-if="user_os === 'macOS'">Double click the disc, then drag the downloaded .iso file into the disc's window, choose File > Burn and wait for it to finish</li>
-          <li>Use a waterproof pencil to label the DVD with the name of your dsitribution and the version number which is in the .iso's filename</li>
+          <li>Use a waterproof pencil to label the DVD with the name of your distribution and the version number which is in the .iso's filename</li>
         </ul>
       </q-step>
 
@@ -169,7 +169,7 @@
           <li>Don't just copy your files but use a backup program for this. Simply copying over files is better than nothing but you should still use a proper backup program or command for reasons explained <a target="_blank" rel="noopener noreferrer" href="https://askleo.com/cant_i_just_copy_everything_instead_of_using_a_backup_program/" style="color: white; font-weight: bold;">here</a></li>
           <li>An external hard drive is probably the most convenient storage device for the backup, but you could also use another internal hard drive or something else that has large enough storage space.</li>
           <li>It's best to disconnect the storage device before you install GNU/Linux so you don't accidentally overwrite it.</li>
-          <li>GNU/Linux doesn't work with all filesystems of storage devices so you might have to change the filesystem of the storage device before you do the backup. This will erase all the data on the storage device. You can do this with the program <a target="_blank" rel="noopener noreferrer" href="https://gparted.org/download.php" style="color: white; font-weight: bold;">GParted</a>. For example select your connected external hard drive and change the filesystem to "NTFS" which also works on GNU/Linux.</li>
+          <li>GNU/Linux doesn't work with all file systems of storage devices so you might have to change the file system of the storage device before you do the backup. This will erase all the data on the storage device. You can do this with the program <a target="_blank" rel="noopener noreferrer" href="https://gparted.org/download.php" style="color: white; font-weight: bold;">GParted</a>. For example select your connected external hard drive and change the file system to "NTFS" which also works on GNU/Linux.</li>
           <div v-if="user_os === 'Windows'">
             <li>If you don't have a backup program already download and install <a target="_blank" rel="noopener noreferrer" href="https://www.uranium-backup.com/uranium-backup-free-download/" style="color: white; font-weight: bold;">Uranium Backup Free</a></li>
             <li>Do a Full Backup of all the data you don't want to lose as described in <a target="_blank" rel="noopener noreferrer" href="https://www.uranium-backup.com/tutorials/configuring-a-files-and-folders-backup/" style="color: white; font-weight: bold;">this tutorial for Uranium Backup</a>. For this simply check "This PC" so that everything is selected when selecting the files to backup.</li>
@@ -179,17 +179,17 @@
             <li>Backup all your data using Apple's TimeMachine.</li>
             <li>You might lose all passwords saved in your browser and other things stored in apps.</li>
           </div>
-          <li>You might also want to backup data on storage devices which have a filesystem that don't work with GNU/Linux. For example usb sticks. But most likely they will work under GNU/Linux. If it is a FAT32 filesystem there might be problems with long filenames. NTFS filesystems work perfectly fine. Ext2, Ext3, and Ext4 filesystems only work properly on GNU/Linux. You can change the filesystem with GParted but will lose all data on the device.</li>
+          <li>You might also want to backup data on storage devices which have a file system that don't work with GNU/Linux. For example usb sticks. But most likely they will work under GNU/Linux. If it is a FAT32 file system there might be problems with long filenames. NTFS file systems work perfectly fine. Ext2, Ext3, and Ext4 file systems only work properly on GNU/Linux. You can change the file system with GParted but will lose all data on the device.</li>
           <li v-if="user_os === 'Windows'">Windows programs like .exe files won't work in GNU/Linux by default. But you usually can make them work by using a program called "Wine".</li>
           <li v-if="user_os === 'macOS'">macOS programs won't work in GNU/Linux.</li>
-          <li>Before you continue verify that the backup worked correctly and that you have backedup all important data: go through some of the folders, check if the filesize of the entire backup is as large as the folders you backedup and check if the backup program had errors.</li>
+          <li>Before you continue verify that the backup worked correctly and that you have backed up all important data: go through some of the folders, check if the file size of the entire backup is as large as the folders you backed up and check if the backup program had errors.</li>
         </ul>
       </q-step>
 
       <q-step :name="6" title="Install GNU/Linux" prefix="6" :done="step > 6">
         <ul>
           <span v-if="user_type === 'Business'"><li>To make sure everything runs fine after roll-out you can test the installation and most things that needs to be working with either a Lice-CD or a virtual machine prior to the roll-out.</li></span>
-          <li>It's not recommended to dual-boot Windows and GNU/Linux: many things can go wrong, it unecessarily makes things more complicated and if you need to run Windows you can do so in a virtual machine. If you still want to have Windows installed somewhere for example to play some games you could install it on a separate hard drive and later make sure it's below the one where GNU/Linux installed on in the boot order (explained in later steps). If you do so don't forget to first disconnect all other drives so that you won't accidentally install it on the wrong partition.</li>
+          <li>It's not recommended to dual-boot Windows and GNU/Linux: many things can go wrong, it unnecessarily makes things more complicated and if you need to run Windows you can do so in a virtual machine. If you still want to have Windows installed somewhere for example to play some games you could install it on a separate hard drive and later make sure it's below the one where GNU/Linux installed on in the boot order (explained in later steps). If you do so don't forget to first disconnect all other drives so that you won't accidentally install it on the wrong partition.</li>
           <!--TODO also include this step for inexperienced users somehow?-->
           <span v-if="user_type !== 'Personal user (inexperienced)'"><li>If you aren't using a prebuilt computer or replaced the hard drive yourself you might want to partition the drive as GPT if it isn't yet. GPT is the successor of MBR, is more robust, supports volumes larger than 2 TB and allows for more partitions. GPT can only be used with UEFI. UEFI is the successor of BIOS and older mainboards might not support it. Go into the BIOS/UEFI settings like described in the steps below and set the <i>boot mode</i> to <i>UEFI only</i> before starting from DVD to install a GNU/Linux - the installer will do the rest so you don't need to partition the drive with GPT yourself. In short you should use GPT and UEFI if possible and whether or not you can do so depends on the mainboard you currently use. If you decide to replace your mainboard you need to make sure your other components - most importantly RAM, CPU and graphics card - are compatible with it.</li></span>
           <li>To install GNU/Linux from DVD you need to make your computer start the DVD before it starts {{user_os}}. This is called booting from DVD.</li>
@@ -200,7 +200,7 @@
           <li>If this does not work you may have to change some BIOS/UEFI settings. You can enter the BIOS or UEFI menu by pressing the key displayed right after starting your computer (likely F2, F12 or Del). You may have to disable <i>Secure Boot</i> or a setting like <i>"Windows 7 Installation"</i>.</li>
           <li>Once KDE neon has started click on "Install neon user" in the upper left</li>
           <li>Go through the installation wizard. <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/y4OWeQZD8h4?t=107" style="color: white;">Here is a video of how</a>.</li>
-          <li>The installation wizard is mostly self-explanatory and you can also skip some steps like connecting to your WiFi. Once you complete step "Disk Setup" data on the selected hard drive will be lost. This is why it is important that you have backedup everything and that you don't select the wrong hard drive. It is recommended to select "Guided - use entire disk and set up encrypted LVM" because this allows you to protect your data with a password which you then have to enter every time you start (boot) your computer.</li>
+          <li>The installation wizard is mostly self-explanatory and you can also skip some steps like connecting to your WiFi. Once you complete step "Disk Setup" data on the selected hard drive will be lost. This is why it is important that you have backed up everything and that you don't select the wrong hard drive. It is recommended to select "Guided - use entire disk and set up encrypted LVM" because this allows you to protect your data with a password which you then have to enter every time you start (boot) your computer.</li>
           <li>If the installer asks you for a user password and a root password for security purposes leave the root password empty so it won't a login as root.</li>
           <li>In step "User Info" select "Require my password to log in" and select a password that's not too short and simple. Make sure you remember your password/s for example by writing it down somewhere.</li>
         </ul>
@@ -212,7 +212,7 @@
           <li>Connect to your WLAN or LAN if you aren't yet by clicking the WiFi icon in bottom right, selecting your WLAN and entering your password. You can configure the connection by clicking the button in the upper right of the box.</li>
           <li>Once you're connected to your WLAN install the latest updates if you haven't yet by clicking the button in the bottom left > Software Center > Updates > Install. If you want to make sure that this works properly or in the case something doesn't work press the button in the bottom left, enter "Terminal" in the search, open the "Konsole", enter this command: <em>sudo apt-get update && sudo apt-get upgrade</em>, press enter and enter your password</li>
           <li>Connect other hardware to your computer if it isn't connected yet like your printer or your graphics card.</li>
-          <li>To get your printer to work click on the button in the bottom left and enter "printer" in the search field > Print Settings. If this does not work go <a target="_blank" rel="noopener noreferrer" href="https://www.howtogeek.com/215235/how-to-install-printer-drivers-on-linux/" style="color: white;">here</a> In short: you could try getting the printer to work by opening <em>localhost:631</em> in the browser and adding it there or by installing drivers from the manufacturer's homepage for the printer. If this does not work you have two options: get a printer that is guaranteed to work with GNU/Linux or <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">ask for help</span>.</li>
+          <li>To get your printer to work click on the button in the bottom left and enter "printer" in the search field > Print Settings. If this does not work go <a target="_blank" rel="noopener noreferrer" href="https://www.howtogeek.com/215235/how-to-install-printer-drivers-on-linux/" style="color: white;">here</a> In short: you could try getting the printer to work by opening <em>localhost:631</em> in the browser (just enter it into the address bar at the top) and adding it there or by installing drivers from the manufacturer's homepage for the printer. If this does not work you have two options: get a printer that is guaranteed to work with GNU/Linux or <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">ask for help</span>.</li>
           <li>If you have a graphics card you might need to install drivers for it.<span v-if="selection_distro === 'kdeneon'"> Press the button in the bottom left, enter "Terminal" in the search, open the "Konsole", enter this command: <em>sudo apt-get install kubuntu-driver-manager && sudo ubuntu-drivers autoinstall</em> and enter your password. Restart once it finished.</span></li>
         </ul>
       </q-step>
@@ -398,7 +398,7 @@ export default {
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian',
-          description: '100% FOSS, run by a large community, very stable and the distribution used on most servers. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
+          description: '100% FOSS, run by a large community and the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions are based and contributors to it adhere to a Social Contract. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'
