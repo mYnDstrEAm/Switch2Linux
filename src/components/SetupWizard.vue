@@ -515,6 +515,7 @@ export default {
   watch : {
     user_os: function(val) {},// Todo
     user_type:function(val) {
+      console.log(val)
       if (val === "Geek (experienced)") {
         this.distributions = [
         {
@@ -559,7 +560,7 @@ export default {
         }
         ]
       }
-      if (val === "School") {
+      else if (val === "School") {
         this.distributions = [
         {
           logo: 'statics/logos_debian_small.png',
