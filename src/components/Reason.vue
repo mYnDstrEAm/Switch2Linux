@@ -136,7 +136,7 @@
             </li>
           </ul>
           <div
-            class="q-pa-md row items-start q-gutter-md"
+            class="q-pa-md row items-start q-gutter-md source_background_details_tiles_container"
             style="overflow: visible;"
             v-if="
               reason.source_background_details_tiles !== undefined &&
@@ -148,7 +148,7 @@
               v-for="source_background_details_tile in reason.source_background_details_tiles"
               :key="source_background_details_tile.title"
               class="source_background_details_tile text-white tooltip col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3"
-              style="background-color: #2B2B2B;overflow: visible;"
+              style="background-color: #2B2B2B;overflow: visible; padding: 10px;"
             >
               <!-- <span
                 class="tooltiptext"
@@ -173,9 +173,9 @@
                 >
                   <q-icon
                     :name="source_background_details_tile.icon"
-                    style="font-size:20pt; text-align: center;"
+                    style="font-size: 30pt; text-align: center;"
                   />
-                  <div class="tile_title">
+                  <div class="tile_title" style="padding-bottom: 7px;">
                     {{ source_background_details_tile.title }}
                   </div>
                 </q-card-section>
@@ -183,7 +183,7 @@
                 <q-card-section
                   style="word-wrap: normal; padding-bottom: 3px; padding-top: 3px; text-align: center;"
                 >
-                  <div class="row justify-center" style="text-align: center;">
+                  <div class="row justify-center" style="text-align: center; padding-top: 7px;">
                     <q-img
                       class=""
                       :src="source_background_details_tile.image"
@@ -206,22 +206,22 @@
                 <q-carousel
                   class="qcarousel_apps"
                   v-model="slide"
+                  navigation
+                  arrows
                   animated
                   infinite
                   autoplay
                   transition-prev="slide-right"
                   transition-next="slide-left"
                 >
-                  <!-- navigation
-                  arrows -->
                   <q-carousel-slide
                     v-for="source_background_details_slideshow in reason.source_background_details_slideshow"
                     :key="source_background_details_slideshow"
-                    :name="source_background_details_slideshow"
-                    :img-src="source_background_details_slideshow">
+                    :name="source_background_details_slideshow.name"
+                    :img-src="source_background_details_slideshow.src">
                     <div class="absolute-bottom custom-caption">
-                      <div class="text-h2">Thunderbird</div>
-                      <div class="text-subtitle1">Replaces: Outlook</div>
+                      <div class="text-h2">{{source_background_details_slideshow.name}}</div>
+                      <div class="text-subtitle1">{{source_background_details_slideshow.subtitle}}</div>
                     </div>
                   </q-carousel-slide>
                 </q-carousel>

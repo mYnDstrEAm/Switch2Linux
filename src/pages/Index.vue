@@ -354,6 +354,24 @@ export default {
           '</ul>'
           // thunderbird icon: https://id.wikipedia.org/wiki/Berkas:Mozilla_Thunderbird_logo.png
           // thunderbird screenshot: https://commons.wikimedia.org/wiki/File:Thunderbird_60_Windows.png
+          // libreoffice icon: https://en.wikipedia.org/wiki/File:LibreOffice_4.0_Main_Icon.svg
+          // libreoffice screenshot: https://commons.wikimedia.org/wiki/File:LibreOffice_6.0.6.2_Writer.png
+          // Okular icon: https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-okular.svg
+          // Dolphin icon: https://commons.wikimedia.org/wiki/File:Dolphin_icon_in_Plasma_5.svg
+          // Gwenview icon: https://en.wikipedia.org/wiki/File:Gwenview_Icon.svg
+          // GIMP icon: https://commons.wikimedia.org/wiki/File:The_GIMP_icon_-_gnome.svg
+          // GIMP screenshot: https://en.wikipedia.org/wiki/File:GIMP_2.10.jpg
+          // Kdenlive icon: https://en.wikipedia.org/wiki/File:Kdenlive_new_logo.png (edited)
+          // Kdenlive screenshot: https://de.wikipedia.org/wiki/Datei:Kdenlive_19.04.2_English.png
+          // MPV icon: https://commons.wikimedia.org/wiki/File:Mpv_icon.png
+          // K3b icon: https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-k3b.svg
+          // Calibre icon: https://en.wikipedia.org/wiki/File:Calibre_logo_3.png
+          // Ark icon: https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-ark.svg
+          // Aqemu icon: https://sourceforge.net/projects/aqemu/
+          // Firefox icon: https://commons.wikimedia.org/wiki/File:Firefox_logo,_2019.svg
+          // Visual Studio Code icon: https://en.wikipedia.org/wiki/File:Visual_Studio_Code_1.35_icon.svg
+          // Remmina icon: https://en.wikipedia.org/wiki/File:Org.remmina.Remmina.png
+          // BackInTime: https://github.com/KDE/breeze-icons/blob/2e86786290c35cbb3fe80d6e132985a027ec5d84/icons-dark/actions/32/document-save.svg
       }).onOk(() => {})
     }
   },
