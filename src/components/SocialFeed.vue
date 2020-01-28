@@ -19,28 +19,26 @@
             :key="item.guid"
           >
             <div
-              style="border: 1px solid orange"
-              v-if="
-                item.feed_name === 'reddit' &&
-                  item.categories[0] !== undefined &&
-                  item.categories[0] !== null
-              "
+              class="reddit_post"
+              v-if="item.feed_name === 'reddit'"
             >
               <p>{{ item.title }}</p>
-              <a :href="item.link" style="padding:0px !important; margin: 0px;"
+              <a
+                :href="item.link"
+                style="padding:0px !important; margin: 0px;"
                 >{{ item.author }} on /r/{{ item.categories[0] }}</a
               >
               <p style="font-size: 8pt; opacity: 0.7;text-align:left;">
                 ({{ dateFormat1(item.pubDate) }})
               </p>
             </div>
-
             <div
-              style="border: 1px solid blue"
+              class="tweet"
               v-else-if="item.feed_name === 'twitter'"
             >
-              <div v-html="item.content"></div>
+              <div v-html="sanitizedSocialFeedHtml(item)"></div>
             </div>
+
           </q-carousel-slide>
         </q-carousel>
         <div
@@ -69,7 +67,6 @@
             <q-item-section>
               <div
                 class="reddit_post"
-                style="border: 1px solid orange"
                 v-if="item.feed_name === 'reddit'"
               >
                 <p>{{ item.title }}</p>
@@ -84,10 +81,10 @@
               </div>
               <div
                 class="tweet"
-                style="border: 1px solid blue"
                 v-else-if="item.feed_name === 'twitter'"
               >
-                <div v-html="item.content"></div>
+                <!-- TODO: load image of pic.twitter.com -->
+                <div v-html="sanitizedSocialFeedHtml(item)"></div>
               </div>
             </q-item-section>
           </q-item>
@@ -114,14 +111,14 @@ export default {
       isSocialFeedExpanded: false,
       settings: {
         feeds: [
-          // {
-          //   name: "twitter",
-          //   url: "..."
-          // },
-          // {
-          //   name: "reddit",
-          //   url: "https://www.reddit.com/search.xml?q=Switch2Linux&sort=new"
-          // }
+          {
+            name: "twitter",
+            url: "https://rss.app/feeds/B0K98MseQ2AU4KRa.xml"
+          },
+          {
+            name: "reddit",
+            url: "https://www.reddit.com/search.xml?q=Switch2Linux&sort=new"
+          }
         ]
       },
       newFeed: ""
@@ -137,6 +134,9 @@ export default {
         .get(`${API}${encodeURIComponent(url)}`)
         .then(res => res.data);
       return x;
+    },
+    sanitizedSocialFeedHtml(html) {
+      return this.$sanitize(html.content);
     },
     addFeed(url) {
       if (url.trim().length === 0) return;
@@ -160,12 +160,16 @@ export default {
               .filter(item => {
                 return (
                   (item.feed_name === "reddit" &&
-                    item.item.categories[0] !== undefined &&
-                    item.categories[0] !== null) ||
+                    item.categories[0] !== undefined &&
+                    item.categories[0] !== null &&
+                    item.categories[0] !== "jw_mentions" &&
+                    item.categories[0] !== "Layer" &&
+                    !item.author.endsWith("Bot")) ||
                   item.feed_name === "twitter"
                 );
               })
               .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+              // console.log(this.items)
           })
           .finally(() => {
             this.loading = false;

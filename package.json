@@ -17,6 +17,7 @@
     "dateformat": "^3.0.3",
     "quasar": "^1.8.2",
     "vue-i18n": "^8.15.3",
+    "vue-sanitize": "^0.2.0",
     "vue-script2": "^2.1.0",
     "vue-twitter": "^0.1.0"
   },

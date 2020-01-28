@@ -85,29 +85,27 @@
     <div
       style="margin: auto; padding-bottom: 20px; background-color: #245f5e;"
     >
-      <table style="margin: auto;"><tr>
-        <td>
+      <div class="row justify-center">
       <q-icon
         name="ion-logo-github"
         class="logo_icon"
         @click="openUrl('https://github.com/mYnDstrEAm/Switch2Linux')"
         style="cursor: pointer;"
-      ></q-icon></td><td>
+      ></q-icon>
       <q-icon
         name="ion-logo-reddit"
         class="logo_icon"
         @click="openUrl('https://www.reddit.com/search?q=Switch2Linux&restrict_sr=')"
         style="cursor: pointer;"
-      ></q-icon></td><td>
+      ></q-icon>
       <q-icon
         name="ion-logo-twitter"
         class="logo_icon"
         @click="openUrl('https://twitter.com/hashtag/Switch2Linux')"
         style="cursor: pointer;"
-      ></q-icon></td><td>
+      ></q-icon>
       <div style="position: absolute; right: 0px; text-align: right; padding-right: 10px; cursor: pointer;"><p @click="showImageSources()">Image sources</p></div></td>
-      </tr>
-      </table>
+      </div>
     </div>
     <SocialFeed></SocialFeed>
   </q-page>
