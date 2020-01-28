@@ -189,7 +189,7 @@
       <q-step :name="6" title="Install GNU/Linux" prefix="6" :done="step > 6">
         <ul>
           <span v-if="user_type === 'Business'"><li>To make sure everything runs fine after roll-out you can test the installation and most things that needs to be working with either a Lice-CD or a virtual machine prior to the roll-out.</li></span>
-          <li>It's not recommended to dual-boot Windows and GNU/Linux: many things can go wrong, it unnecessarily makes things more complicated and if you need to run Windows you can do so in a virtual machine. If you still want to have Windows installed somewhere for example to play some games you could install it on a separate hard drive and later make sure it's below the one where GNU/Linux installed on in the boot order (explained in later steps). If you do so don't forget to first disconnect all other drives so that you won't accidentally install it on the wrong partition.</li>
+          <li>It's not recommended to dual-boot Windows and GNU/Linux: many things can go wrong, it unnecessarily makes things more complicated and if you need to run Windows you can do so in a virtual machine. If you still want to have Windows installed somewhere for example to play some games you could install it on a separate hard drive or partition and later make sure it's below the one where GNU/Linux installed on in the boot order (explained in later steps). If you do so don't forget to first disconnect all other drives so that you won't accidentally install it on the wrong partition.</li>
           <!--TODO also include this step for inexperienced users somehow?-->
           <span v-if="user_type !== 'Personal user (inexperienced)'"><li>If you aren't using a prebuilt computer or replaced the hard drive yourself you might want to partition the drive as GPT if it isn't yet. GPT is the successor of MBR, is more robust, supports volumes larger than 2 TB and allows for more partitions. GPT can only be used with UEFI. UEFI is the successor of BIOS and older mainboards might not support it. Go into the BIOS/UEFI settings like described in the steps below and set the <i>boot mode</i> to <i>UEFI only</i> before starting from DVD to install a GNU/Linux - the installer will do the rest so you don't need to partition the drive with GPT yourself. In short you should use GPT and UEFI if possible and whether or not you can do so depends on the mainboard you currently use. If you decide to replace your mainboard you need to make sure your other components - most importantly RAM, CPU and graphics card - are compatible with it.</li></span>
           <li>To install GNU/Linux from DVD you need to make your computer start the DVD before it starts {{user_os}}. This is called booting from DVD.</li>
@@ -418,6 +418,22 @@ export default {
           enabled: false,
           website: 'https://kubuntu.org/',
           selectionKey: 'kubuntu'
+        },
+        {
+          logo: 'statics/logos_linuxmint.png',
+          name: 'Linux Mint',
+          description: '',
+          enabled: false,
+          website: 'https://linuxmint.com/',
+          selectionKey: 'linuxmint'
+        },
+        {
+          logo: 'statics/logos_ubuntu.png',
+          name: 'Ubuntu',
+          description: '',
+          enabled: false,
+          website: 'https://ubuntu.com/',
+          selectionKey: 'ubuntu'
         }
       ],
       desktopEnvironments: [
@@ -524,6 +540,22 @@ export default {
           enabled: false,
           website: 'https://kubuntu.org/',
           selectionKey: 'kubuntu'
+        },
+        {
+          logo: 'statics/logos_linuxmint.png',
+          name: 'Linux Mint',
+          description: 'Not recommended',
+          enabled: false,
+          website: 'https://linuxmint.com/',
+          selectionKey: 'linuxmint'
+        },
+        {
+          logo: 'statics/logos_ubuntu.png',
+          name: 'Ubuntu',
+          description: 'Not recommended',
+          enabled: false,
+          website: 'https://ubuntu.com/',
+          selectionKey: 'ubuntu'
         }
         ]
       }
@@ -552,6 +584,22 @@ export default {
           enabled: false,
           website: 'https://kubuntu.org/',
           selectionKey: 'kubuntu'
+        },
+        {
+          logo: 'statics/logos_linuxmint.png',
+          name: 'Linux Mint',
+          description: '',
+          enabled: false,
+          website: 'https://linuxmint.com/',
+          selectionKey: 'linuxmint'
+        },
+        {
+          logo: 'statics/logos_ubuntu.png',
+          name: 'Ubuntu',
+          description: '',
+          enabled: false,
+          website: 'https://ubuntu.com/',
+          selectionKey: 'ubuntu'
         }
         ]
       } else {
@@ -579,6 +627,22 @@ export default {
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'
+        },
+        {
+          logo: 'statics/logos_linuxmint.png',
+          name: 'Linux Mint',
+          description: '',
+          enabled: false,
+          website: 'https://linuxmint.com/',
+          selectionKey: 'linuxmint'
+        },
+        {
+          logo: 'statics/logos_ubuntu.png',
+          name: 'Ubuntu',
+          description: '',
+          enabled: false,
+          website: 'https://ubuntu.com/',
+          selectionKey: 'ubuntu'
         }
       ]
       }
