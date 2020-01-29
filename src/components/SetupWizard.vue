@@ -274,7 +274,55 @@
           >Tweet about it</a>
         </q-btn>
 
-        <p>If you need help you can find help in places such as <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">these</span> (swipe card).</p>
+        <div class="expandableInfoContainer">
+          <q-expansion-item
+          dense
+          dense-toggle
+          expand-separator
+          label="Show places to find help"
+          class="expandableInfo"
+          >
+          <q-card>
+            <q-card-section class="placesToGetHelpBox">
+              <!-- TODO: add useful commands box? -->
+              Before you ask a question try to search the web if somebody has solved your problem already.<br/>Often answers can then be found on a StackExchange site. If you don't find an answer post a new question and give a good title and tags.<br/>If you don't know what to search for or only need a very short info or a very quick answer ask in a Live Chat.
+              <ul v-if="user_type !== 'Personal (inexperienced)'">
+                <li v-if="selection_distro === 'ubuntu'"><a target="_blank" rel="noopener noreferrer" href=https://askubuntu.com/>AskUbuntu Stack Exchange<br/>Questions related to Ubuntu</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href=https://unix.stackexchange.com/>Unix & Linux Stack Exchange<br/>Recommended place to ask about Linux-related things</a></li>
+                <li v-if="selection_distro === 'debian'"><a target="_blank" rel="noopener noreferrer" href=irc://irc.debian.org/debian/>#Debian IRC<br/>Live chat for help with Debian</a></li>
+                <li v-if="selection_distro !== 'ubuntu'"><a target="_blank" rel="noopener noreferrer" href=https://askubuntu.com/>AskUbuntu Stack Exchange<br/>Questions related to Ubuntu, answers typically also apply to Debian as Ubuntu is based on Debian</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href=https://superuser.com/>Super User Stack Exchange<br/>More general questions such as about hardware</a></li>
+                <li v-if="selection_de === 'kde'"><a target="_blank" rel="noopener noreferrer" href=https://kde.org/support/>Support for KDE software</a></li>
+                <li :class="{ unrecommendedHelpPlace: user_type === ('Geek (experienced)' || user_type === 'Developer') }"><a target="_blank" rel="noopener noreferrer" href=https://itsfoss.com/use-windows-applications-linux/>#Linux-Help<br/>One of many live chats where you can find help</a></li>
+                <li :class="{ unrecommendedHelpPlace: user_type === ('Geek (experienced)' || user_type === 'Developer') }"><a target="_blank" rel="noopener noreferrer" href=https://www.reddit.com/r/linux4noobs/>/r/Linux4Noobs<br/>Reddit page for Linux questions</a></li>
+                <li :class="{ unrecommendedHelpPlace: user_type === ('Geek (experienced)' || user_type === 'Developer') }"><a target="_blank" rel="noopener noreferrer" href=https://www.reddit.com/r/linuxquestions//>/r/LinuxQuestions<br/>Reddit page for Linux questions</a></li>
+                <li class="specialHelpPlace"><a target="_blank" rel="noopener noreferrer" href=https://www.reddit.com/r/linux_gaming/wiki/index#wiki_getting_tech_support>Gaming: /r/linux_gaming<br/>Help for getting a game/gaming to work (try to use Lutris install scripts!)</a></li>
+                <li class="specialHelpPlace"><a target="_blank" rel="noopener noreferrer" href=https://www.gamingonlinux.com/irc/>Gaming: GamingOnLinux IRC<br/>Live-chat help for getting a game/gaming to work (try to use Lutris install scripts!)</a></li>
+              </ul>
+              <ul v-if="user_type === 'Personal (inexperienced)'">
+                <li v-if="selection_distro === 'debian'"><a target="_blank" rel="noopener noreferrer" href=irc://irc.debian.org/debian/>#Debian IRC<br/>Live chat for help with Debian</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href=https://itsfoss.com/use-windows-applications-linux/>#Linux-Help<br/>One of many live chats where you can find help</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href=https://www.reddit.com/r/linux4noobs/>/r/Linux4Noobs<br/>Reddit page for Linux questions</a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href=https://www.reddit.com/r/linuxquestions//>/r/LinuxQuestions<br/>Reddit page for Linux questions</a></li>
+                <li class="unrecommendedHelpPlace"><a target="_blank" rel="noopener noreferrer" href=https://unix.stackexchange.com/>Unix & Linux Stack Exchange<br/>Recommended place to ask about Linux-related things - but you should only ask questions that have not been asked before (search the web thoroughly)</a></li>
+                <li class="unrecommendedHelpPlace"><a target="_blank" rel="noopener noreferrer" href=https://askubuntu.com/>AskUbuntu Stack Exchange<br/>Questions related to Ubuntu, answers typically also apply to Debian as Ubuntu is based on Debian - only ask questions that have not been asked before (search the web thoroughly)</a></li>
+                <li class="unrecommendedHelpPlace"><a target="_blank" rel="noopener noreferrer" href=https://superuser.com/>Super User Stack Exchange<br/>More general questions such as about hardware - only ask questions that have not been asked before (search the web thoroughly)</a></li>
+                <li class="unrecommendedHelpPlace" v-if="selection_de === 'kde'"><a target="_blank" rel="noopener noreferrer" href=https://kde.org/support/>Support for KDE software</a></li>
+                <li class="specialHelpPlace"><a target="_blank" rel="noopener noreferrer" href=https://www.reddit.com/r/linux_gaming/wiki/index#wiki_getting_tech_support>Gaming: /r/linux_gaming<br/>Help for getting a game/gaming to work (try to use Lutris install scripts!)</a></li>
+                <li class="specialHelpPlace"><a target="_blank" rel="noopener noreferrer" href=https://www.gamingonlinux.com/irc/>Gaming: GamingOnLinux IRC<br/>Live-chat help for getting a game/gaming to work (try to use Lutris install scripts!)</a></li>
+              </ul>
+              Not for asking questions:
+              <ul>
+                <li v-if="selection_distro === 'debian'"><a target="_blank" rel="noopener noreferrer" href=https://www.debian.org/releases/stable/amd64/index.en.html/>Debian Documentation: Installation Guide</a></li>
+                <li v-if="selection_distro === 'debian'"><a target="_blank" rel="noopener noreferrer" href=https://www.debian.org/doc/manuals/debian-faq//>Debian Documentation: FAQ</a></li>
+                <li v-if="selection_de === 'kde' || selection_de === ''"><a target="_blank" rel="noopener noreferrer" href=https://docs.kde.org//>KDE Documentation</a></li>
+                <li v-if="user_type !== 'Personal (inexperienced)'">If you need help for a command enter <i>man command</i> in the terminal (Konsole)</li>
+              </ul>
+            </q-card-section>
+          </q-card>
+        </q-expansion-item>
+      </div>
+        <!-- <p>If you need help you can find help in places such as <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">these</span> (swipe card).</p> -->
       </q-step>
 
       <template v-slot:navigation>

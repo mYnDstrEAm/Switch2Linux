@@ -157,7 +157,7 @@ export default {
       main_text: "There is a huge community of people willing to help you use free software",
       text: "Volunteer-support also cuts maintenance costs. Most problems have already been solved and you only need to use a search engine to find out how. But if you need help there are many sites where people respond to your questions like the StackExchange sites.<br/>Swipe this card to see places where to find help.</b>",
       image_src: "statics/reasons_support.png",
-      source_background_details: ["<a href=https://unix.stackexchange.com/>Unix & Linux Stack Exchange - Recommended place to ask about Linux-related things</a>",
+      source_background_details: ["<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://unix.stackexchange.com/>Unix & Linux Stack Exchange - Recommended place to ask about Linux-related things</a>",
         "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://askubuntu.com/>AskUbuntu Stack Exchange - Questions related to Ubuntu, answers typically also apply to Debian as Ubuntu is based on Debian</a>",
         "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://superuser.com/>Super User Stack Exchange - More general questions such as about hardware</a>",
         "<a target=\"_blank\" rel=\"noopener noreferrer\" href=https://itsfoss.com/use-windows-applications-linux/>#Linux-Help - One of many live chats where you can find help</a>",
