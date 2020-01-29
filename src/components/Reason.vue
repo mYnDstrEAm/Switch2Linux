@@ -146,9 +146,9 @@
           >
             <q-card
               v-for="source_background_details_tile in reason.source_background_details_tiles"
-              :key="source_background_details_tile.title"
+              :key="source_background_details_tile.name"
               class="source_background_details_tile text-white tooltip col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3"
-              style="background-color: #2B2B2B;overflow: visible; padding: 10px;"
+              :class="{ activeTile: slide === source_background_details_tile.title }"
             >
               <!-- <span
                 class="tooltiptext"
@@ -216,8 +216,8 @@
                 >
                   <q-carousel-slide
                     v-for="source_background_details_slideshow in reason.source_background_details_slideshow"
-                    :key="source_background_details_slideshow"
-                    :name="source_background_details_slideshow.name"
+                    :key="source_background_details_slideshow.app_slot"
+                    :name="source_background_details_slideshow.app_slot"
                     :img-src="source_background_details_slideshow.src">
                     <div class="absolute-bottom custom-caption">
                       <div class="text-h2">{{source_background_details_slideshow.name}}</div>
@@ -252,7 +252,7 @@ export default {
   },
   data() {
     return {
-      slide: "statics/kdeneon_1.jpg",
+      slide: "Email",
       panel: "front",
       isWindowSmallBool: false
     };
@@ -273,6 +273,7 @@ export default {
   },
   methods: {
     slidePanel() {
+      console.log(this.slide)
       this.$refs.reason_panels.next();
     },
     isWindowSmall() {
