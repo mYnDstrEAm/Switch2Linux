@@ -41,6 +41,7 @@ $color_primary: #363B41
 
 .slideshow_row_2
     width: 100%
+    margin-left: 0px !important
 
 .qcarousel_apps,
 .q-panel,
@@ -50,19 +51,19 @@ $color_primary: #363B41
     background-repeat: no-repeat
     padding: 0px !important
 
-.qcarousel_apps,
 .slideshow_container_2
+    margin: auto
+    width: 100%
+
+.qcarousel_apps
     min-width: 300px
-    height: 600px
+    height: calc(300px + 12vw + 12vh)
     padding: 0px
     left: 0px
     top: 0px
     border: 0px
     background-size: contain !important
     background-repeat: no-repeat
-
-.slideshow_container_2
-    width: 100%
 
 .q-carousel__slides-container::-webkit-scrollbar,
 .q-panel::-webkit-scrollbar
@@ -75,11 +76,20 @@ $color_primary: #363B41
     background-color: rgba(54, 60, 97, 0.5)
 
 .custom-caption
-  text-align: center
-  padding: 12px
-  padding-bottom: 35px
-  color: white
-  background-color: rgba(0, 0, 0, .3)
+    text-align: center
+    color: white
+    background-color: rgba(0, 0, 0, .3)
+
+.text-h2
+    font-size: calc(2vw + 2vh + 10px)
+
+.text-subtitle1
+    font-size: calc(0.4vw + 0.4vh + 12px)
+
+@media (min-width: 600px)
+    .custom-caption
+        padding: 12px
+        padding-bottom: 35px
 
 /* #endregion */
 

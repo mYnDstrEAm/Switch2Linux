@@ -30,6 +30,10 @@
           />
         </div>
       </div>
+      <q-stepper-navigation>
+        <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+        <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+      </q-stepper-navigation>
       </q-step>
 
       <q-step
@@ -48,6 +52,10 @@
             />
           </div>
         </div>
+        <q-stepper-navigation>
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
       </q-step>
 
       <q-step
@@ -150,6 +158,10 @@
             </template>
           </q-table>
         </div>
+        <q-stepper-navigation>
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
       </q-step>
 
       <q-step
@@ -166,6 +178,10 @@
           <li v-if="user_os === 'macOS'">Double click the disc, then drag the downloaded .iso file into the disc's window, choose File > Burn and wait for it to finish</li>
           <li>Use a waterproof pencil to label the DVD with the name of your distribution and the version number which is in the .iso's filename</li>
         </ul>
+        <q-stepper-navigation>
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
       </q-step>
 
       <q-step :name="5" title="Backup your data" prefix="5" :done="step > 5">
@@ -189,6 +205,10 @@
           <li v-if="user_os === 'macOS'">macOS programs won't work in GNU/Linux.</li>
           <li>Before you continue verify that the backup worked correctly and that you have backed up all important data: go through some of the folders, check if the file size of the entire backup is as large as the folders you backed up and check if the backup program had errors.</li>
         </ul>
+        <q-stepper-navigation>
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
       </q-step>
 
       <q-step :name="6" title="Install GNU/Linux" prefix="6" :done="step > 6">
@@ -209,6 +229,10 @@
           <li>If the installer asks you for a user password and a root password for security purposes leave the root password empty so it won't a login as root.</li>
           <li>In step "User Info" select "Require my password to log in" and select a password that's not too short and simple. Make sure you remember your password/s for example by writing it down somewhere.</li>
         </ul>
+        <q-stepper-navigation>
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
       </q-step>
 
       <q-step :name="7" title="Install drivers and updates" prefix="7" :done="step > 7">
@@ -221,6 +245,10 @@
           <li>To get your printer to work click on the button in the bottom left and enter "printer" in the search field > Print Settings. If this does not work go <a target="_blank" rel="noopener noreferrer" href="https://www.howtogeek.com/215235/how-to-install-printer-drivers-on-linux/" style="color: white;">here</a> In short: you could try getting the printer to work by opening <em>localhost:631</em> in the browser (just enter it into the address bar at the top) and adding it there or by installing drivers from the manufacturer's homepage for the printer. If this does not work you have two options: get a printer that is guaranteed to work with GNU/Linux or <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">ask for help</span>.</li>
           <li>If you have a graphics card you might need to install drivers for it.<span v-if="selection_distro === 'kdeneon'"> Press the button in the bottom left, enter "Terminal" in the search, open the "Konsole", enter this command: <em>sudo apt-get install kubuntu-driver-manager && sudo ubuntu-drivers autoinstall</em> and enter your password. Restart once it finished.</span></li>
         </ul>
+        <q-stepper-navigation>
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
       </q-step>
 
       <q-step :name="8" title="Install needed software" prefix="8" :done="step > 8">
@@ -251,6 +279,10 @@
           <li>Your software manager in KDE neon is <a target="_blank" rel="noopener noreferrer" href=https://userbase.kde.org/Discover style="color: white;">Discover</a>. But it doesn't yet work with packages so you also have a second software-manager "Apper". You can open them by entering the name in the search after pressing the button in the bottom left. To install something simply enter the name in the search bar of the software manager, press install and enter your password. The software manager is also used to do updates for all of your software.</li>
           <li>Never run software as root. Apps should be installed via your software manager only except if it's not available in the "repositories" it has configured.</li>
         </ul>
+        <q-stepper-navigation>
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
       </q-step>
       <q-step :name="9" title="Configure your system" prefix="9" :done="step > 9">
         <ul>
@@ -268,6 +300,10 @@
           <li>To configure your system to look like Windows or macOS or like in other screenshots swipe <span @click="scrollToElement('reason_9')" style="text-decoration: underline; cursor: pointer;">this card</span>.</li>
           <span v-if="user_type === 'Developer' || user_type === 'Geek (experienced)' || user_type === 'Business' || user_type === 'School' || user_type === 'Public administration'"><li>If you're looking for a firewall use nftables. Likely at some point an easy to use and fully working GUI for it will be build. As antivirus install rkhunter and ClamAV.</li></span>
         </ul>
+        <q-stepper-navigation>
+          <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
+          <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
+        </q-stepper-navigation>
       </q-step>
       <q-step :name="10" title="Finish" prefix="10">
         <p>Congratulations for switching to GNU/Linux!</p>
@@ -329,14 +365,13 @@
         </q-expansion-item>
       </div>
         <!-- <p>If you need help you can find help in places such as <span @click="scrollToElement('reason_13')" style="text-decoration: underline; cursor: pointer;">these</span> (swipe card).</p> -->
-      </q-step>
-
       <template v-slot:navigation>
         <q-stepper-navigation>
           <q-btn v-if="step < 10" @click="wizardStepForward()" color="primary" :label="step === 9 ? 'Finish' : 'Continue'" />
           <q-btn v-if="step > 1" flat color="primary" @click="wizardStepBack()" label="Back" class="q-ml-sm" />
         </q-stepper-navigation>
       </template>
+      </q-step>
     </q-stepper>
   </div>
 </template>
