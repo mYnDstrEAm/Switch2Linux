@@ -67,7 +67,8 @@
       >
         <q-card>
           <q-card-section>
-          A Linux distribution is a specific GNU/Linux operating system that bundles various software with the Linux kernel and GNU software. Many such distributions exist and this page will recommend the most prospectful, used and user-friendly ones and help you decide which one to pick.
+          A Linux distribution is a specific GNU/Linux operating system that bundles various software with the Linux kernel and GNU software.
+          Many such distributions exist and this page will recommend the most prospectful, used and user-friendly ones and help you decide which one to pick.
           </q-card-section>
         </q-card>
       </q-expansion-item>
@@ -82,7 +83,10 @@
       >
         <q-card>
           <q-card-section>
-          Each distribution is used with a "desktop environment" which is software for the graphical user interface like windows, icons and related functionalities. Many such desktop environments exist and this page will again recommend the most prospectful, used and user-friendly ones.
+          Each distribution is used with a "desktop environment" which is software for the graphical user interface.
+          The graphical user interface is what the user sees on the screen and interacts with: like windows, icons and related functionalities.
+          Many such desktop environments exist and this page will, again, recommend the most prospectful, used and user-friendly ones.
+          The desktop environments you can choose depends on the distribution you choose. You have to select a desktop environment from the distribution's options during its installation.
           </q-card-section>
         </q-card>
       </q-expansion-item>
@@ -135,7 +139,7 @@
                   :src="props.row.logo"/>
                 </q-td>
                 <q-td key="name" :props="props" style="text-align: left; width: 100px; font-weight: bold;">{{ props.row.name }}</q-td>
-                <q-td key="description" :props="props" style="text-align: left; white-space: normal; min-width: 300px;">{{ props.row.description }}</q-td>
+                <q-td key="description" :props="props" style="text-align: left; white-space: normal; min-width: 300px;"><span v-html="props.row.description"></span></q-td>
                 <q-td key="website" :props="props" style="text-align: right; width: 100px;">
                   <a target="_blank" rel="noopener noreferrer" :href="props.row.website" style="color: white; padding-right: 20px;">Website</a>
                 </q-td>
@@ -154,10 +158,11 @@
         prefix="4"
         :done="step > 4">
         <ul style="text-align: left;">
-          <li>Instead of a DVD you can also use an usb flash drive with Rufus: <a target="_blank" rel="noopener noreferrer" href="https://www.howtogeek.com/howto/linux/create-a-bootable-ubuntu-usb-flash-drive-the-easy-way/" style="color: white; font-weight: bold;">here's how</a>.</li>
+          <li v-if="user_os === 'Windows'">Instead of a DVD you can also use an usb flash drive with "Rufus": <a target="_blank" rel="noopener noreferrer" href="https://www.howtogeek.com/howto/linux/create-a-bootable-ubuntu-usb-flash-drive-the-easy-way/" style="color: white; font-weight: bold;">here's how</a>.</li>
+          <li v-if="user_os === 'macOS'">Instead of a DVD you can also use an usb flash drive: <a target="_blank" rel="noopener noreferrer" href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos#0" style="color: white; font-weight: bold;">here's how</a>. Just use the .iso file you downloaded earlier and not the Ubuntu .iso. It should work the same for distributions other than Ubuntu.</li>
           <li>Download the .iso file of your selected distribution (KDE neon): <a target="_blank" rel="noopener noreferrer" href="https://neon.kde.org/download" style="color: white; font-weight: bold;">here</a> by clicking on the button "User Edition Live/Install Image" on the left.</li>
           <li>Insert an empty DVD into your DVD reader.</li>
-          <li v-if="user_os === 'Windows'">Right click the downloaded .iso file and select Burn disc image. Select the DVD drive and check "Verify disc after burning". Then press Burn and wait for it to finish.</li>
+          <li v-if="user_os === 'Windows'">Right click the downloaded .iso file in your Downloads folder and select Burn disc image. Select the DVD drive and check "Verify disc after burning". Then press Burn and wait for it to finish.</li>
           <li v-if="user_os === 'macOS'">Double click the disc, then drag the downloaded .iso file into the disc's window, choose File > Burn and wait for it to finish</li>
           <li>Use a waterproof pencil to label the DVD with the name of your distribution and the version number which is in the .iso's filename</li>
         </ul>
@@ -166,7 +171,7 @@
       <q-step :name="5" title="Backup your data" prefix="5" :done="step > 5">
         <ul>
           <li>Do a complete backup of all your data or all the data you want to keep.</li>
-          <li>Don't just copy your files but use a backup program for this. Simply copying over files is better than nothing but you should still use a proper backup program or command for reasons explained <a target="_blank" rel="noopener noreferrer" href="https://askleo.com/cant_i_just_copy_everything_instead_of_using_a_backup_program/" style="color: white; font-weight: bold;">here</a></li>
+          <li>Don't just copy your files but use a backup program for this. Simply copying over files is better than nothing but you should still use a proper backup program (or command) for reasons explained <a target="_blank" rel="noopener noreferrer" href="https://askleo.com/cant_i_just_copy_everything_instead_of_using_a_backup_program/" style="color: white; font-weight: bold;">here</a>.</li>
           <li>An external hard drive is probably the most convenient storage device for the backup, but you could also use another internal hard drive or something else that has large enough storage space.</li>
           <li>It's best to disconnect the storage device before you install GNU/Linux so you don't accidentally overwrite it.</li>
           <li>GNU/Linux doesn't work with all file systems of storage devices so you might have to change the file system of the storage device before you do the backup. This will erase all the data on the storage device. You can do this with the program <a target="_blank" rel="noopener noreferrer" href="https://gparted.org/download.php" style="color: white; font-weight: bold;">GParted</a>. For example select your connected external hard drive and change the file system to "NTFS" which also works on GNU/Linux.</li>
@@ -209,6 +214,7 @@
       <q-step :name="7" title="Install drivers and updates" prefix="7" :done="step > 7">
         <p>You might have to enter your password before making changes</p>
         <ul>
+          <li v-if="selection_distro === 'debian'">For the installation of drivers under Debian you likely need to enable contrib and non-free package sources in your package-manager except if you bought your hardware with the intention of running only free software drivers. They are disabled by default because Debian users don't want to install non-free software. You can remove these package sources after you installed your drivers. To do this open the following file with your text editor: <i>/etc/apt/sources.list</i> and in all places where it says <i>stable main</i> also add <i> contrib non-free</i> behind it and save the file (enter your password when it asks you to). Then in your package manager (for example Apper) click on update and you should be able to find your drivers there by searching. A common driver is <i>firmware-iwlwifi</i> for WLAN.</li>
           <li>Connect to your WLAN or LAN if you aren't yet by clicking the WiFi icon in bottom right, selecting your WLAN and entering your password. You can configure the connection by clicking the button in the upper right of the box.</li>
           <li>Once you're connected to your WLAN install the latest updates if you haven't yet by clicking the button in the bottom left > Software Center > Updates > Install. If you want to make sure that this works properly or in the case something doesn't work press the button in the bottom left, enter "Terminal" in the search, open the "Konsole", enter this command: <em>sudo apt-get update && sudo apt-get upgrade</em>, press enter and enter your password</li>
           <li>Connect other hardware to your computer if it isn't connected yet like your printer or your graphics card.</li>
@@ -254,7 +260,7 @@
           <li>Disable notification sounds because they can be too loud by going to Notifications, selecting one Event source after another and clicking the button "Disable sounds for all of these events" at the bottom.</li>
           <li>Under Accessibility > make sure "Use system bell", "Use customized bell" and "Use visual bell" are disabled.</li>
           <li>It's important that you know how to open the Terminal if you ever need to enter a command: press the button in the bottom left and enter "terminal" in the search. For KDE the Terminal is Konsole by default. You can enter commands here. Make sure you don't enter dangerous commands because they could delete data. Commands without "sudo" in them are unlikely to be dangerous. One exemplary command is "sudo apt-get update && sudo apt-get upgrade" which is an alternative way to update all your software at once.</li>
-          <li>You can also configure updates to be done automatically so you don't need to them every time.</li>
+          <li>You can also configure updates to be done automatically so you don't need to do them every time.</li>
           <li>You probably need to configure some software such as adding spellchecking for your language for LibreOffice.</li>
           <li>The Firefox AddOn <a target="_blank" rel="noopener noreferrer" href="https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/" style="color: white;">Plasma Integration</a> better integrates the browser into KDE. For example it shows browser notifications within KDE.</li>
           <li>To view your files press the bottom left button and click on File Manager</li>
@@ -447,7 +453,7 @@ export default {
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian',
-          description: '100% FOSS, run by a large community and the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions are based and contributors to it adhere to a Social Contract. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
+          description: 'Strict guidelines make sure that it remains 100% free open source software, it\'s run by a large community and it\'s the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions, like Ubuntu, are based. Contributors to it adhere to a Social Contract that codifies the moral agenda of the project. However it\'s not easy for beginners yet. If you use it as a beginner you should be okay with at least running a few commands using the terminal directly after installation. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'
@@ -455,7 +461,7 @@ export default {
         {
           logo: 'statics/logos_kdeneon_small.png',
           name: 'KDE neon',
-          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
+          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". KDE neon is based on Ubuntu which is based on Debian. Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
           enabled: true,
           website: 'https://neon.kde.org/',
           selectionKey: 'kdeneon'
@@ -489,7 +495,7 @@ export default {
         {
           logo: 'statics/logos_kde.png',
           name: 'KDE',
-          description: '"Simple by default, Powerful when needed", highly customizable, modern UI, phone integration and more',
+          description: '"Simple by default, Powerful when needed", highly customizable, widgets, looks beautiful and modern, a lot of apps that share same look and feel, a lot of similarity with Windows, phone integration with KDE Connect and more.',
           enabled: true,
           website: 'https://kde.org/',
           selectionKey: 'kde'
@@ -497,10 +503,26 @@ export default {
         {
           logo: 'statics/logos_gnome.png',
           name: 'GNOME',
-          description: '"An easy and elegant way to use your computer, GNOME is designed to put you in control and get things done."',
+          description: '"An easy and elegant way to use your computer, GNOME is designed to put you in control and get things done." Does not have a taskbar or a start menu in the bottom left. Might have some advantages for touchscreens including tablets but KDE could improve in that area. It is used by many because it\'s the desktop environment of the popular distribution Ubuntu. But it is recommended to use KDE even if you use a touchscreen so that you don\'t have to change your desktop environment later on. GNOME is a good alternative to KDE but unless you know exactly what you\'re doing it\'s recommended to use KDE. More reasons for that doing so <a target="_blank" rel="noopener noreferrer" href="https://www.makeuseof.com/tag/why-kde-better-gnome/" style="color: white; font-weight: bold;">here</a>.',
           enabled: false,
           website: 'https://www.gnome.org/',
           selectionKey: 'gnome'
+        },
+        {
+          logo: 'statics/logos_xfce.png',
+          name: 'XFCE',
+          description: 'Xfce aims to be fast and lightweight while still being visually appealing and easy to use. Unless you plan to install it on a system with very, very low resources it\'s not recommended. If you\'re using a workstation computer that isn\'t 20+ years old this likely isn\'t a good choice for you. For example it looks very outdated.',
+          enabled: false,
+          website: 'https://xfce.org/',
+          selectionKey: 'xfce'
+        },
+        {
+          logo: 'statics/logos_cinnamon.png',
+          name: 'Cinnamon',
+          description: 'Based upon GNOME and is used by Linux Mint. Unlike GNOME it looks very similar to Windows. But this isn\'t a good reason to use it instead of KDE.',
+          enabled: false,
+          website: 'https://cinnamon-spices.linuxmint.com/',
+          selectionKey: 'cinnamon'
         }
       ]
     };
@@ -569,7 +591,7 @@ export default {
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian',
-          description: '100% FOSS, run by a large community and the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions are based and contributors to it adhere to a Social Contract. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
+          description: 'Strict guidelines make sure that it remains 100% free open source software, it\'s run by a large community and it\'s the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions, like Ubuntu, are based. Contributors to it adhere to a Social Contract that codifies the moral agenda of the project. However it\'s not easy for beginners yet. If you use it as a beginner you should be okay with at least running a few commands using the terminal directly after installation. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'
@@ -577,7 +599,7 @@ export default {
         {
           logo: 'statics/logos_kdeneon_small.png',
           name: 'KDE neon',
-          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
+          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". KDE neon is based on Ubuntu which is based on Debian. Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
           enabled: true,
           website: 'https://neon.kde.org/',
           selectionKey: 'kdeneon'
@@ -613,7 +635,7 @@ export default {
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian Edu/Skolelinux',
-          description: '100% FOSS, run by a large community and the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions are based and contributors to it adhere to a Social Contract. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.<br/>Debian Edu/Skolelinux is an operating system intended for educational use. Skolelinux\'s literal translation is \"school linux\". It has been created as an overall free software computer solution designed to fit to schools\' resources and needs, and is currently being developed by a large and growing international community. More info about it <a target="_blank" rel="noopener noreferrer" href="https://wiki.debian.org/DebianEdu/Introduction" style="color: white; font-weight: bold;">here</a>.',
+          description: 'Strict guidelines make sure that it remains 100% free open source software, it\'s run by a large community and it\'s the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions, like Ubuntu, are based. Contributors to it adhere to a Social Contract that codifies the moral agenda of the project. However the main distribution (not Skolelinux) isn\'t easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.<br/>Debian Edu/Skolelinux is an operating system intended for educational use. Skolelinux\'s literal translation is \"school linux\". It has been created as an overall free software computer solution designed to fit to schools\' resources and needs, and is currently being developed by a large and growing international community. More info about it <a target="_blank" rel="noopener noreferrer" href="https://wiki.debian.org/DebianEdu/Introduction" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'
@@ -621,7 +643,7 @@ export default {
         {
           logo: 'statics/logos_kdeneon_small.png',
           name: 'KDE neon',
-          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
+          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". KDE neon is based on Ubuntu which is based on Debian. Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
           enabled: true,
           website: 'https://neon.kde.org/',
           selectionKey: 'kdeneon'
@@ -656,7 +678,7 @@ export default {
         {
           logo: 'statics/logos_kdeneon_small.png',
           name: 'KDE neon',
-          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
+          description: 'Easy to use, looks modern and great, "the latest and greatest of KDE community software packaged on a rock-solid base". KDE neon is based on Ubuntu which is based on Debian. Video showcasing it <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=TXWUyUUx3ZE" style="color: white; font-weight: bold;">here</a>',
           enabled: true,
           website: 'https://neon.kde.org/',
           selectionKey: 'kdeneon'
@@ -672,7 +694,7 @@ export default {
         {
           logo: 'statics/logos_debian_small.png',
           name: 'Debian',
-          description: '100% FOSS, run by a large community and the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions are based and contributors to it adhere to a Social Contract. However not easy for beginners yet. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
+          description: 'Strict guidelines make sure that it remains 100% free open source software, it\'s run by a large community and it\'s the distribution used most on servers. It is a very old, established and stable distribution upon which many other distributions, like Ubuntu, are based. Contributors to it adhere to a Social Contract that codifies the moral agenda of the project. However it\'s not easy for beginners yet. If you use it as a beginner you should be okay with at least running a few commands using the terminal directly after installation. Debian calls itself the "universal operating system" which makes its high goals clear. More reasons to use it <a target="_blank" rel="noopener noreferrer" href="https://www.debian.org/intro/why_debian" style="color: white; font-weight: bold;">here</a>.',
           enabled: true,
           website: 'https://www.debian.org/',
           selectionKey: 'debian'
