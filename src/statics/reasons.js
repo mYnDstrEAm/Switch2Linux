@@ -170,9 +170,9 @@ export var reasons = [
     ],
     source_background_details_slideshow: [
       { name: "Thunderbird", app_slot: "Email", subtitle: "Replaces Outlook", src: "statics/apps/screenshot_thunderbird.png" },
-      // { name: "LibreOffice", app_slot: "Office", subtitle: "Replaces Microsoft Office (Word, Excel, ...)", src: "statics/apps/screenshot_libreoffice.png" },
-      // { name: "Kdenlive", app_slot: "Video editor", subtitle: "Easy to use video editor", src: "statics/apps/screenshot_kdenlive.jpg" },
-      // { name: "GIMP", app_slot: "Image editor", subtitle: "Replaces Photoshop", src: "statics/apps/screenshot_gimp.jpg" }
+      { name: "LibreOffice", app_slot: "Office", subtitle: "Replaces Microsoft Office (Word, Excel, ...)", src: "statics/apps/screenshot_libreoffice.png" },
+      { name: "Kdenlive", app_slot: "Video editor", subtitle: "Easy to use video editor", src: "statics/apps/screenshot_kdenlive.jpg" },
+      { name: "GIMP", app_slot: "Image editor", subtitle: "Replaces Photoshop", src: "statics/apps/screenshot_gimp.jpg" }
     ]
   },
   {
