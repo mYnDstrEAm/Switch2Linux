@@ -113,6 +113,7 @@
             <template v-slot:body="props">
               <q-tr :props="props" :class="{ disabledTableRow: props.row.enabled === false }">
                 <q-td key="logo" :props="props" style="width: 10vw; min-width: 40px; max-width: 100px;"><q-img
+                  native-context-menu
                   style="vertical-align: middle !important; text-align: left;"
                   :src="props.row.logo"/>
                 </q-td>
@@ -143,6 +144,7 @@
             <template v-slot:body="props">
               <q-tr :props="props" :class="{ disabledTableRow: props.row.enabled === false }">
                 <q-td key="logo" :props="props" style="width: 10vw; min-width: 40px; max-width: 100px;"><q-img
+                  native-context-menu
                   style="vertical-align: middle !important; text-align: left;"
                   :src="props.row.logo"/>
                 </q-td>

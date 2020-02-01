@@ -15,7 +15,7 @@
     "@quasar/extras": "^1.4.0",
     "axios": "^0.19.1",
     "dateformat": "^3.0.3",
-    "quasar": "^1.8.2",
+    "quasar": "^1.8.5",
     "vue-i18n": "^8.15.3",
     "vue-sanitize": "^0.2.0",
     "vue-script2": "^2.1.0",

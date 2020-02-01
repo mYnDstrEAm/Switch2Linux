@@ -20,6 +20,7 @@
         >
           <div class="col-12 reason reason_img_container_topdown">
             <q-img
+              native-context-menu
               class="reason_img reason_img_topdown"
               :src="reason.image.src"
               contain
@@ -37,6 +38,7 @@
             class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2 reason_img_container_left"
           >
             <q-img
+              native-context-menu
               style="vertical-align: middle !important;"
               :src="reason.image.src"
             />
@@ -93,6 +95,7 @@
           >
             <div style="padding-right: 20px;">
               <q-img
+                native-context-menu
                 style="vertical-align: middle !important;"
                 :src="reason.image.src"
               />
@@ -110,6 +113,7 @@
         >
           <div class="col-12 reason reason_img_container_topdown">
             <q-img
+              native-context-menu
               class="reason_img reason_img_topdown"
               :src="reason.image.src"
               contain
@@ -185,6 +189,7 @@
                 >
                   <div class="row justify-center" style="text-align: center; padding-top: 7px;">
                     <q-img
+                      native-context-menu
                       class=""
                       :src="source_background_details_tile.image"
                       contain
