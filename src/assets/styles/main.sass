@@ -1,6 +1,55 @@
 $color_primary: #363B41
 $color_secondary: #2B908E
 
+$media_li_fontsize_maxwidth:            600px
+$media_h6_fontsize_minheight:           1300px
+$media_h6_fontsize_minwidth:            1000px
+$media_h5_fontsize_maxheight:           1000px
+$media_h5-h4_fontsize_minheight:        1300px
+$media_h5-h4_fontsize_minwidth:         1000px
+$media_arrowdown_fontsize_maxheight:    1200px
+$media_p_fontsize_maxwidth:             600px
+$media_p_fontsize_maxheight:            700px
+$media_p_fontsize_minwidth:             1300px
+$media_p_fontsize_minheight:            1000px
+$media_arrowdown_fontsize_maxheight:    700px
+$media_arrowdown_fontsize_minheight:    1700px
+$media_arrowdown2-arrowup2_fontsize_maxheight: $media_arrowdown_fontsize_maxheight
+$media_arrowdown2-arrowup2_fontsize_minheight: $media_arrowdown_fontsize_minheight
+
+$media_h5_lineheight_maxwidth:          600px
+$media_h5_lineheight_minheight:         600px
+$media_whatrow_position_maxwidth:       900px
+
+$media_p_margintop_minheight:           1300px
+$media_p_margintop_maxwidth:            700px
+$media_p_margintop_maxheight:           1000px
+$media_whatIsLinuxBoxContent-whatIsWebsiteBoxContent_margintop_maxwidth:    600px
+$media_whatIsLinuxBoxContent-whatIsWebsiteBoxContent_margintop_minheight:   600px
+$media_p_paddingtop_minheight:          1300px
+$media_p_paddingtop_minwidth:           1000px
+$media_p_paddingtop_minheight:          1280px
+$media_whyhowrow_paddingtop_maxheight:                          600px
+$media_whatIsLinuxBoxContent-h5-arrowdown_marginright_maxwidth: 1900px
+$media_whatIsLinuxBoxContent-h5-arrowdown_marginright_minwidth: 720px
+$media_descriptionbox_marginbottom_maxwidth:                    600px
+
+$calc_h6_fontsize:              calc(0.4vw + 0.4vh + 16px)
+$calc_h5-h4_fontsize:           calc(0.5vw + 2vh + 5px)
+$calc_li_fontsize:              calc(0.1vw + 0.1vh + 14px) !important
+$calc_p-li-qitemlabel_fontsize: calc(0.7vw + 0.7vh + 9px)
+$calc_h5_fontsize:              calc(0.7vw + 1vh + 2px)
+$calc_arrowdown_fontsize:       calc(1.1vh + 0.35vw + 2px) !important
+$calc_qcarouselbefore_fontsize:     calc(1.6vw + 2vh)
+$calc_whatrow--p_fontsize:      calc(0.3vw + 1.5vh + 2px) !important
+$calc_how--p-why--p_fontsize:   calc(0.5vw + 0.5vh + 14px)
+$calc_arrowdown_fontsize:       calc(2.7vh + 0.7vw + 2px)
+$calc_arrowdown2-arrowup2_fontsize: calc(2.2vh + 0.7vw + 2px)
+$calc_imageSourcesButtonContainer--p_fontsize:          calc(0.7vw + 0.7vh + 2px)
+$calc_qcarouselbefore_paddingtop:   calc((2vw + 1.3vh) / 6)
+$calc_qcarouselbefore_height:   calc(3vw + 3vh)
+$calc_whatIsWebsiteBox--p-whatIsLinuxBox--p_paddingtop: calc(0.4vw + 0.4vh)
+
 /* #region Page */
 
 .page,
@@ -39,7 +88,7 @@ body
 p,
 li,
 .q-item__label
-    font-size: calc(0.7vw + 0.7vh + 9px)
+    font-size: $calc_p-li-qitemlabel_fontsize
     font-family: Roboto,sans-serif
     letter-spacing: -.1px
     opacity: 0.7
@@ -51,12 +100,12 @@ p
     margin-top: 0px !important
     margin-bottom: 0px !important
 
-@media (max-width: 600px)
+@media (max-width: $media_li_fontsize_maxwidth)
     li
-        font-size: calc(0.1vw + 0.1vh + 14px) !important
+        font-size: $calc_li_fontsize
 
 .col-xs-12 > div > h6
-    font-size: calc(0.4vw + 0.4vh + 16px)
+    font-size: $calc_h6_fontsize
     font-family: Roboto,sans-serif
     font-weight: 500
     margin-top: 0px
@@ -70,7 +119,7 @@ p
     margin-top: 0px !important
     padding-top: 0px !important
 
-@media screen and (min-height: 1300px) and (min-width: 1000px)
+@media screen and (min-height: $media_h6_fontsize_minheight) and (min-width: $media_h6_fontsize_minwidth)
     .col-xs-12 > div > h6
         font-size: 38px
 
@@ -80,7 +129,7 @@ p
 .col-xs-6 > div > h4,
 .col-xs-12 > div > h5,
 .col-xs-12 > div > h4
-    font-size: calc(0.5vw + 2vh + 5px)
+    font-size: $calc_h5-h4_fontsize
     margin-top: 10px
     margin-bottom: 0px
     font-family: Roboto,sans-serif
@@ -89,17 +138,18 @@ p
     opacity: 0.9
     color: white
 
-@media screen and (max-height: 1000px)
+@media screen and (max-height: $media_h5_fontsize_maxheight)
     .why_how_row_2 > h5,
     .why_how_row_3 > h5
-        font-size: calc(0.7vw + 1vh + 2px)
-@media screen and (max-height: 1200px)
+        font-size: $calc_h5_fontsize
+
+@media screen and (max-height: $media_arrowdown_fontsize_maxheight)
     .arrow_down
-        font-size: calc(1.1vh + 0.35vw + 2px) !important
+        font-size: $calc_arrowdown_fontsize
         animation: landing-bounce-small 2s infinite !important
         margin-top: -19px
 
-@media screen and (min-height: 1300px) and (min-width: 1000px)
+@media screen and (min-height: $media_h5-h4_fontsize_minheight) and (min-width: $media_h5-h4_fontsize_minwidth)
     .col-xs-12 > div > h5,
     .col-xs-12 > div > h4,
     .col-xs-6 > div > h5,
@@ -130,15 +180,15 @@ p
 
 .qcarousel:before
     content: "#Switch2Linux"
-    padding-top: calc((2vw + 1.3vh) / 6)
-    font-size: calc(1.6vw + 2vh)
+    padding-top: $calc_qcarouselbefore_paddingtop
+    font-size: $calc_qcarouselbefore_fontsize
     color: white
     text-align: center
     vertical-align: center
     vertical-alignment: center
     font-weight: bold
     width: 100%
-    height: calc(3vw + 3vh)
+    height: $calc_qcarouselbefore_height
     position: absolute
     z-index: 3
     top: 0
@@ -206,7 +256,7 @@ p
     // bottom: 8vh
     vertical-align: top
     width: 100%
-@media screen and (max-width: 900px)
+@media screen and (max-width: $media_whatrow_position_maxwidth)
     .what_row
         position: relative
         top: 0px
@@ -250,9 +300,9 @@ p
     padding-left: 0px !important
 
 .what_row p
-    font-size: calc(0.3vw + 1.5vh + 2px) !important
+    font-size: $calc_whatrow--p_fontsize
 
-@media (max-width: 600px) and (max-height: 700px) 
+@media (max-width: $media_p_fontsize_maxwidth) and (max-height: $media_p_fontsize_maxheight)
     .what_row p
         font-size: 15px !important
 
@@ -267,7 +317,7 @@ p
     text-align: center
     margin: auto
 
-@media screen and (max-width: 1900px) and (min-width: 720px)
+@media screen and (max-width: $media_whatIsLinuxBoxContent-h5-arrowdown_marginright_maxwidth) and (min-width: $media_whatIsLinuxBoxContent-h5-arrowdown_marginright_minwidth)
     #whatIsLinuxBoxContent,
     .why_how_row_2 > h5,
     .why_how_row_2 > .arrow_down
@@ -283,7 +333,7 @@ p
     text-align: center
     margin: auto
 
-@media screen and (min-height: 1300px) and (max-width: 700px)
+@media screen and (min-height: $media_p_margintop_minheight) and (max-width: $media_p_margintop_maxwidth)
     #whatIsWebsiteBoxContent p,
     #whatIsLinuxBoxContent p
         margin-top: 0px !important
@@ -293,7 +343,7 @@ p
 //     #whatIsLinuxBoxContent p
 //         margin-top: calc(0.1vw - 25px) !important
 
-@media screen and (min-height: 1300px) and (min-width: 1000px)
+@media screen and (min-height: $media_p_paddingtop_minheight) and (min-width: $media_p_paddingtop_minwidth)
     .whatIsWebsiteBox p,
     .whatIsLinuxBox p
         padding-top: 0px//17px
@@ -302,23 +352,24 @@ p
     margin-bottom: 15px
     padding-left: 0px !important
 
-@media (max-width: 600px)
+@media (max-width: $media_descriptionbox_marginbottom_maxwidth)
     .description_box
         margin-bottom: 0px !important
     // .whatIsLinuxBox
     //     margin-top: -10px !important
-@media (max-width: 600px) and (min-height: 600px)
+@media (max-width: $media_whatIsLinuxBoxContent-whatIsWebsiteBoxContent_margintop_maxwidth) and (min-height: $media_whatIsLinuxBoxContent-whatIsWebsiteBoxContent_margintop_minheight)
     #whatIsLinuxBoxContent
         margin-top: 20px
     #whatIsWebsiteBoxContent
         margin-top: 30px
-    #whatIsWebsiteBoxContent > h5
+@media (max-width: $media_h5_lineheight_maxwidth) and (min-height: $media_h5_lineheight_minheight)
+     #whatIsWebsiteBoxContent > h5
         line-height: 30px !important
 
-@media (max-height: 600px)
+@media (max-height: $media_whyhowrow_paddingtop_maxheight)
     .why_how_row
         display: none
-@media (max-height: 1000px)
+@media (max-height: $media_p_margintop_maxheight)
     #whatIsWebsiteBoxContent p,
     #whatIsLinuxBoxContent p
         margin-top: 0px !important
@@ -333,10 +384,10 @@ p
 .whatIsLinuxBox p,
     text-align: center
 
-@media (min-height: 1280px)
+@media (min-height: $media_p_paddingtop_minheight)
     .whatIsWebsiteBox p,
     .whatIsLinuxBox p,
-        padding-top: calc(0.4vw + 0.4vh)
+        padding-top: $calc_whatIsWebsiteBox--p-whatIsLinuxBox--p_paddingtop
 
 .why_how
     margin-top: 0px !important
@@ -363,9 +414,9 @@ p
 #why > p
     text-align: center
     padding-top: 2px
-    font-size: calc(0.5vw + 0.5vh + 14px)
+    font-size: $calc_how--p-why--p_fontsize
 
-@media (min-width: 1300px) and (min-height: 1000px)
+@media (min-width: $media_p_fontsize_minwidth) and (min-height: $media_p_fontsize_minheight)
     #how > p,
     #why > p
         font-size: 30px
@@ -376,30 +427,30 @@ p
     cursor: pointer
     animation: landing-bounce 2s infinite
     -webkit-animation: landing-bounce 2s infinite
-    font-size: calc(2.7vh + 0.7vw + 2px)
+    font-size: $calc_arrowdown_fontsize
     opacity: 0.9
     color: white
     bottom: -10px
 
-@media (max-height: 700px)
+@media (max-height: $media_arrowdown_fontsize_maxheight)
     .arrow_down
         font-size: 25px
-@media (min-height: 1700px)
+@media (min-height: $media_arrowdown_fontsize_minheight)
     .arrow_down
         font-size: 80px
 
 .arrow_down_2,
 .arrow_up_2
     cursor: pointer
-    font-size: calc(2.2vh + 0.7vw + 2px)
+    font-size: $calc_arrowdown2-arrowup2_fontsize
     opacity: 0.9
     color: white
 
-@media (max-height: 700px)
+@media (max-height: $media_arrowdown2-arrowup2_fontsize_maxheight)
     .arrow_down_2,
     .arrow_up_2
         font-size: 25px
-@media (min-height: 1700px)
+@media (min-height: $media_arrowdown2-arrowup2_fontsize_minheight)
     .arrow_down_2,
     .arrow_up_2
         font-size: 80px
@@ -446,7 +497,7 @@ p
     font-size: 32px !important
 
 #imageSourcesButtonContainer > p
-    font-size: calc(0.7vw + 0.7vh + 2px)
+    font-size: $calc_imageSourcesButtonContainer--p_fontsize
 
 /* #region Override & apply quasar dialog box styles */
 

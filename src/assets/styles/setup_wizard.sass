@@ -1,5 +1,16 @@
 $color_primary: #363B41
 $color_secondary: #2B908E
+
+$media_fullscreenbtn_fontsize_maxwidth: 700px
+$media_fullscreenbtn_fontsize_minwidth: 1700px
+$media_qtd-qradiolabel_fontsize_minwidth: 1300px
+$media_qtd-qradiolabel_fontsize_minheight: 1000px
+
+$calc_qcardsection_fontsize:    calc(0.7vw + 0.7vh + 6px)
+$calc_fullscreenbtn_fontsize:   calc(2vh + 0.8vh + 10px)
+$calc_td_fontsize:              calc(0.5vw + 0.5vh + 12px)
+$calc_qtd-qradiolabel_fontsize: calc(0.5vw + 0.5vh + 12px)
+
 // #stepper_module
 
 #setup_wizard
@@ -75,7 +86,7 @@ $color_secondary: #2B908E
 .q-card__section
     padding-top: 7px
     padding-bottom: 7px
-    font-size: calc(0.7vw + 0.7vh + 6px)
+    font-size: $calc_qcardsection_fontsize
 
 #distributionContainer,
 #desktopEnvironmentContainer
@@ -97,7 +108,7 @@ $color_secondary: #2B908E
 
 .fullscreen_btn
     cursor: pointer
-    font-size: calc(2vh + 0.8vh + 10px)
+    font-size: $calc_fullscreenbtn_fontsize
     opacity: 0.7
     color: white
     vertical-align: top
@@ -105,10 +116,10 @@ $color_secondary: #2B908E
     right: 7px
     float: right
 
-@media (max-width: 700px)
+@media (max-width: $media_fullscreenbtn_fontsize_maxwidth)
     .fullscreen_btn
         font-size: 25px
-@media (min-width: 1700px)
+@media (min-width: $media_fullscreenbtn_fontsize_minwidth)
     .fullscreen_btn
         font-size: 62px
 
@@ -140,13 +151,13 @@ $color_secondary: #2B908E
     // pointer-events: none
 
 .q-table tbody td
-    font-size: calc(0.5vw + 0.5vh + 12px)
+    font-size: $calc_td_fontsize
 
 .q-td,
 .q-radio__label
-    font-size: calc(0.5vw + 0.5vh + 12px)
+    font-size: $calc_qtd-qradiolabel_fontsize
 
-@media (min-width: 1300px) and (min-height: 1000px)
+@media (min-width: $media_qtd-qradiolabel_fontsize_minwidth) and (min-height: $media_qtd-qradiolabel_fontsize_minheight)
     .q-td,
     .q-radio__label
         font-size: 24px
